@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Nov 25 11:31:05 2016
+Quartus II Version : 10.1 Build 197 01/19/2011 SP 1 SJ Web Edition
+Revision Name : CHARACTER_LCD
+Top-level Entity Name : Time_LCD
+Family : Cyclone II
+Device : EP2C70F672C8
+Timing Models : Final
+Total logic elements : 326 / 68,416 ( < 1 % )
+    Total combinational functions : 326 / 68,416 ( < 1 % )
+    Dedicated logic registers : 103 / 68,416 ( < 1 % )
+Total registers : 103
+Total pins : 13 / 422 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,152,000 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

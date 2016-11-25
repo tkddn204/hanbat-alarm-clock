@@ -1,0 +1,40 @@
+
+
+
+
+
+
+
+// WT_DECODER.v
+
+module WT_DECODER(
+	BCD, DOT,
+	SEG_DATA
+);
+
+input [3:0] BCD;
+input DOT;
+output wire [7:0] SEG_DATA;
+
+reg [6:0] BUFF;
+
+always @(BCD)
+begin
+	case(BCD)
+		4'b0000: BUFF = 7'b1111110;
+		4'b0001: BUFF = 7'b1111110;
+		4'b0010: BUFF = 7'b1111110;
+		4'b0011: BUFF = 7'b1111110;
+		4'b0100: BUFF = 7'b1111110;
+		4'b0101: BUFF = 7'b1111110;
+		4'b0110: BUFF = 7'b1111110;
+		4'b0111: BUFF = 7'b1111110;
+		4'b1000: BUFF = 7'b1111110;
+		4'b1001: BUFF = 7'b1111110;
+		4'b0000: BUFF = 7'b1111110;
+	endcase
+end
+
+assign SEG_DATA = { BUFF, DOT };
+
+endmodule
