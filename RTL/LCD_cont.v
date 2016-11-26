@@ -2,13 +2,20 @@
 
 module LCD_cont(
     RESETN, CLK,
-	 H10, H1, M10, M1, S10, S1, MERIDIAN
+	 H10, H1, M10, M1, S10, S1,
+	 Y10, Y1, MT10, MT1, D10, D1,
+	 TIME_FORMAT, MERIDIAN, MODE, BLINK,
+	 RING_ALARM, SET_ALARM,
     LCD_E, LCD_RS, LCD_RW,
     LCD_DATA
 );
 
 input RESETN, CLK;
 input [7:0] H10, H1, M10, M1, S10, S1, MERIDIAN;
+input [7:0] Y10, Y1, MT10, MT1, D10, D1;
+input [1:0] MODE;
+input [2:0] BLINK;
+input TIME_FORMAT, RING_ALARM, SET_ALARM;
 output LCD_E, LCD_RS, LCD_RW;
 output [7:0] LCD_DATA;
 
@@ -17,6 +24,7 @@ reg LCD_RS, LCD_RW;
 reg [7:0] LCD_DATA;
 
 reg [2:0] STATE;
+
 parameter DELAY = 3'b000,
           FUNCTION_SET = 3'b001,
           ENTRY_MODE = 3'b010,
@@ -25,9 +33,28 @@ parameter DELAY = 3'b000,
           LINE2 = 3'b101,
           DELAY_T = 3'b110,
           CLEAR_DISP = 3'b111;
-
+			 
+/* MODE LIST */
+// 10 -> State Bit
+//  1 -> Control Bit
+parameter CURRENT_TIME = 2'b00,
+			 CURRENT_CONTROL_TIME = 2'b01,
+			 ALARM_TIME = 2'b10,
+			 ALARM_CONTROL_TIME = 2'b11;
+			 
+/* CURRENT BLINK LIST */
+parameter BLINK_NO = 3'b000,
+			 BLINK_HOUR = 3'b001,
+			 BLINK_MIN = 3'b010,
+			 BLINK_SEC = 3'b011,
+			 BLINK_MERIDIAN = 3'b100,
+			 BLINK_YEAR = 3'b101,
+			 BLINK_MONTH = 3'b110,
+			 BLINK_DAY = 3'b111;
+			 
 integer CNT;
-integer BLINK = 0;
+integer EACH_BLINK = 0;
+integer DOT_BLINK = 0;
 
 always @(posedge CLK)
 begin
@@ -140,56 +167,126 @@ begin
                             2:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = H10; 			// H10
+												if(BLINK == BLINK_HOUR)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = H10; // H10
+														end
+												else 
+													LCD_DATA = H10; 			// H10
                                 end
 									 3:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = H1; 			// H1
+												if(BLINK == BLINK_HOUR)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = H1; // H1
+														end
+												else 
+													LCD_DATA = H1; 			// H1
                                 end
 									 4:
                                 begin
-												if(BLINK == 0)
+                                    LCD_RS = 1'b1;
+												if(DOT_BLINK == 0)
 													begin
-														BLINK = 1;
+														DOT_BLINK = 1;
 														LCD_DATA = 8'b00100000; // 
 													end
 												else
 													begin
-														BLINK = 0;
+														DOT_BLINK = 0;
 														LCD_DATA = 8'b00111010; // :(clock count)
 													end
                                 end
 									 5:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = M10; 			// M10
+												if(BLINK == BLINK_MIN)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = M10; // M10
+														end
+												else 
+													LCD_DATA = M10; 			// M10
                                 end
 									 6:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = M1; 			// M1
+												if(BLINK == BLINK_MIN)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = M1; // H1
+														end
+												else 
+													LCD_DATA = M1; 			// M1
                                 end
 									 7:
                                 begin
-												if(BLINK == 1)
-													begin
+                                    LCD_RS = 1'b1;
+												if(DOT_BLINK == 1)
 														LCD_DATA = 8'b00100000; // 
-													end
-												else
-													begin
+												else 				
 														LCD_DATA = 8'b00111010; // :(clock count)
-													end
                                 end
 									 8:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = S10; 			// S10
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = S10; // S10
+														end
+												else 
+													LCD_DATA = S10; 			// S10
                                 end
 									 9:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = S1; 			// S1
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = S1; // S1
+														end
+												else 
+													LCD_DATA = S1; 			// S1
                                 end
 									 10:
                                 begin
@@ -199,12 +296,42 @@ begin
 									 11:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = MERIDIAN; // meridian(A / P)
+												if(TIME_FORMAT == 1)
+													if(BLINK == BLINK_MERIDIAN)
+														if(EACH_BLINK == 1)
+															begin
+																EACH_BLINK = 0;
+																LCD_DATA = 8'b00100000; //
+															end
+														else
+															begin
+																EACH_BLINK = 1;
+																LCD_DATA = MERIDIAN; // meridian(A / P)
+															end
+													else
+														LCD_DATA = MERIDIAN; // meridian(A / P)
+												else
+													   LCD_DATA = 8'b00100000; //
                                 end
 									 12:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b01001101; // M
+												if(TIME_FORMAT == 1)
+													if(BLINK == BLINK_MERIDIAN)
+														if(EACH_BLINK == 1)
+															begin
+																EACH_BLINK = 0;
+																LCD_DATA = 8'b00100000; //
+															end
+														else
+															begin
+																EACH_BLINK = 1;
+																LCD_DATA = 8'b01001101; // M
+															end
+													else
+														LCD_DATA = 8'b01001101; // M
+												else
+														LCD_DATA = 8'b00100000; //
                                 end
                             13:
                                 begin
@@ -214,9 +341,20 @@ begin
                             14:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b10101001; // special C
+												if((MODE == ALARM_TIME) || (MODE == ALARM_CONTROL_TIME))
+														LCD_DATA = 8'b10011000; // alarm
+												else
+														LCD_DATA = 8'b00100000; // 
                                 end
                             15:
+                                begin
+                                    LCD_RS = 1'b1;
+												if((MODE == CURRENT_CONTROL_TIME) || (MODE == ALARM_CONTROL_TIME))
+														LCD_DATA = 8'b10101001; // special C
+												else
+														LCD_DATA = 8'b00100000; // 
+                                end
+                            16:
                                 begin
                                     LCD_RS = 1'b1;
                                     LCD_DATA = 8'b00100000; //
@@ -246,57 +384,153 @@ begin
                             2:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = 8'b00110010; // 2
+														end
+												else 
+													LCD_DATA = 8'b00110010; // 2
                                 end
                             3:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = 8'b00110000; // 0
+														end
+												else 
+													LCD_DATA = 8'b00110000; // 0
                                 end
                             4:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = Y10; // Y10
+														end
+												else 
+													LCD_DATA = Y10; // Y10
                                 end
                             5:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = Y1; // Y1
+														end
+												else 
+													LCD_DATA = Y1; // Y1
                                 end
                             6:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+                                    LCD_DATA = 8'b01011001; // Y
                                 end
                             7:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = MT10; // MT10	
+														end
+												else 
+													LCD_DATA = MT10; // MT10
                                 end
                             8:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = MT1; // MT1
+														end
+												else 
+													LCD_DATA = MT1; // MT1
                                 end
                             9:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+                                    LCD_DATA = 8'b01001101; // M
                                 end
                             10:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = D10; // D10
+														end
+												else 
+													LCD_DATA = D10; // D10
                                 end
                             11:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(BLINK == BLINK_SEC)
+													if(EACH_BLINK == 1)
+														begin
+															EACH_BLINK = 0;
+															LCD_DATA = 8'b00100000; //
+														end
+													else
+														begin
+															EACH_BLINK = 1;
+															LCD_DATA = D1; // D1
+														end
+												else 
+													LCD_DATA = D1; // D1
                                 end
                             12:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+                                    LCD_DATA = 8'b01000100; // D
                                 end
                             13:
                                 begin
@@ -306,12 +540,18 @@ begin
                             14:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(RING_ALARM == 1)
+														LCD_DATA = 8'b10010001; // note
+												else
+														LCD_DATA = 8'b00100000; //
                                 end
                             15:
                                 begin
                                     LCD_RS = 1'b1;
-                                    LCD_DATA = 8'b00100000; //
+												if(SET_ALARM == 1)
+														LCD_DATA = 8'b10011000; // alarm
+												else
+														LCD_DATA = 8'b00100000; // 
                                 end
                             16:
                                 begin
