@@ -1,43 +1,43 @@
 
+/* IN_TIME BIT LIST
+`define   IN_MERIDIAN IN_TIME[16]
+`define	 IN_HOUR     IN_TIME[15:12]
+`define	 IN_MIN      IN_TIME[11:6]
+`define   IN_SEC      IN_TIME[5:0]
 
+/* OUT_TIME BIT LIST
+`define OUT_MERIDIAN  OUT_TIME_BUFF[16]
+*/
 
+// KEY_CONT.v
 
-
-
-
-// key_cont.v
-
-module key_cont(
-	RESETN,
-	KEY,
-	TIME_FORMAT, MERIDIAN,
-	MODE, FLAG, BLINK, UP, DOWN
+module KEY_CONT(
+	RESETN, CLK,
+	KEY, IN_TIME,
+	MODE, FLAG, CONT, UP, DOWN,
+	OUT_TIME, SET_ALARM
 );
 
-input RESETN;
-input [7:0] KEY;
-
-output reg TIME_FORMAT;
-output reg [7:0] MERIDIAN;
+input RESETN, CLK;
+input [4:0] KEY;
+input [16:0] IN_TIME;
 output wire [1:0] MODE;
-output wire [2:0] FLAG, BLINK;
+output wire [2:0] FLAG, CONT;
 output wire [2:0] UP, DOWN;
+output wire [16:0] OUT_TIME;
+output reg SET_ALARM;
 
+reg [16:0] OUT_TIME_BUFF;
 reg [1:0] MODE_BUFF;
-reg [2:0] FLAG_BUFF;
-reg [2:0] BLINK_BUFF;
+reg [2:0] FLAG_BUFF, CONT_BUFF;
 reg [2:0] UP_BUFF, DOWN_BUFF;
 
-/* MERIDIAN LIST(A, B) */
-parameter AM = 8'b01000001,
-			 PM = 8'b01000010;
-
 /* KEY LIST */
-parameter MENU = 8'b10000000,
-			 SET = 8'b01000000,
-			 CANCEL = 8'b00100000,
-			 UP_KEY = 8'b00010000,
-			 DOWN_KEY = 8'b00001000;
+parameter MENU = 8'b10000,
+			 SET = 8'b01000,
+			 CANCEL = 8'b00100,
+			 UP_KEY = 8'b00010,
+			 DOWN_KEY = 8'b00001;
 			 
 /* MODE BUFF */
 // 10 -> State Bit
@@ -51,53 +51,61 @@ parameter CURRENT_TIME = 2'b00,
 parameter FLAG_NO = 3'b000,
 			 FLAG_VIEW_ALARM = 3'b001,
 			 FLAG_CONTROL_STATE = 3'b100,
-			 FLAG_CONTROL_CHANGE_CANCEL_STATE = 3'b101;
+			 FLAG_ALARM_CONTROL_STATE = 3'b101,
+			 FLAG_CONTROL_CHANGE_DONE_STATE = 3'b110,
+			 FLAG_CONTROL_CHANGE_CANCEL_STATE = 3'b111;
 
-/* TIME FORMAT LIST */
-parameter FORMAT_24 = 0,
-			 FORMAT_12 = 1;
-
-/* CURRENT BLINK LIST */
-parameter BLINK_NO = 3'b000,
-			 BLINK_HOUR = 3'b001,
-			 BLINK_MIN = 3'b010,
-			 BLINK_SEC = 3'b011,
-			 BLINK_MERIDIAN = 3'b100,
-			 BLINK_YEAR = 3'b101,
-			 BLINK_MONTH = 3'b110,
-			 BLINK_DAY = 3'b111;
+/* CONTROL SELECTER LIST */
+parameter CONT_NO = 3'b000,
+			 CONT_HOUR = 3'b001,
+			 CONT_MIN = 3'b010,
+			 CONT_SEC = 3'b011,
+			 CONT_MERIDIAN = 3'b100,
+			 CONT_YEAR = 3'b101,
+			 CONT_MONTH = 3'b110,
+			 CONT_DAY = 3'b111;
 			 
-/* UP LIST */
-parameter UP_NO = 3'b000,
-			 UP_HOUR = 3'b001,
-			 UP_MIN = 3'b010,
-			 UP_SEC = 3'b011,
-			 UP_MERIDIAN = 3'b100,
-			 UP_YEAR = 3'b101,
-			 UP_MONTH = 3'b110,
-			 UP_DAY = 3'b111;
-
-/* DOWN LIST */		 
-parameter DOWN_NO = 3'b000,
-			 DOWN_HOUR = 3'b001,
-			 DOWN_MIN = 3'b010,
-			 DOWN_SEC = 3'b011,
-			 DOWN_MERIDIAN = 3'b100,
-			 DOWN_YEAR = 3'b101,
-			 DOWN_MONTH = 3'b110,
-			 DOWN_DAY = 3'b111;
-						 
-initial
-begin
-	TIME_FORMAT = FORMAT_24;
-	MERIDIAN = AM;
+initial begin
+	CNT_ALARM = 0;
+	OUT_TIME_BUFF = IN_TIME;
 	MODE_BUFF = CURRENT_TIME;
 	FLAG_BUFF = FLAG_NO;
-	BLINK_BUFF = BLINK_NO;
-	UP_BUFF = UP_NO;
-	DOWN_BUFF = DOWN_NO;
+	CONT_BUFF = CONT_NO;
+	UP_BUFF = CONT_NO;
+	DOWN_BUFF = CONT_NO;
 end
-			 
+
+integer CNT, CNT_ALARM;
+
+always @(posedge CLK)
+begin
+	if(!RESETN)
+		begin
+			CNT = 0;
+			CNT_ALARM = 0;
+		end
+	else
+		begin
+				if((FLAG == FLAG_CONTROL_STATE) || (FLAG == FLAG_ALARM_CONTROL_STATE))
+					begin
+						if(CNT >= 999)
+							begin
+								CNT = 0;
+								FLAG_BUFF = FLAG_CONTROL_CHANGE_DONE_STATE;
+							end
+						else
+							CNT = CNT + 1;
+					end
+			if((FLAG == FLAG_VIEW_ALARM) && (CNT_ALARM >= 299))
+				begin
+					CNT_ALARM = 0;
+					FLAG_BUFF = FLAG_NO;
+				end
+			else
+				CNT_ALARM = CNT_ALARM + 1;
+		end
+end
+
 always @(KEY)
 begin
 	case(KEY)
@@ -107,57 +115,89 @@ begin
 					CURRENT_TIME: 			 
 						MODE_BUFF = CURRENT_CONTROL_TIME;
 					CURRENT_CONTROL_TIME:
-						if(FLAG == FLAG_CONTROL_STATE)
-							case(BLINK_BUFF)
-								BLINK_HOUR:
-									BLINK_BUFF = BLINK_MIN;
-								BLINK_MIN:
-									BLINK_BUFF = BLINK_SEC;
-								BLINK_SEC:
-									if(TIME_FORMAT == FORMAT_24)
-										BLINK_BUFF = BLINK_YEAR;
-									else
-										BLINK_BUFF = BLINK_MERIDIAN;
-								BLINK_MERIDIAN:
-									BLINK_BUFF = BLINK_YEAR;
-								BLINK_YEAR:
-									BLINK_BUFF = BLINK_MONTH;
-								BLINK_MONTH:
-									BLINK_BUFF = BLINK_DAY;
-								BLINK_DAY:
-									BLINK_BUFF = BLINK_HOUR;
-								default:
-									BLINK_BUFF = BLINK_HOUR;
-							endcase
-						else
-							MODE_BUFF = ALARM_TIME;
+						case(FLAG_BUFF)
+							FLAG_NO:
+								MODE_BUFF = ALARM_TIME;
+							FLAG_CONTROL_STATE:
+								case(CONT_BUFF)
+									CONT_HOUR:
+										CONT_BUFF = CONT_MIN;
+									CONT_MIN:
+										CONT_BUFF = CONT_SEC;
+									CONT_SEC:
+										if(IN_TIME[16] == 0)
+											CONT_BUFF = CONT_YEAR;
+										else
+											CONT_BUFF = CONT_MERIDIAN;
+									CONT_MERIDIAN:
+										CONT_BUFF = CONT_YEAR;
+									CONT_YEAR:
+										CONT_BUFF = CONT_MONTH;
+									CONT_MONTH:
+										CONT_BUFF = CONT_DAY;
+									CONT_DAY:
+										CONT_BUFF = CONT_HOUR;
+									default:
+										begin
+											FLAG_BUFF = FLAG_NO;
+											CONT_BUFF = CONT_NO;
+										end
+								endcase
+							FLAG_CONTROL_CHANGE_DONE_STATE:
+								begin
+								// DONE -> FLAG CHANGE and reg TIME
+									FLAG_BUFF = FLAG_NO;
+									CONT_BUFF = CONT_NO;
+								end
+							FLAG_CONTROL_CHANGE_CANCEL_STATE:
+								begin
+								// CANCEL -> FLAG CHANGE and origin TIME
+									FLAG_BUFF = FLAG_NO;
+									CONT_BUFF = CONT_NO;
+								end
+							default:
+								MODE_BUFF = ALARM_TIME;
+						endcase
 					ALARM_TIME: 			 
 						MODE_BUFF = ALARM_CONTROL_TIME;
 					ALARM_CONTROL_TIME:
-						if(FLAG == FLAG_CONTROL_STATE)
-							case(BLINK_BUFF)
-								BLINK_HOUR:
-									BLINK_BUFF = BLINK_MIN;
-								BLINK_MIN:
-									BLINK_BUFF = BLINK_SEC;
-								BLINK_SEC:
-									if(TIME_FORMAT == FORMAT_24)
-										BLINK_BUFF = BLINK_YEAR;
-									else
-										BLINK_BUFF = BLINK_MERIDIAN;
-								BLINK_MERIDIAN:
-									BLINK_BUFF = BLINK_YEAR;
-								BLINK_YEAR:
-									BLINK_BUFF = BLINK_MONTH;
-								BLINK_MONTH:
-									BLINK_BUFF = BLINK_DAY;
-								BLINK_DAY:
-									BLINK_BUFF = BLINK_HOUR;
-								default:
-									BLINK_BUFF = BLINK_HOUR;
-							endcase
-						else
-							MODE_BUFF = CURRENT_TIME;
+						case(FLAG_BUFF)
+							FLAG_NO:
+								MODE_BUFF = ALARM_TIME;
+							FLAG_ALARM_CONTROL_STATE:
+								case(CONT_BUFF)
+									CONT_HOUR:
+										CONT_BUFF = CONT_MIN;
+									CONT_MIN:
+										CONT_BUFF = CONT_SEC;
+									CONT_SEC:
+										if(IN_TIME[16] == 0)
+											CONT_BUFF = CONT_HOUR;
+										else
+											CONT_BUFF = CONT_MERIDIAN;
+									CONT_MERIDIAN:
+										CONT_BUFF = CONT_HOUR;
+									default:
+										begin
+											FLAG_BUFF = FLAG_NO;
+											CONT_BUFF = CONT_NO;
+										end
+								endcase
+							FLAG_CONTROL_CHANGE_DONE_STATE:
+								begin
+								// DONE -> FLAG CHANGE and reg TIME
+									FLAG_BUFF = FLAG_NO;
+									CONT_BUFF = CONT_NO;
+								end
+							FLAG_CONTROL_CHANGE_CANCEL_STATE:
+								begin
+								// CANCEL -> FLAG CHANGE and origin TIME
+									FLAG_BUFF = FLAG_NO;
+									CONT_BUFF = CONT_NO;
+								end
+							default:
+								MODE_BUFF = ALARM_TIME;
+						endcase
 					default:
 						MODE_BUFF = CURRENT_TIME;
 				endcase
@@ -167,24 +207,25 @@ begin
 				case(MODE_BUFF)
 					CURRENT_TIME:
 						// alarm time check
-						// TODO add 3 seconds!!
-						if(FLAG_BUFF == FLAG_NO)
-							FLAG_BUFF = FLAG_VIEW_ALARM;
-					CURRENT_CONTROL_TIME: 
+						FLAG_BUFF = FLAG_VIEW_ALARM;
+					CURRENT_CONTROL_TIME:
 						// control current time
-						if(BLINK_BUFF != BLINK_NO)
-							BLINK_BUFF = BLINK_NO;
-						else
-							FLAG_BUFF = FLAG_CONTROL_STATE;
+						case (FLAG_BUFF)
+							FLAG_CONTROL_STATE:
+								FLAG_BUFF = FLAG_CONTROL_CHANGE_DONE_STATE;
+						endcase
 					ALARM_TIME:
-						// nothing special
-						FLAG_BUFF = FLAG_NO;
+						// alarm time check
+						FLAG_BUFF = FLAG_VIEW_ALARM;
 					ALARM_CONTROL_TIME:
 						// control alarm time
-						if(BLINK_BUFF != BLINK_NO)
-							BLINK_BUFF = BLINK_NO;
-						else
-							FLAG_BUFF = FLAG_CONTROL_STATE;
+						case (FLAG_BUFF)
+							FLAG_ALARM_CONTROL_STATE:
+								begin
+									FLAG_BUFF = FLAG_CONTROL_CHANGE_DONE_STATE;
+									SET_ALARM = 1;
+								end
+						endcase
 					default:
 						FLAG_BUFF = FLAG_NO;
 				endcase
@@ -193,35 +234,33 @@ begin
 			begin
 				case(MODE_BUFF)
 					CURRENT_TIME:
+						// change meridian
 						begin
 							FLAG_BUFF = FLAG_NO;
-						// TODO maybe operated change problem..
-							if((TIME_FORMAT == FORMAT_12) && (MERIDIAN == AM))
-									MERIDIAN = PM;
+							if(IN_TIME[16] == 0)
+								OUT_TIME_BUFF[16] = 1;
 							else					 
-									MERIDIAN = AM;
+								OUT_TIME_BUFF[16] = 0;
 						end
 					CURRENT_CONTROL_TIME:
 						// control current time
-						if(BLINK_BUFF != BLINK_NO)
-							begin
-								BLINK_BUFF = BLINK_NO;
+						case (FLAG_BUFF)
+							FLAG_CONTROL_STATE:
 								FLAG_BUFF = FLAG_CONTROL_CHANGE_CANCEL_STATE;
-							end
-						else
-							FLAG_BUFF = FLAG_CONTROL_STATE;
+						endcase
 					ALARM_TIME:
-						// nothing special
-						FLAG_BUFF = FLAG_NO;
+						// alarm cancel
+						if(SET_ALARM == 1)
+							SET_ALARM = 0;
 					ALARM_CONTROL_TIME:
 						// control alarm time
-						if(BLINK_BUFF != BLINK_NO)
-							begin
-								BLINK_BUFF = BLINK_NO;
-								FLAG_BUFF = FLAG_CONTROL_CHANGE_CANCEL_STATE;
-							end
-						else
-							FLAG_BUFF = FLAG_CONTROL_STATE;
+						case (FLAG_BUFF)
+							FLAG_ALARM_CONTROL_STATE:
+								begin
+									FLAG_BUFF = FLAG_CONTROL_CHANGE_DONE_STATE;
+									SET_ALARM = 1;
+								end
+						endcase
 					default:
 						FLAG_BUFF = FLAG_NO;
 				endcase
@@ -232,17 +271,17 @@ begin
 					CURRENT_TIME:
 						// nothing special
 						FLAG_BUFF = FLAG_NO;
-					CURRENT_CONTROL_TIME: 
-						// control current time - up to blink site
+					CURRENT_CONTROL_TIME:
+						// control current time - up to CONT site
 						if(FLAG == FLAG_CONTROL_STATE)
-							UP_BUFF = BLINK_BUFF;
+							UP_BUFF = CONT_BUFF;
 					ALARM_TIME:
 						// nothing special
 						FLAG_BUFF = FLAG_NO;
 					ALARM_CONTROL_TIME:
-						// control alarm time - up to blink site
-						if(FLAG == FLAG_CONTROL_STATE)
-							UP_BUFF = BLINK_BUFF;
+						// control alarm time - up to CONT site
+						if(FLAG == FLAG_ALARM_CONTROL_STATE)
+							UP_BUFF = CONT_BUFF;
 					default:
 						FLAG_BUFF = FLAG_NO;
 				endcase
@@ -254,16 +293,16 @@ begin
 						// nothing special
 						FLAG_BUFF = FLAG_NO;
 					CURRENT_CONTROL_TIME: 
-						// control current time - down to blink site
+						// control current time - down to CONT site
 						if(FLAG == FLAG_CONTROL_STATE)
-							DOWN_BUFF = BLINK_BUFF;
+							DOWN_BUFF = CONT_BUFF;
 					ALARM_TIME:
 						// nothing special
 						FLAG_BUFF = FLAG_NO;
 					ALARM_CONTROL_TIME:
-						// control alarm time - down to blink site
-						if(FLAG == FLAG_CONTROL_STATE)
-							DOWN_BUFF = BLINK_BUFF;
+						// control alarm time - down to CONT site
+						if(FLAG == FLAG_ALARM_CONTROL_STATE)
+							DOWN_BUFF = CONT_BUFF;
 					default:
 						FLAG_BUFF = FLAG_NO;
 				endcase
@@ -271,8 +310,10 @@ begin
 	endcase
 end
 
+assign OUT_TIME = OUT_TIME_BUFF;
 assign MODE = MODE_BUFF;
 assign FLAG = FLAG_BUFF;
+assign CONT = CONT_BUFF;
 assign UP = UP_BUFF;
 assign DOWN = DOWN_BUFF;
 

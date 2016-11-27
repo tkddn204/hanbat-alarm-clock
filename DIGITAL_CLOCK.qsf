@@ -65,16 +65,9 @@ set_location_assignment PIN_K5 -to LCD_E
 set_location_assignment PIN_J5 -to LCD_RS
 set_location_assignment PIN_J4 -to LCD_RW
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_global_assignment -name VERILOG_FILE RTL/DIGITAL_CLOCK.v
-set_global_assignment -name VERILOG_FILE RTL/key_cont.v
-set_global_assignment -name VERILOG_FILE RTL/Time_cal.v
-set_global_assignment -name VERILOG_FILE RTL/LCD_cont.v
-set_global_assignment -name VERILOG_FILE RTL/WT_SEP.v
-set_global_assignment -name VERILOG_FILE RTL/WT_DECODER.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE RTL/Time_cont.v
 set_location_assignment PIN_V4 -to KEY[7]
 set_location_assignment PIN_V3 -to KEY[6]
 set_location_assignment PIN_V2 -to KEY[5]
@@ -83,4 +76,14 @@ set_location_assignment PIN_W3 -to KEY[3]
 set_location_assignment PIN_W2 -to KEY[2]
 set_location_assignment PIN_W1 -to KEY[1]
 set_location_assignment PIN_V7 -to KEY[0]
+set_global_assignment -name VERILOG_FILE RTL/PIEZO_UNIT.v
+set_global_assignment -name VERILOG_FILE RTL/ALARM_TIME_CONT.v
+set_global_assignment -name VERILOG_FILE RTL/TIME_CONT.v
+set_global_assignment -name VERILOG_FILE RTL/TIME_CAL.v
+set_global_assignment -name VERILOG_FILE RTL/LCD_CONT.v
+set_global_assignment -name VERILOG_FILE RTL/KEY_CONT.v
+set_global_assignment -name VERILOG_FILE RTL/DIGITAL_CLOCK.v
+set_global_assignment -name VERILOG_FILE RTL/WT_SEP.v
+set_global_assignment -name VERILOG_FILE RTL/WT_DECODER.v
+set_global_assignment -name VERILOG_FILE RTL/TIME_COMPARE.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
