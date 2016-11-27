@@ -19,7 +19,7 @@ input [2:0] UP, DOWN;
 output wire [16:0] OUT_TIME;
 
 /* FLAG */
-parameter FLAG_ALARM_CONTROL_STATE = 3'b101;
+parameter FLAG_ALARM_CONTROL_STATE = 3'b011;
 			 
 /* CONTROL SELECTER LIST */
 parameter CONT_NO = 3'b000,

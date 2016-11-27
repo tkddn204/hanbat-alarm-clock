@@ -32,6 +32,10 @@ reg [1:0] MODE_BUFF;
 reg [2:0] FLAG_BUFF, CONT_BUFF;
 reg [2:0] UP_BUFF, DOWN_BUFF;
 
+// KEY[5] + MODE[4] + FLAG[6] + CONTROL_SELECTER[8]
+// 000 00 000 000
+// 3+2+3+3 = 11 [10:0]
+
 /* KEY LIST */
 parameter MENU = 8'b10000,
 			 SET = 8'b01000,
@@ -50,10 +54,10 @@ parameter CURRENT_TIME = 2'b00,
 /* FLAG BUFF */
 parameter FLAG_NO = 3'b000,
 			 FLAG_VIEW_ALARM = 3'b001,
-			 FLAG_CONTROL_STATE = 3'b100,
-			 FLAG_ALARM_CONTROL_STATE = 3'b101,
-			 FLAG_CONTROL_CHANGE_DONE_STATE = 3'b110,
-			 FLAG_CONTROL_CHANGE_CANCEL_STATE = 3'b111;
+			 FLAG_CONTROL_STATE = 3'b010,
+			 FLAG_ALARM_CONTROL_STATE = 3'b011,
+			 FLAG_CONTROL_CHANGE_DONE_STATE = 3'b100,
+			 FLAG_CONTROL_CHANGE_CANCEL_STATE = 3'b101;
 
 /* CONTROL SELECTER LIST */
 parameter CONT_NO = 3'b000,
@@ -65,6 +69,7 @@ parameter CONT_NO = 3'b000,
 			 CONT_MONTH = 3'b110,
 			 CONT_DAY = 3'b111;
 			 
+/* MODE_STATE */
 initial begin
 	CNT_ALARM = 0;
 	OUT_TIME_BUFF = IN_TIME;
@@ -106,7 +111,7 @@ begin
 		end
 end
 
-always @(KEY)
+always @*
 begin
 	case(KEY)
 		MENU:

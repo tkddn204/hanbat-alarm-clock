@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DIGITAL_CLOCK
-Mon Nov 28 01:23:57 2016
+Mon Nov 28 08:31:06 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Nov 28 01:23:57 2016               ;
+; Analysis & Synthesis Status        ; Failed - Mon Nov 28 08:31:06 2016               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DIGITAL_CLOCK                                   ;
 ; Top-level Entity Name              ; DIGITAL_CLOCK                                   ;
@@ -155,7 +155,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Nov 28 01:23:57 2016
+    Info: Processing started: Mon Nov 28 08:31:05 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/piezo_unit.v
@@ -191,92 +191,73 @@ Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(7
 Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(88): instance has no name
 Info (12127): Elaborating entity "DIGITAL_CLOCK" for the top level hierarchy
 Info (12128): Elaborating entity "KEY_CONT" for hierarchy "KEY_CONT:comb_88"
-Warning (10855): Verilog HDL warning at KEY_CONT.v(68): initial value for variable OUT_TIME_BUFF should be constant
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(114): variable "MODE_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(122): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(128): variable "IN_TIME" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(122): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(118): all case item expressions in this case statement are onehot
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(168): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(174): variable "IN_TIME" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(168): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(164): all case item expressions in this case statement are onehot
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(207): variable "MODE_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(213): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(222): incomplete case statement has no default case item
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(235): variable "MODE_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(240): variable "IN_TIME" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(247): incomplete case statement has no default case item
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(253): variable "SET_ALARM" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(257): incomplete case statement has no default case item
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(270): variable "MODE_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(276): variable "FLAG" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(277): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(283): variable "FLAG" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(284): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(291): variable "MODE_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(297): variable "FLAG" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(298): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(304): variable "FLAG" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at KEY_CONT.v(305): variable "CONT_BUFF" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(111): incomplete case statement has no default case item
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(111): all case item expressions in this case statement are onehot
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "MODE_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "CONT_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "FLAG_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "SET_ALARM", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "OUT_TIME_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "UP_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(109): inferring latch(es) for variable "DOWN_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10855): Verilog HDL warning at KEY_CONT.v(73): initial value for variable OUT_TIME_BUFF should be constant
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(127): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(123): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(173): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(169): all case item expressions in this case statement are onehot
+Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(218): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(227): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(252): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(262): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(116): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(116): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "MODE_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "CONT_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "FLAG_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "SET_ALARM", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "OUT_TIME_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "UP_BUFF", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "DOWN_BUFF", which holds its previous value in one or more paths through the always construct
 Warning (10030): Net "OUT_TIME_BUFF[15..0]" at KEY_CONT.v(30) has no driver or initial value, using a default initial value '0'
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_DAY" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MONTH" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_YEAR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MERIDIAN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_SEC" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MIN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_HOUR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_NO" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_DAY" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MONTH" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_YEAR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MERIDIAN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_SEC" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MIN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_HOUR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "UP_BUFF.CONT_NO" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "OUT_TIME_BUFF[16]" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "SET_ALARM" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_DAY" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MONTH" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_YEAR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MERIDIAN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_SEC" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MIN" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_HOUR" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_NO" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "MODE_BUFF.ALARM_CONTROL_TIME" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "MODE_BUFF.ALARM_TIME" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "MODE_BUFF.CURRENT_CONTROL_TIME" at KEY_CONT.v(109)
-Info (10041): Inferred latch for "MODE_BUFF.CURRENT_TIME" at KEY_CONT.v(109)
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
-Error (10029): Constant driver at KEY_CONT.v(80) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 80
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(109) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 109
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_DAY" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_MONTH" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_YEAR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_SEC" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_MIN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_HOUR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "DOWN_BUFF.CONT_NO" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_DAY" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_MONTH" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_YEAR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_SEC" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_MIN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_HOUR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "UP_BUFF.CONT_NO" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "OUT_TIME_BUFF[16]" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "SET_ALARM" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_DAY" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_MONTH" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_YEAR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_SEC" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_MIN" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_HOUR" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "CONT_BUFF.CONT_NO" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "MODE_BUFF.ALARM_CONTROL_TIME" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "MODE_BUFF.ALARM_TIME" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "MODE_BUFF.CURRENT_CONTROL_TIME" at KEY_CONT.v(116)
+Info (10041): Inferred latch for "MODE_BUFF.CURRENT_TIME" at KEY_CONT.v(116)
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
+Error (10029): Constant driver at KEY_CONT.v(85) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 85
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
+Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
 Error (12152): Can't elaborate user hierarchy "KEY_CONT:comb_88" File: D:/Projects/hanbat-alarm-clock/RTL/DIGITAL_CLOCK.v Line: 41
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 8 errors, 45 warnings
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 8 errors, 26 warnings
     Error: Peak virtual memory: 465 megabytes
-    Error: Processing ended: Mon Nov 28 01:23:57 2016
-    Error: Elapsed time: 00:00:00
+    Error: Processing ended: Mon Nov 28 08:31:06 2016
+    Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
 

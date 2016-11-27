@@ -25,7 +25,7 @@ input [2:0] UP, DOWN;
 output wire [16:0] OUT_TIME, OUT_DATE;
 
 /* FLAG BUFF */
-parameter FLAG_CONTROL_STATE = 3'b100;
+parameter FLAG_CONTROL_STATE = 3'b010;
 			 
 /* CONTROL SELECTER LIST */
 parameter CONT_NO = 3'b000,
