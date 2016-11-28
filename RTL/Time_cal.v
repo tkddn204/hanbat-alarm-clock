@@ -1,65 +1,98 @@
 
 /* IN_TIME BIT LIST
-`define   IN_MERIDIAN IN_TIME[16]
-`define	 IN_HOUR     IN_TIME[15:12]
+`define   IN_MERIDIAN IN_TIME[17]
+`define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
 
-/* ALARM_TIME BIT LIST
-`define	 ALARM_HOUR  ALARM_TIME[15:12]
-`define	 ALARM_MIN   ALARM_TIME[11:6]
-`define	 ALARM_SEC   ALARM_TIME[5:0]
+/* IN_DATE BIT LIST
+`define   IN_YEAR     IN_DATE[15:9]
+`define	 IN_MONTH    IN_DATE[8:5]
+`define	 IN_DAY      IN_DATE[4:0]
+*/
+
+/* IN_ALARM_TIME BIT LIST
+`define	 IN_HOUR     IN_TIME[16:12]
+`define	 IN_MIN      IN_TIME[11:6]
+`define   IN_SEC      IN_TIME[5:0]
 */
 
 // TIME_CAL.v
 
 module TIME_CAL(
 	RESETN, CLK,
-	IN_TIME, IN_DATE, ALARM_TIME,
-	IS_SAVED_TIME, FLAG,
-	OUT_TIME, OUT_DATE
+	IN_TIME, IN_DATE, IN_ALARM_TIME,
+	MODE, MODE_STATE, SETTING,
+	OUT_TIME, OUT_DATE, OUT_ALARM_TIME
 );
 
 input RESETN, CLK;
-input [16:0] IN_TIME;
-input [16:0] IN_DATE;
-input [16:0] ALARM_TIME;
-input IS_SAVED_TIME;
-input [2:0] FLAG;
-output wire [16:0] OUT_TIME;
-output wire [16:0] OUT_DATE;
+input [16:0] IN_ALARM_TIME;
+input [17:0] IN_TIME;
+input [15:0] IN_DATE;
+input MODE, MODE_STATE, SETTING;
+output reg [16:0] OUT_ALARM_TIME;
+output reg [17:0] OUT_TIME;
+output reg [15:0] OUT_DATE;
 
-// 1+4+6+6+7+5+5 = 17+17 = 34bit
+// TEMP TIME
 reg MERIDIAN;
-reg [3:0] HOUR;
+reg [4:0] HOUR;
 reg [5:0] MIN, SEC;
-reg [6:0] YEAR;
-reg [4:0] MONTH, DAY;
 
-/* FLAG */
-parameter FLAG_NO = 3'b000,
-			 FLAG_VIEW_ALARM = 3'b001;
-			 
+// TEMP DATE
+reg [6:0] YEAR;
+reg [3:0] MONTH;
+reg [4:0] DAY;
+
 integer CNT;
 
-// Temp Year, Month part
-initial begin
-	YEAR = 16;
-	MONTH = 12;
-	DAY = 02;
+always @(posedge CLK)
+begin
+	if(!RESETN)
+		begin
+			CNT = 0;
+			MERIDIAN = 0; HOUR = 0; MIN = 0; SEC = 0;
+			YEAR = 0; MONTH = 0; DAY = 0;
+		end
+	else if(SETTING)
+		CNT = 0;
+	else
+		if(CNT >= 99)
+			CNT = 0;
+		else
+			CNT = CNT + 1;
 end
 
 // Count part
 always @(posedge CLK)
 begin
-	if(~RESETN)
-		CNT = 0;
-	else
+	if(!MODE) // MODE 0 -> continue stream
 		begin
-			if(CNT >= 99)
-				CNT = 0;
-			else
-				CNT = CNT + 1;
+			if(!MODE_STATE) // MODE_STATE 0 -> current time
+				begin
+					OUT_TIME = { MERIDIAN, HOUR, MIN, SEC };
+					OUT_DATE = { YEAR, MONTH, DAY };
+				end
+			else				 // MODE_STATE 1 -> alarm time
+				begin
+					OUT_ALARM_TIME = { HOUR, MIN, SEC, YEAR };
+				end
+		end
+	else		 // MODE 1 -> stop stream
+		begin
+			if(!MODE_STATE) // MODE_STATE 0 -> current time
+				begin
+					MERIDIAN = IN_TIME[17]; HOUR = IN_TIME[16:12];
+					MIN = IN_TIME[11:6]; SEC = IN_TIME[5:0];
+					YEAR = IN_DATE[15:9]; MONTH = IN_DATE[8:5];
+					DAY = IN_DATE[4:0];
+				end
+			else				 // MODE_STATE 1 -> alarm time
+				begin
+					HOUR = IN_ALARM_TIME[16:12]; MIN = IN_ALARM_TIME[11:6];
+					SEC = IN_ALARM_TIME[5:0];
+				end
 		end
 end
 

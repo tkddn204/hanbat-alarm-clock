@@ -77,8 +77,6 @@ set_location_assignment PIN_W2 -to KEY[2]
 set_location_assignment PIN_W1 -to KEY[1]
 set_location_assignment PIN_V7 -to KEY[0]
 set_global_assignment -name VERILOG_FILE RTL/PIEZO_UNIT.v
-set_global_assignment -name VERILOG_FILE RTL/ALARM_TIME_CONT.v
-set_global_assignment -name VERILOG_FILE RTL/TIME_CONT.v
 set_global_assignment -name VERILOG_FILE RTL/TIME_CAL.v
 set_global_assignment -name VERILOG_FILE RTL/LCD_CONT.v
 set_global_assignment -name VERILOG_FILE RTL/KEY_CONT.v

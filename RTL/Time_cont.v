@@ -38,8 +38,8 @@ parameter CONT_NO = 3'b000,
 			 CONT_DAY = 3'b111;
 			 
 /* MERIDIAN LIST */
-parameter AM = 8'b01000001,
-			 PM = 8'b01000010;
+parameter AM = 0,
+			 PM = 1;
 			 
 reg MERIDIAN;
 reg [3:0] HOUR;
