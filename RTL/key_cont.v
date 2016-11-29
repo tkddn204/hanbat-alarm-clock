@@ -5,13 +5,13 @@
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
 
-/* IN_DATE BIT LIST
+ IN_DATE BIT LIST
 `define   IN_YEAR     IN_DATE[15:9]
 `define	 IN_MONTH    IN_DATE[8:5]
 `define	 IN_DAY      IN_DATE[4:0]
-*/
 
-/* IN_ALARM_TIME BIT LIST
+
+ IN_ALARM_TIME BIT LIST
 `define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
@@ -40,11 +40,11 @@ output reg ALARM_ENABLE, SETTING;
 reg [5:0] MODE_BUFF;
 
 /* KEY LIST */
-parameter MENU = 8'b10000,
-			 SET = 8'b01000,
-			 CANCEL = 8'b00100,
-			 UP = 8'b00010,
-			 DOWN= 8'b00001;
+parameter MENU = 5'b10000,
+			 SET = 5'b01000,
+			 CANCEL = 5'b00100,
+			 UP = 5'b00010,
+			 DOWN= 5'b00001;
 			 
 /* MODE
   100000    -> Current(0), Alarm(1) Control TIME Bit

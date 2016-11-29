@@ -1,6 +1,6 @@
 Analysis & Synthesis report for DIGITAL_CLOCK
-Tue Nov 29 22:37:47 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Nov 30 00:39:01 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,47 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|STATE
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: KEY_CONT:key_cont
+ 14. Parameter Settings for User Entity Instance: PIEZO_UNIT:piezo_unit
+ 15. Parameter Settings for User Entity Instance: DISPLAY_CONT:display_cont
+ 16. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S1_DECODE"
+ 17. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S10_DECODE"
+ 18. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M1_DECODE"
+ 19. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE"
+ 20. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE"
+ 21. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H10_DECODE"
+ 22. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE"
+ 23. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D10_DECODE"
+ 24. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT1_DECODE"
+ 25. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT10_DECODE"
+ 26. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y1_DECODE"
+ 27. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y10_DECODE"
+ 28. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE"
+ 29. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S10_DECODE"
+ 30. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE"
+ 31. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE"
+ 32. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE"
+ 33. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"
+ 34. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP"
+ 35. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP"
+ 36. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP"
+ 37. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP"
+ 38. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MONTH_SEP"
+ 39. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP"
+ 40. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP"
+ 41. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP"
+ 42. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP"
+ 43. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder"
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +76,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Nov 29 22:37:47 2016               ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 30 00:39:01 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DIGITAL_CLOCK                                   ;
 ; Top-level Entity Name              ; DIGITAL_CLOCK                                   ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 1,294                                           ;
+;     Total combinational functions  ; 1,230                                           ;
+;     Dedicated logic registers      ; 445                                             ;
+; Total registers                    ; 445                                             ;
+; Total pins                         ; 19                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,21 +189,761 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; RTL/PIEZO_UNIT.v                 ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/PIEZO_UNIT.v      ;         ;
+; RTL/TIME_CAL.v                   ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/TIME_CAL.v        ;         ;
+; RTL/KEY_CONT.v                   ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v        ;         ;
+; RTL/DIGITAL_CLOCK.v              ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DIGITAL_CLOCK.v   ;         ;
+; RTL/WT_SEP.v                     ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/WT_SEP.v          ;         ;
+; RTL/WT_DECODER.v                 ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/WT_DECODER.v      ;         ;
+; RTL/TIME_COMPARE.v               ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/TIME_COMPARE.v    ;         ;
+; RTL/DISPLAY_CONT.v               ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v    ;         ;
+; RTL/DISPLAY_DECODER.v            ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DISPLAY_DECODER.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1,294 ;
+;                                             ;       ;
+; Total combinational functions               ; 1230  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 687   ;
+;     -- 3 input functions                    ; 177   ;
+;     -- <=2 input functions                  ; 366   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 975   ;
+;     -- arithmetic mode                      ; 255   ;
+;                                             ;       ;
+; Total registers                             ; 445   ;
+;     -- Dedicated logic registers            ; 445   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 19    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 446   ;
+; Total fan-out                               ; 5531  ;
+; Average fan-out                             ; 3.27  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Library Name ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; |DIGITAL_CLOCK                       ; 1230 (1)          ; 445 (0)      ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |DIGITAL_CLOCK                                                         ; work         ;
+;    |DISPLAY_CONT:display_cont|       ; 651 (651)         ; 185 (185)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont                               ; work         ;
+;    |DISPLAY_DECODER:display_decoder| ; 109 (0)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder                         ; work         ;
+;       |WT_DECODER:D10_DECODE|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:D10_DECODE   ; work         ;
+;       |WT_DECODER:D1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE    ; work         ;
+;       |WT_DECODER:H10_DECODE|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE   ; work         ;
+;       |WT_DECODER:H1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE    ; work         ;
+;       |WT_DECODER:M10_DECODE|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE   ; work         ;
+;       |WT_DECODER:M1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE    ; work         ;
+;       |WT_DECODER:S10_DECODE|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:S10_DECODE   ; work         ;
+;       |WT_DECODER:S1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE    ; work         ;
+;       |WT_SEP:ALARM_HOUR_SEP|        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP   ; work         ;
+;       |WT_SEP:ALARM_MIN_SEP|         ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP    ; work         ;
+;       |WT_SEP:ALARM_SECOND_SEP|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP ; work         ;
+;       |WT_SEP:DAY_SEP|               ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP          ; work         ;
+;       |WT_SEP:HOUR_SEP|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP         ; work         ;
+;       |WT_SEP:MIN_SEP|               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP          ; work         ;
+;       |WT_SEP:SECOND_SEP|            ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP       ; work         ;
+;       |WT_SEP:YEAR_SEP|              ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP         ; work         ;
+;    |KEY_CONT:key_cont|               ; 317 (317)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|KEY_CONT:key_cont                                       ; work         ;
+;    |TIME_CAL:time_cal|               ; 152 (152)         ; 117 (117)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|TIME_CAL:time_cal                                       ; work         ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|STATE                                                                                              ;
++--------------------+------------------+---------------+-------------+-------------+-------------------+------------------+--------------------+-------------+
+; Name               ; STATE.CLEAR_DISP ; STATE.DELAY_T ; STATE.LINE2 ; STATE.LINE1 ; STATE.DISP_ON_OFF ; STATE.ENTRY_MODE ; STATE.FUNCTION_SET ; STATE.DELAY ;
++--------------------+------------------+---------------+-------------+-------------+-------------------+------------------+--------------------+-------------+
+; STATE.DELAY        ; 0                ; 0             ; 0           ; 0           ; 0                 ; 0                ; 0                  ; 0           ;
+; STATE.FUNCTION_SET ; 0                ; 0             ; 0           ; 0           ; 0                 ; 0                ; 1                  ; 1           ;
+; STATE.ENTRY_MODE   ; 0                ; 0             ; 0           ; 0           ; 0                 ; 1                ; 0                  ; 1           ;
+; STATE.DISP_ON_OFF  ; 0                ; 0             ; 0           ; 0           ; 1                 ; 0                ; 0                  ; 1           ;
+; STATE.LINE1        ; 0                ; 0             ; 0           ; 1           ; 0                 ; 0                ; 0                  ; 1           ;
+; STATE.LINE2        ; 0                ; 0             ; 1           ; 0           ; 0                 ; 0                ; 0                  ; 1           ;
+; STATE.DELAY_T      ; 0                ; 1             ; 0           ; 0           ; 0                 ; 0                ; 0                  ; 1           ;
+; STATE.CLEAR_DISP   ; 1                ; 0             ; 0           ; 0           ; 0                 ; 0                ; 0                  ; 1           ;
++--------------------+------------------+---------------+-------------+-------------+-------------------+------------------+--------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                       ;
++--------------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                                ; Reason for Removal                                        ;
++--------------------------------------------------------------+-----------------------------------------------------------+
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][1]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][2]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][3]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][6]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][3]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][4]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][3]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][0]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][4]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][1]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][2]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][2]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][2]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][5]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][0]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[0][2]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][5]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[12][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[12][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
+; PIEZO_UNIT:piezo_unit|LIMIT[9,11,13,15,17,19,21,23,25,27,29] ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[8,10,12,14,16,18,20,22,24,26,28] ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[30]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[3]                               ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[5]                ;
+; PIEZO_UNIT:piezo_unit|LIMIT[2]                               ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[4]                ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][2]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][1]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][0] ;
+; PIEZO_UNIT:piezo_unit|LIMIT[30]                              ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[1]                               ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[4]                ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][3]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][4]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][5]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][6]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][7]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][5]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][3]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][4]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][2]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][6]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][7]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][4]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][0]                ; Stuck at GND due to stuck port data_in                    ;
+; PIEZO_UNIT:piezo_unit|LIMIT[31]                              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][3]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][2]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][3]                 ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][2]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][3]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][3]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6]                ; Stuck at GND due to stuck port data_in                    ;
+; KEY_CONT:key_cont|ALARM_ENABLE                               ; Stuck at GND due to stuck port data_in                    ;
+; TIME_COMPARE:time_compare|DOING                              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0]                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][5]                ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][7]                ; Stuck at GND due to stuck port data_in                    ;
+; PIEZO_UNIT:piezo_unit|BUFF                                   ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[8][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]                 ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][5]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3]                ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]                 ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][5]                ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][5]                ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|STATE~10                           ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE~11                           ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE~12                           ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE.CLEAR_DISP                   ; Stuck at GND due to stuck port data_in                    ;
+; Total Number of Removed Registers = 220                      ;                                                           ;
++--------------------------------------------------------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++---------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++---------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; KEY_CONT:key_cont|ALARM_ENABLE  ; Stuck at GND              ; TIME_COMPARE:time_compare|DOING, DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0], ;
+;                                 ; due to stuck port data_in ; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][5],                                  ;
+;                                 ;                           ; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][7],                                  ;
+;                                 ;                           ; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][5]                                   ;
+; PIEZO_UNIT:piezo_unit|LIMIT[31] ; Stuck at GND              ; PIEZO_UNIT:piezo_unit|BUFF                                                      ;
+;                                 ; due to stuck port data_in ;                                                                                 ;
++---------------------------------+---------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 445   ;
+; Number of registers using Synchronous Clear  ; 244   ;
+; Number of registers using Synchronous Load   ; 81    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 252   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|OUT_DATE[6]                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|MONTH[0]                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|CNT[5]                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|CNT[31]                                ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|DAY[3]                                 ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|YEAR[5]                                ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|HOUR[4]                                ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|SEC[4]                                 ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|MIN[3]                                 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LIMIT[12]                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|CNT[27]                        ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 12 LEs               ; 74 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0]            ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 12 LEs               ; 74 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]             ;
+; 63:1               ; 2 bits    ; 84 LEs        ; 2 LEs                ; 82 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1]            ;
+; 66:1               ; 8 bits    ; 352 LEs       ; 8 LEs                ; 344 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[20][3]            ;
+; 36:1               ; 3 bits    ; 72 LEs        ; 6 LEs                ; 66 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[4]                           ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[26][3]            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1]            ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LCD_CNT[14]                    ;
+; 98:1               ; 3 bits    ; 195 LEs       ; 18 LEs               ; 177 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[5]                           ;
+; 41:1               ; 5 bits    ; 135 LEs       ; 20 LEs               ; 115 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[4]                            ;
+; 41:1               ; 7 bits    ; 189 LEs       ; 21 LEs               ; 168 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[13]                           ;
+; 41:1               ; 3 bits    ; 81 LEs        ; 12 LEs               ; 69 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[6]                            ;
+; 43:1               ; 5 bits    ; 140 LEs       ; 15 LEs               ; 125 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[15]                           ;
+; 43:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[3]                            ;
+; 43:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[3]                      ;
+; 43:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[11]                           ;
+; 43:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[6]                      ;
+; 43:1               ; 5 bits    ; 140 LEs       ; 15 LEs               ; 125 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[13]                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LCD_DATA                       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|Selector25                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP|SEP_A[2] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP|SEP_A[3] ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|STATE                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_CONT:key_cont ;
++-----------------------+--------+-------------------------------+
+; Parameter Name        ; Value  ; Type                          ;
++-----------------------+--------+-------------------------------+
+; MENU                  ; 10000  ; Unsigned Binary               ;
+; SET                   ; 01000  ; Unsigned Binary               ;
+; CANCEL                ; 00100  ; Unsigned Binary               ;
+; UP                    ; 00010  ; Unsigned Binary               ;
+; DOWN                  ; 00001  ; Unsigned Binary               ;
+; CURRENT_TIME          ; 000000 ; Unsigned Binary               ;
+; CURRENT_CONTROL_TIME  ; 010000 ; Unsigned Binary               ;
+; CURRENT_CONTROL_HOUR  ; 010011 ; Unsigned Binary               ;
+; CURRENT_CONTROL_MIN   ; 010101 ; Unsigned Binary               ;
+; CURRENT_CONTROL_SEC   ; 010111 ; Unsigned Binary               ;
+; CURRENT_CONTROL_YEAR  ; 011011 ; Unsigned Binary               ;
+; CURRENT_CONTROL_MONTH ; 011101 ; Unsigned Binary               ;
+; CURRENT_CONTROL_DAY   ; 011111 ; Unsigned Binary               ;
+; ALARM_TIME            ; 100001 ; Unsigned Binary               ;
+; ALARM_CONTROL_TIME    ; 110001 ; Unsigned Binary               ;
+; ALARM_CONTROL_HOUR    ; 110011 ; Unsigned Binary               ;
+; ALARM_CONTROL_MIN     ; 110101 ; Unsigned Binary               ;
+; ALARM_CONTROL_SEC     ; 110111 ; Unsigned Binary               ;
++-----------------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PIEZO_UNIT:piezo_unit ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; DO             ; 190   ; Signed Integer                            ;
+; RAE            ; 169   ; Signed Integer                            ;
+; MI             ; 151   ; Signed Integer                            ;
+; FA             ; 142   ; Signed Integer                            ;
+; SOL            ; 127   ; Signed Integer                            ;
+; RA             ; 113   ; Signed Integer                            ;
+; SI             ; 100   ; Signed Integer                            ;
+; HDO            ; 95    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DISPLAY_CONT:display_cont ;
++-----------------------+----------+-------------------------------------+
+; Parameter Name        ; Value    ; Type                                ;
++-----------------------+----------+-------------------------------------+
+; CURRENT_TIME          ; 000000   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_TIME  ; 010000   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_HOUR  ; 010011   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_MIN   ; 010101   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_SEC   ; 010111   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_YEAR  ; 011011   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_MONTH ; 011101   ; Unsigned Binary                     ;
+; CURRENT_CONTROL_DAY   ; 011111   ; Unsigned Binary                     ;
+; ALARM_TIME            ; 100001   ; Unsigned Binary                     ;
+; ALARM_CONTROL_TIME    ; 110001   ; Unsigned Binary                     ;
+; ALARM_CONTROL_HOUR    ; 110011   ; Unsigned Binary                     ;
+; ALARM_CONTROL_MIN     ; 110101   ; Unsigned Binary                     ;
+; ALARM_CONTROL_SEC     ; 110111   ; Unsigned Binary                     ;
+; AM                    ; 01000001 ; Unsigned Binary                     ;
+; PM                    ; 01000010 ; Unsigned Binary                     ;
+; DELAY                 ; 000      ; Unsigned Binary                     ;
+; FUNCTION_SET          ; 001      ; Unsigned Binary                     ;
+; ENTRY_MODE            ; 010      ; Unsigned Binary                     ;
+; DISP_ON_OFF           ; 011      ; Unsigned Binary                     ;
+; LINE1                 ; 100      ; Unsigned Binary                     ;
+; LINE2                 ; 101      ; Unsigned Binary                     ;
+; DELAY_T               ; 110      ; Unsigned Binary                     ;
+; CLEAR_DISP            ; 111      ; Unsigned Binary                     ;
++-----------------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S1_DECODE"                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S10_DECODE"                                                                                                                         ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M1_DECODE"                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE"                                                                                                                         ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE"                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H10_DECODE"                                                                                                                         ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; LCD_DATA ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "LCD_DATA[7..1]" have no fanouts                                                      ;
+; LCD_DATA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE"                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D10_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT1_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT10_DECODE"                                                                                                                         ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y1_DECODE"                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y10_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE"                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S10_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE"                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE"                                                                                                                           ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; BCD  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP"                                                                                                                ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..6]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP"                                                                                                                   ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..6]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP"                                                                                                                  ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..5]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP"                                                                                                                         ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..5]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MONTH_SEP"                                                                                                                            ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER      ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..4]" will be connected to GND.                        ;
+; SEP_A       ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_A[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; SEP_B       ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP"                                                                                                                       ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SEP_A ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP"                                                                                                                      ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..6]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP"                                                                                                                         ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..6]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP"                                                                                                                        ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NUMBER ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "NUMBER[6..5]" will be connected to GND.                        ;
+; SEP_A  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; SEP_B  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DISPLAY_DECODER:display_decoder"                                                                                                        ;
++--------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                         ;
++--------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; OUT_MERIDIAN ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "OUT_MERIDIAN[7..1]" have no fanouts ;
++--------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 29 22:37:46 2016
+    Info: Processing started: Wed Nov 30 00:38:53 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/piezo_unit.v
     Info (12023): Found entity 1: PIEZO_UNIT
-Warning (10090): Verilog HDL syntax warning at TIME_CAL.v(8): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/time_cal.v
     Info (12023): Found entity 1: TIME_CAL
-Warning (10090): Verilog HDL syntax warning at KEY_CONT.v(8): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/key_cont.v
     Info (12023): Found entity 1: KEY_CONT
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/digital_clock.v
@@ -174,32 +954,125 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/wt_
     Info (12023): Found entity 1: WT_DECODER
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/time_compare.v
     Info (12023): Found entity 1: TIME_COMPARE
-Warning (10090): Verilog HDL syntax warning at DISPLAY_CONT.v(8): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/display_cont.v
     Info (12023): Found entity 1: DISPLAY_CONT
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/display_decoder.v
     Info (12023): Found entity 1: DISPLAY_DECODER
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_TIME"
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_DATE"
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_ALARM_TIME"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(78): created implicit net for "OUT_ALARM_H10"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(79): created implicit net for "OUT_ALARM_H1"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(80): created implicit net for "OUT_ALARM_M10"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(81): created implicit net for "OUT_ALARM_M1"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(82): created implicit net for "OUT_ALARM_S10"
-Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(83): created implicit net for "OUT_ALARM_S1"
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(132): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 132
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(134): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 134
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(191): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 191
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(193): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 193
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(410): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 410
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(412): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 412
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(469): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 469
-Error (10161): Verilog HDL error at DISPLAY_CONT.v(471): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 471
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 8 errors, 13 warnings
-    Error: Peak virtual memory: 336 megabytes
-    Error: Processing ended: Tue Nov 29 22:37:47 2016
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(82): created implicit net for "OUT_ALARM_H10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(83): created implicit net for "OUT_ALARM_H1"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(84): created implicit net for "OUT_ALARM_M10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(85): created implicit net for "OUT_ALARM_M1"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(86): created implicit net for "OUT_ALARM_S10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(87): created implicit net for "OUT_ALARM_S1"
+Info (12127): Elaborating entity "DIGITAL_CLOCK" for the top level hierarchy
+Info (12128): Elaborating entity "KEY_CONT" for hierarchy "KEY_CONT:key_cont"
+Warning (10230): Verilog HDL assignment warning at KEY_CONT.v(253): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at KEY_CONT.v(258): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at KEY_CONT.v(319): truncated value with size 32 to match size of target (1)
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(95): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "TIME_CAL" for hierarchy "TIME_CAL:time_cal"
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(108): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(125): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(144): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(171): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(188): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(205): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "TIME_COMPARE" for hierarchy "TIME_COMPARE:time_compare"
+Info (12128): Elaborating entity "PIEZO_UNIT" for hierarchy "PIEZO_UNIT:piezo_unit"
+Warning (10762): Verilog HDL Case Statement warning at PIEZO_UNIT.v(39): can't check case statement for completeness because the case expression has too many possible states
+Info (12128): Elaborating entity "DISPLAY_DECODER" for hierarchy "DISPLAY_DECODER:display_decoder"
+Info (12128): Elaborating entity "WT_SEP" for hierarchy "DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP"
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(28): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(33): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(38): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(43): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(48): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(53): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(58): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(63): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at WT_SEP.v(68): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "WT_DECODER" for hierarchy "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"
+Info (12128): Elaborating entity "DISPLAY_CONT" for hierarchy "DISPLAY_CONT:display_cont"
+Info (10264): Verilog HDL Case Statement information at DISPLAY_CONT.v(659): all case item expressions in this case statement are onehot
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_H1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_M1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|ALARM_S1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|H1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|M1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|S1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|Y1[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D10[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D10[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D10[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D10[4]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D1[6]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D1[5]" is missing source, defaulting to GND
+    Warning (12110): Net "DISPLAY_DECODER:display_decoder|D1[4]" is missing source, defaulting to GND
+Warning (12241): 28 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PIEZO" is stuck at GND
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1314 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 1295 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 94 warnings
+    Info: Peak virtual memory: 491 megabytes
+    Info: Processing ended: Wed Nov 30 00:39:01 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
 
 

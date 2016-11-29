@@ -5,13 +5,13 @@
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
 
-/* CURRENT_DATE BIT LIST
+ CURRENT_DATE BIT LIST
 `define   IN_YEAR     IN_DATE[15:9]
 `define	 IN_MONTH    IN_DATE[8:5]
 `define	 IN_DAY      IN_DATE[4:0]
-*/
 
-/* ALARM_TIME BIT LIST
+
+ ALARM_TIME BIT LIST
 `define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
@@ -31,10 +31,10 @@ module DISPLAY_CONT(
 
 input RESETN, CLK;
 input [5:0] MODE;
-input H10, H1, M10, M1, S10, S1;
-input Y10, Y1, MT10, MT1, D10, D1;
-input ALARM_H10, ALARM_H1, ALARM_M10, ALARM_M1, ALARM_S10, ALARM_S1;
-input ALARM_ENABLE, ALARM_DOING;
+input [7:0] H10, H1, M10, M1, S10, S1;
+input [7:0] Y10, Y1, MT10, MT1, D10, D1;
+input [7:0] ALARM_H10, ALARM_H1, ALARM_M10, ALARM_M1, ALARM_S10, ALARM_S1;
+input MERIDIAN, ALARM_ENABLE, ALARM_DOING;
 output wire LCD_E;
 output reg LCD_RS, LCD_RW;
 output reg [7:0] LCD_DATA;
@@ -131,7 +131,7 @@ begin
 							DISPLAY_DATA[8] = S1;
 							if(MERIDIAN == 1)	// Meridian is On(12)
 								begin
-									if(IN_TIME[16:12] >= 5'b01100)
+									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
 										begin
 											DISPLAY_DATA[10] = PM;
 										end
@@ -190,7 +190,7 @@ begin
 							DISPLAY_DATA[8] = S1;*/
 							if(MERIDIAN == 1)	// Meridian is On(12)
 								begin
-									if(IN_TIME[16:12] >= 5'b01100)
+									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
 										begin
 											DISPLAY_DATA[10] = PM;
 										end
@@ -409,7 +409,7 @@ begin
 							DISPLAY_DATA[8] = ALARM_S1;
 							if(MERIDIAN == 1)	// Meridian is On(12)
 								begin
-									if(IN_TIME[16:12] >= 5'b01100)
+									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
 										begin
 											DISPLAY_DATA[10] = PM;
 										end
@@ -468,7 +468,7 @@ begin
 							DISPLAY_DATA[8] = ALARM_S1; */
 							if(MERIDIAN == 1)	// Meridian is On(12)
 								begin
-									if(IN_TIME[16:12] >= 5'b01100)
+									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
 										begin
 											DISPLAY_DATA[10] = PM;
 										end

@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "DIGITAL_CLOCK"  ASSIGNED TO AN: EP2C70F672C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -259,7 +259,7 @@ RESERVED_INPUT               : B10       :        :                   :         
 RESERVED_INPUT               : B11       :        :                   :         : 3         :                
 RESERVED_INPUT               : B12       :        :                   :         : 3         :                
 GND+                         : B13       :        :                   :         : 4         :                
-PIEZO                        : B14       : output : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT               : B14       :        :                   :         : 4         :                
 RESERVED_INPUT               : B15       :        :                   :         : 4         :                
 RESERVED_INPUT               : B16       :        :                   :         : 4         :                
 RESERVED_INPUT               : B17       :        :                   :         : 4         :                
@@ -459,7 +459,7 @@ LCD_DATA[2]                  : K2        : output : 3.3-V LVTTL       :         
 LCD_DATA[1]                  : K3        : output : 3.3-V LVTTL       :         : 2         : Y              
 LCD_DATA[0]                  : K4        : output : 3.3-V LVTTL       :         : 2         : Y              
 LCD_E                        : K5        : output : 3.3-V LVTTL       :         : 2         : Y              
-RESERVED_INPUT               : K6        :        :                   :         : 2         :                
+PIEZO                        : K6        : output : 3.3-V LVTTL       :         : 2         : Y              
 LCD_DATA[7]                  : K7        : output : 3.3-V LVTTL       :         : 2         : Y              
 LCD_DATA[6]                  : K8        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                

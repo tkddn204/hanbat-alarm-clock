@@ -1,6 +1,6 @@
 Assembler report for DIGITAL_CLOCK
-Tue Nov 29 21:38:37 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Nov 30 00:39:21 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof
-  6. Assembler Device Options: C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof
+  5. Assembler Device Options: D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof
+  6. Assembler Device Options: D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 29 21:38:37 2016 ;
+; Assembler Status      ; Successful - Wed Nov 30 00:39:21 2016 ;
 ; Revision Name         ; DIGITAL_CLOCK                         ;
 ; Top-level Entity Name ; DIGITAL_CLOCK                         ;
 ; Family                ; Cyclone II                            ;
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------------------+
-; Assembler Generated Files                                               ;
-+-------------------------------------------------------------------------+
-; File Name                                                               ;
-+-------------------------------------------------------------------------+
-; C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof ;
-; C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof ;
-+-------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Assembler Generated Files                                     ;
++---------------------------------------------------------------+
+; File Name                                                     ;
++---------------------------------------------------------------+
+; D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof ;
+; D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof ;
++---------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof ;
-+----------------+----------------------------------------------------------------------------------+
-; Option         ; Setting                                                                          ;
-+----------------+----------------------------------------------------------------------------------+
-; Device         ; EP2C70F672C8                                                                     ;
-; JTAG usercode  ; 0x00697E98                                                                       ;
-; Checksum       ; 0x00697E98                                                                       ;
-+----------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.sof ;
++----------------+------------------------------------------------------------------------+
+; Option         ; Setting                                                                ;
++----------------+------------------------------------------------------------------------+
+; Device         ; EP2C70F672C8                                                           ;
+; JTAG usercode  ; 0x006C6A8D                                                             ;
+; Checksum       ; 0x006C6A8D                                                             ;
++----------------+------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/JJM/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof ;
-+--------------------+------------------------------------------------------------------------------+
-; Option             ; Setting                                                                      ;
-+--------------------+------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                       ;
-; JTAG usercode      ; 0x00000000                                                                   ;
-; Checksum           ; 0x18721BBE                                                                   ;
-; Compression Ratio  ; 3                                                                            ;
-+--------------------+------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/Projects/hanbat-alarm-clock/output_files/DIGITAL_CLOCK.pof ;
++--------------------+--------------------------------------------------------------------+
+; Option             ; Setting                                                            ;
++--------------------+--------------------------------------------------------------------+
+; Device             ; EPCS16                                                             ;
+; JTAG usercode      ; 0x00000000                                                         ;
+; Checksum           ; 0x18638631                                                         ;
+; Compression Ratio  ; 3                                                                  ;
++--------------------+--------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Assembler
+Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 29 21:38:33 2016
+    Info: Processing started: Wed Nov 30 00:39:17 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 351 megabytes
-    Info: Processing ended: Tue Nov 29 21:38:37 2016
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 452 megabytes
+    Info: Processing ended: Wed Nov 30 00:39:21 2016
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 

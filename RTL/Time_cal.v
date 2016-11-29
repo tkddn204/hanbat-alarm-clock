@@ -5,13 +5,13 @@
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
 
-/* IN_DATE BIT LIST
+ IN_DATE BIT LIST
 `define   IN_YEAR     IN_DATE[15:9]
 `define	 IN_MONTH    IN_DATE[8:5]
 `define	 IN_DAY      IN_DATE[4:0]
-*/
 
-/* IN_ALARM_TIME BIT LIST
+
+ IN_ALARM_TIME BIT LIST
 `define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
@@ -53,7 +53,7 @@ begin
 		begin
 			CNT = 0;
 		end
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		CNT = 0;
 	else
 		if(CNT >= 999)
@@ -97,7 +97,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		SEC = 0;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		SEC = IN_TIME[5:0];
 	else
 		if(CNT == 999)
@@ -114,7 +114,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		MIN = 0;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		MIN = IN_TIME[11:6];
 	else
 		if((CNT == 999) && (SEC == 59))
@@ -131,7 +131,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		HOUR = 0;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		HOUR = IN_TIME[16:12];
 	else
 		if((CNT == 999) && (SEC == 59) && (MIN == 59))
@@ -150,7 +150,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		MERIDIAN = 0;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		MERIDIAN = IN_TIME[17];
 end
 
@@ -160,7 +160,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		DAY = 1;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		DAY = IN_DATE[4:0];
 	else
 		if((CNT == 999) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
@@ -177,7 +177,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		MONTH = 1;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		MONTH = IN_DATE[8:5];
 	else
 		if((CNT == 999) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
@@ -194,7 +194,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		YEAR = 16;
-	else if(SETTING)
+	else if(SETTING == 1'b1)
 		YEAR = IN_DATE[15:9]; 
 	else
 		if((CNT == 999) && (MONTH == 12) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
