@@ -10,6 +10,10 @@ input [16:0] CURRENT_TIME, ALARM_TIME;
 output wire ALARM_DOING;
 reg DOING;
 
+initial begin
+	DOING = 1'b0;
+end
+
 always @(posedge CLK)
 begin
 	if(!RESETN)
@@ -17,8 +21,6 @@ begin
 	else
 		if((ALARM_ENABLE == 1'b1) && (CURRENT_TIME == ALARM_TIME))
 			DOING = 1'b1;
-		else
-			DOING = 1'b0;
 end
 
 assign ALARM_DOING = DOING;
