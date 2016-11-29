@@ -1,6 +1,6 @@
 Analysis & Synthesis report for DIGITAL_CLOCK
-Mon Nov 28 08:31:06 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Nov 29 22:37:47 2016
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -36,8 +36,8 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Nov 28 08:31:06 2016               ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Failed - Tue Nov 29 22:37:47 2016               ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DIGITAL_CLOCK                                   ;
 ; Top-level Entity Name              ; DIGITAL_CLOCK                                   ;
 ; Family                             ; Cyclone II                                      ;
@@ -153,23 +153,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Nov 28 08:31:05 2016
+    Info: Processing started: Tue Nov 29 22:37:46 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/piezo_unit.v
-    Info (12023): Found entity 1: PIEZO
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/alarm_time_cont.v
-    Info (12023): Found entity 1: ALARM_TIME_CONT
-Warning (10090): Verilog HDL syntax warning at TIME_CONT.v(8): extra block comment delimiter characters /* within block comment
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/time_cont.v
-    Info (12023): Found entity 1: TIME_CONT
+    Info (12023): Found entity 1: PIEZO_UNIT
 Warning (10090): Verilog HDL syntax warning at TIME_CAL.v(8): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/time_cal.v
     Info (12023): Found entity 1: TIME_CAL
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/lcd_cont.v
-    Info (12023): Found entity 1: LCD_CONT
 Warning (10090): Verilog HDL syntax warning at KEY_CONT.v(8): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/key_cont.v
     Info (12023): Found entity 1: KEY_CONT
@@ -180,83 +173,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/wt_
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/wt_decoder.v
     Info (12023): Found entity 1: WT_DECODER
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/time_compare.v
-    Info (12023): Found entity 1: TIME_CONPARE
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(39): created implicit net for "UP"
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(39): created implicit net for "DOWN"
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(41): created implicit net for "SET_ALARM"
-Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(85): created implicit net for "RING_ALARM"
-Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(41): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(72): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(79): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at DIGITAL_CLOCK.v(88): instance has no name
-Info (12127): Elaborating entity "DIGITAL_CLOCK" for the top level hierarchy
-Info (12128): Elaborating entity "KEY_CONT" for hierarchy "KEY_CONT:comb_88"
-Warning (10855): Verilog HDL warning at KEY_CONT.v(73): initial value for variable OUT_TIME_BUFF should be constant
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(127): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(123): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(173): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(169): all case item expressions in this case statement are onehot
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(218): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(227): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(252): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(262): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at KEY_CONT.v(116): incomplete case statement has no default case item
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(116): all case item expressions in this case statement are onehot
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "MODE_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "CONT_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "FLAG_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "SET_ALARM", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "OUT_TIME_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "UP_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at KEY_CONT.v(116): inferring latch(es) for variable "DOWN_BUFF", which holds its previous value in one or more paths through the always construct
-Warning (10030): Net "OUT_TIME_BUFF[15..0]" at KEY_CONT.v(30) has no driver or initial value, using a default initial value '0'
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_DAY" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MONTH" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_YEAR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_SEC" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_MIN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_HOUR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "DOWN_BUFF.CONT_NO" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_DAY" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MONTH" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_YEAR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_SEC" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_MIN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_HOUR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "UP_BUFF.CONT_NO" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "OUT_TIME_BUFF[16]" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "SET_ALARM" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_DAY" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MONTH" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_YEAR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MERIDIAN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_SEC" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_MIN" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_HOUR" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "CONT_BUFF.CONT_NO" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "MODE_BUFF.ALARM_CONTROL_TIME" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "MODE_BUFF.ALARM_TIME" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "MODE_BUFF.CURRENT_CONTROL_TIME" at KEY_CONT.v(116)
-Info (10041): Inferred latch for "MODE_BUFF.CURRENT_TIME" at KEY_CONT.v(116)
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_NO" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (10029): Constant driver at KEY_CONT.v(85) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 85
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_VIEW_ALARM" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_ALARM_CONTROL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_DONE_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (10028): Can't resolve multiple constant drivers for net "FLAG_BUFF.FLAG_CONTROL_CHANGE_CANCEL_STATE" at KEY_CONT.v(116) File: D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v Line: 116
-Error (12152): Can't elaborate user hierarchy "KEY_CONT:comb_88" File: D:/Projects/hanbat-alarm-clock/RTL/DIGITAL_CLOCK.v Line: 41
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 8 errors, 26 warnings
-    Error: Peak virtual memory: 465 megabytes
-    Error: Processing ended: Mon Nov 28 08:31:06 2016
+    Info (12023): Found entity 1: TIME_COMPARE
+Warning (10090): Verilog HDL syntax warning at DISPLAY_CONT.v(8): extra block comment delimiter characters /* within block comment
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/display_cont.v
+    Info (12023): Found entity 1: DISPLAY_CONT
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/display_decoder.v
+    Info (12023): Found entity 1: DISPLAY_DECODER
+Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_TIME"
+Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_DATE"
+Warning (10236): Verilog HDL Implicit Net warning at DIGITAL_CLOCK.v(70): created implicit net for "IN_ALARM_TIME"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(78): created implicit net for "OUT_ALARM_H10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(79): created implicit net for "OUT_ALARM_H1"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(80): created implicit net for "OUT_ALARM_M10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(81): created implicit net for "OUT_ALARM_M1"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(82): created implicit net for "OUT_ALARM_S10"
+Warning (10236): Verilog HDL Implicit Net warning at DISPLAY_DECODER.v(83): created implicit net for "OUT_ALARM_S1"
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(132): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 132
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(134): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 134
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(191): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 191
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(193): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 193
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(410): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 410
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(412): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 412
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(469): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 469
+Error (10161): Verilog HDL error at DISPLAY_CONT.v(471): object "IN_TIME" is not declared File: C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v Line: 471
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 8 errors, 13 warnings
+    Error: Peak virtual memory: 336 megabytes
+    Error: Processing ended: Tue Nov 29 22:37:47 2016
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 

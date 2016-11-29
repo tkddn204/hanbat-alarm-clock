@@ -3,26 +3,15 @@
 module LCD_CONT(
     RESETN, CLK,
 	 DISPLAY_DATA,
-    LCD_E, LCD_RS, LCD_RW,
-    LCD_DATA
 );
 
 input RESETN, CLK;
 // LINE 1 -> [15:0], LINE 2 -> [31:16]
 input [7:0] DISPLAY_DATA [31:0];
-output wire LCD_E,
+output wire LCD_E;
 output reg LCD_RS, LCD_RW;
 output reg [7:0] LCD_DATA;
 
-reg [2:0] STATE;
-parameter DELAY = 3'b000,
-          FUNCTION_SET = 3'b001,
-          ENTRY_MODE = 3'b010,
-          DISP_ON_OFF = 3'b011,
-          LINE1 = 3'b100,
-          LINE2 = 3'b101,
-          DELAY_T = 3'b110,
-          CLEAR_DISP = 3'b111;
 			 
 always @(posedge CLK)
 begin
@@ -44,7 +33,7 @@ begin
                 LINE2:
                     if(CNT == 17) STATE = DELAY_T;
                 DELAY_T:
-                    if(CNT == 62) STATE = LINE1;
+                    if(CNT == 10) STATE = LINE1;
                 CLEAR_DISP:
                     if(CNT == 200) STATE = LINE1;
                 default: STATE = DELAY;
@@ -78,7 +67,7 @@ begin
                     if(CNT >= 17) CNT = 0;
                     else CNT = CNT + 1;
                 DELAY_T:
-                    if(CNT >= 62) CNT = 0;
+                    if(CNT >= 10) CNT = 0;
                     else CNT = CNT + 1;
                 CLEAR_DISP:
                     if(CNT >= 200) CNT = 0;
@@ -143,7 +132,7 @@ begin
                         if(CNT == 0)
 									begin
 										LCD_RS = 1'b0;
-										LCD_DATA = 8'b10000000;
+										LCD_DATA = 8'b11000000;
 									end
 								else if(CNT <= 16)
 									begin

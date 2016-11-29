@@ -56,7 +56,7 @@ begin
 	else if(SETTING)
 		CNT = 0;
 	else
-		if(CNT >= 99)
+		if(CNT >= 999)
 			CNT = 0;
 		else
 			CNT = CNT + 1;
@@ -100,7 +100,7 @@ begin
 	else if(SETTING)
 		SEC = IN_TIME[5:0];
 	else
-		if(CNT == 99)
+		if(CNT == 999)
 			begin
 				if(SEC >= 59)
 					SEC = 0;
@@ -117,7 +117,7 @@ begin
 	else if(SETTING)
 		MIN = IN_TIME[11:6];
 	else
-		if((CNT == 99) && (SEC == 59))
+		if((CNT == 999) && (SEC == 59))
 			begin
 				if(MIN >= 59)
 					MIN = 0;
@@ -134,12 +134,14 @@ begin
 	else if(SETTING)
 		HOUR = IN_TIME[16:12];
 	else
-		if((CNT == 99) && (SEC == 59) && (MIN == 59))
+		if((CNT == 999) && (SEC == 59) && (MIN == 59))
 			begin
-				if(HOUR >= 59)
+				if(HOUR >= 23)
 					HOUR = 0;
-				else
-					HOUR = HOUR + 1;
+			end
+		else
+			begin
+				HOUR = HOUR + 1;
 			end
 end
 
@@ -161,7 +163,7 @@ begin
 	else if(SETTING)
 		DAY = IN_DATE[4:0];
 	else
-		if((CNT == 99) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 999) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(DAY >= 31)
 					DAY = 1;
@@ -178,7 +180,7 @@ begin
 	else if(SETTING)
 		MONTH = IN_DATE[8:5];
 	else
-		if((CNT == 99) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 999) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(MONTH >= 31)
 					MONTH = 1;
@@ -195,7 +197,7 @@ begin
 	else if(SETTING)
 		YEAR = IN_DATE[15:9]; 
 	else
-		if((CNT == 99) && (MONTH == 12) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 999) && (MONTH == 12) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(YEAR >= 99)
 					YEAR = 0;

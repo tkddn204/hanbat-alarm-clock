@@ -21,26 +21,26 @@
 
 module DISPLAY_CONT(
 	RESETN, CLK,
-	CURRENT_TIME, CURRENT_DATE, ALARM_TIME,
+	H10, H1, M10, M1, S10, S1, MERIDIAN,
+	Y10, Y1, MT10, MT1, D10, D1,
+	ALARM_H10, ALARM_H1, ALARM_M10, ALARM_M1, ALARM_S10, ALARM_S1,
 	MODE, ALARM_ENABLE, ALARM_DOING,
-	DISPLAY_DATA
+	LCD_E, LCD_RS, LCD_RW,
+	LCD_DATA
 );
 
 input RESETN, CLK;
-input [4:0] KEY;
-input [16:0] ALARM_TIME;
-input [17:0] CURRENT_TIME;
-input [15:0] CURRENT_DATE;
 input [5:0] MODE;
+input H10, H1, M10, M1, S10, S1;
+input Y10, Y1, MT10, MT1, D10, D1;
+input ALARM_H10, ALARM_H1, ALARM_M10, ALARM_M1, ALARM_S10, ALARM_S1;
 input ALARM_ENABLE, ALARM_DOING;
+output wire LCD_E;
+output reg LCD_RS, LCD_RW;
+output reg [7:0] LCD_DATA;
+
 // LINE 1 -> [15:0], LINE 2 -> [31:16]
-input [7:0] DISPLAY_DATA [31:0];
-
-wire [7:0] H10, H1, M10, M1, S10, S1, M;
-wire [7:0] Y10, Y1, MT10, MT1, D10, D1;
-
-wire [7:0] OUT_H10, OUT_H1, OUT_M10, OUT_M1, OUT_S10, OUT_S1;
-wire [7:0] OUT_Y10, OUT_Y1, OUT_MT10, OUT_MT1, OUT_D10, OUT_D1;
+reg [7:0] DISPLAY_DATA [31:0];
 
 /* MODE */
 parameter CURRENT_TIME = 6'b000000,
@@ -48,7 +48,6 @@ parameter CURRENT_TIME = 6'b000000,
 			 CURRENT_CONTROL_HOUR = 6'b010011,
 			 CURRENT_CONTROL_MIN = 6'b010101,
 			 CURRENT_CONTROL_SEC = 6'b010111,
-			 CURRENT_CONTROL_MERIDIAN = 6'b011001,
 			 CURRENT_CONTROL_YEAR = 6'b011011,
 			 CURRENT_CONTROL_MONTH = 6'b011101,
 			 CURRENT_CONTROL_DAY = 6'b011111,
@@ -62,43 +61,682 @@ parameter CURRENT_TIME = 6'b000000,
 parameter AM = 8'b01000001,
 			 PM = 8'b01000010;
 			 
-// x, y, z => input x, output y, z
-WT_SEP HOUR_SEP(HOUR, H10, H1);
-WT_SEP MIN_SEP(MIN, M10, M1);
-WT_SEP SECOND_SEP(SEC, S10, S1);
+reg [2:0] STATE;
+parameter DELAY = 3'b000,
+          FUNCTION_SET = 3'b001,
+          ENTRY_MODE = 3'b010,
+          DISP_ON_OFF = 3'b011,
+          LINE1 = 3'b100,
+          LINE2 = 3'b101,
+          DELAY_T = 3'b110,
+          CLEAR_DISP = 3'b111;
 
-WT_SEP YEAR_SEP(YEAR, Y10, Y1);
-WT_SEP MONTH_SEP(MONTH, MT10, MT1);
-WT_SEP DAY_SEP(DAY, D10, D1);
-
-// decode x to y
-WT_DECODER H10_DECODE(H10, OUT_H10);
-WT_DECODER H1_DECODE(H1, OUT_H1);
-WT_DECODER M10_DECODE(M10, OUT_M10);
-WT_DECODER M1_DECODE(M1, OUT_M1);
-WT_DECODER S10_DECODE(S10, OUT_S10);
-WT_DECODER S1_DECODE(S1, OUT_S1);
-
-WT_DECODER Y10_DECODE(Y10, OUT_Y10);
-WT_DECODER Y1_DECODE(Y1, OUT_Y1);
-WT_DECODER MT10_DECODE(D10, OUT_MT10);
-WT_DECODER MT1_DECODE(D1, OUT_MT1);
-WT_DECODER D10_DECODE(D10, OUT_D10);
-WT_DECODER D1_DECODE(D1, OUT_D1);
+reg CONT_START, BLINK;
+integer CNT, LCD_CNT, INC, LIMIT;
 
 always @(posedge CLK)
 begin
 	if(!RESETN)
 		begin
-			for(integer i = 0; i < 32; i = i++)
+			CONT_START = 1'b0;
+			BLINK = 1'b0;
+			CNT = 0;
+			LIMIT = 0;
+			
+			INC = 0;
+			while(INC <= 31)
 				begin
-					DISPLAY_DATA[i] = 8'b00100000;
+					DISPLAY_DATA[INC] = 8'b00100000; // space
+					INC = INC + 1;
 				end
 		end
 	else
 		begin
-			
+			if(CONT_START == 1'b1)
+				begin
+					if(LIMIT == 20)
+						begin
+							CONT_START = 1'b0;
+							CNT = 0;
+							LIMIT = 0;
+						end
+					else if(CNT <= 499)
+						begin
+							CNT =0;
+							BLINK = !BLINK;
+							LIMIT = LIMIT + 1;
+						end
+					else
+						begin
+							CNT = CNT + 1;
+						end
+				end
+			else
+				begin
+					CONT_START = 1'b0;
+					BLINK = 1'b0;
+					CNT = 0;
+					LIMIT = 0;
+				end
+			case(MODE)
+					CURRENT_TIME:
+						begin
+							DISPLAY_DATA[1] = H10;
+							DISPLAY_DATA[2] = H1;
+							DISPLAY_DATA[3] = 8'b00111010; // :
+							DISPLAY_DATA[4] = M10;
+							DISPLAY_DATA[5] = M1;
+							DISPLAY_DATA[6] = 8'b00111010; // :
+							DISPLAY_DATA[7] = S10;
+							DISPLAY_DATA[8] = S1;
+							if(MERIDIAN == 1)	// Meridian is On(12)
+								begin
+									if(IN_TIME[16:12] >= 5'b01100)
+										begin
+											DISPLAY_DATA[10] = PM;
+										end
+									else
+										begin
+											DISPLAY_DATA[10] = AM;
+										end
+									DISPLAY_DATA[11] = 8'b01001101; // M
+								end
+							else
+								begin
+									DISPLAY_DATA[10] = 8'b00100000; // space
+									DISPLAY_DATA[11] = 8'b00100000; // space
+								end
+							DISPLAY_DATA[13] = 8'b00100000; // 
+							DISPLAY_DATA[14] = 8'b00100000; // 
+							DISPLAY_DATA[17] = 8'b00110010; // 2
+							DISPLAY_DATA[18] = 8'b00110000; // 0
+							DISPLAY_DATA[19] = Y10;
+							DISPLAY_DATA[20] = Y1;
+							DISPLAY_DATA[21] = 8'b01011001; // Y
+							DISPLAY_DATA[22] = MT10;
+							DISPLAY_DATA[23] = MT1;
+							DISPLAY_DATA[24] = 8'b01001101; // M
+							DISPLAY_DATA[25] = D10;
+							DISPLAY_DATA[26] = D1;
+							DISPLAY_DATA[27] = 8'b01000100; // D
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							if(ALARM_ENABLE == 1)
+								begin
+									DISPLAY_DATA[30] = 8'b10011000; // alarm
+								end
+							else
+								begin
+									DISPLAY_DATA[30] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_TIME:
+						begin
+							CONT_START = 1'b0;
+							/*
+							DISPLAY_DATA[1] = H10;
+							DISPLAY_DATA[2] = H1;
+							DISPLAY_DATA[3] = 8'b00111010; // :
+							DISPLAY_DATA[4] = M10;
+							DISPLAY_DATA[5] = M1;
+							DISPLAY_DATA[6] = 8'b00111010; // :
+							DISPLAY_DATA[7] = S10;
+							DISPLAY_DATA[8] = S1;*/
+							if(MERIDIAN == 1)	// Meridian is On(12)
+								begin
+									if(IN_TIME[16:12] >= 5'b01100)
+										begin
+											DISPLAY_DATA[10] = PM;
+										end
+									else
+										begin
+											DISPLAY_DATA[10] = AM;
+										end
+									DISPLAY_DATA[11] = 8'b01001101; // M
+								end
+							else
+								begin
+									DISPLAY_DATA[10] = 8'b00100000; // space
+									DISPLAY_DATA[11] = 8'b00100000; // space
+								end
+							DISPLAY_DATA[14] = 8'b10101001; // special C
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							if(ALARM_ENABLE == 1)
+								begin
+									DISPLAY_DATA[30] = 8'b10011000; // alarm
+								end
+							else
+								begin
+									DISPLAY_DATA[30] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_HOUR:
+						begin
+							CONT_START = 1'b1;
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[1] = H10;
+									DISPLAY_DATA[2] = H1;
+								end
+							else
+								begin
+									DISPLAY_DATA[1] = 8'b00100000; // space
+									DISPLAY_DATA[2] = 8'b00100000; // space
+								end
+							/*
+							DISPLAY_DATA[3] = 8'b00111010; // :
+							DISPLAY_DATA[4] = M10;
+							DISPLAY_DATA[5] = M1;
+							DISPLAY_DATA[6] = 8'b00111010; // :
+							DISPLAY_DATA[7] = S10;
+							DISPLAY_DATA[8] = S1;
+							if(CURRENT_TIME[17] == 1)	// Meridian is On(12)
+								begin
+									if(DISPLAY_DATA[16:12] >= 12)
+										begin
+											DISPLAY_DATA[10] = PM;
+										end
+									else
+										begin
+											DISPLAY_DATA[10] = AM;
+										end
+									DISPLAY_DATA[11] = 8'b01001101; // M
+								end
+							else
+								begin
+									DISPLAY_DATA[10] = 8'b00100000; // space
+									DISPLAY_DATA[11] = 8'b00100000; // space
+								end
+							DISPLAY_DATA[14] = 8'b10101001; // special C
+							DISPLAY_DATA[17] = 8'b00110010; // 2
+							DISPLAY_DATA[18] = 8'b00110000; // 0
+							DISPLAY_DATA[19] = Y10;
+							DISPLAY_DATA[20] = Y1;
+							DISPLAY_DATA[21] = 8'b01011001; // Y
+							DISPLAY_DATA[22] = MT10;
+							DISPLAY_DATA[23] = MT1;
+							DISPLAY_DATA[24] = 8'b01001101; // M
+							DISPLAY_DATA[25] = D10;
+							DISPLAY_DATA[26] = D1;
+							DISPLAY_DATA[27] = 8'b01000100; // D
+							*/
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							/*
+							if(ALARM_ENABLE == 1)
+								begin
+									DISPLAY_DATA[30] = 8'b10011000; // alarm
+								end
+							else
+								begin
+									DISPLAY_DATA[30] = 8'b00100000; // space
+								end
+							*/
+						end
+					CURRENT_CONTROL_MIN:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[4] = M10;
+									DISPLAY_DATA[5] = M1;
+								end
+							else
+								begin
+									DISPLAY_DATA[4] = 8'b00100000; // space
+									DISPLAY_DATA[5] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_SEC:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[7] = S10;
+									DISPLAY_DATA[8] = S1;
+								end
+							else
+								begin
+									DISPLAY_DATA[7] = 8'b00100000; // space
+									DISPLAY_DATA[8] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_YEAR:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[19] = Y10;
+									DISPLAY_DATA[20] = Y1;
+								end
+							else
+								begin
+									DISPLAY_DATA[19] = 8'b00100000; // space
+									DISPLAY_DATA[20] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_MONTH:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[22] = MT10;
+									DISPLAY_DATA[23] = MT1;
+								end
+							else
+								begin
+									DISPLAY_DATA[22] = 8'b00100000; // space
+									DISPLAY_DATA[23] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					CURRENT_CONTROL_DAY:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[25] = D10;
+									DISPLAY_DATA[26] = D1;
+								end
+							else
+								begin
+									DISPLAY_DATA[25] = 8'b00100000; // space
+									DISPLAY_DATA[26] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					ALARM_TIME:
+						begin
+							DISPLAY_DATA[1] = ALARM_H10;
+							DISPLAY_DATA[2] = ALARM_H1;
+							DISPLAY_DATA[3] = 8'b00111010; // :
+							DISPLAY_DATA[4] = ALARM_M10;
+							DISPLAY_DATA[5] = ALARM_M1;
+							DISPLAY_DATA[6] = 8'b00111010; // :
+							DISPLAY_DATA[7] = ALARM_S10;
+							DISPLAY_DATA[8] = ALARM_S1;
+							if(MERIDIAN == 1)	// Meridian is On(12)
+								begin
+									if(IN_TIME[16:12] >= 5'b01100)
+										begin
+											DISPLAY_DATA[10] = PM;
+										end
+									else
+										begin
+											DISPLAY_DATA[10] = AM;
+										end
+									DISPLAY_DATA[11] = 8'b01001101; // M
+								end
+							else
+								begin
+									DISPLAY_DATA[10] = 8'b00100000; // space
+									DISPLAY_DATA[11] = 8'b00100000; // space
+								end
+							DISPLAY_DATA[13] = 8'b10011000; // alarm
+							DISPLAY_DATA[14] = 8'b00100000; // 
+							DISPLAY_DATA[17] = 8'b00100000; // 
+							DISPLAY_DATA[18] = 8'b00100000; // 
+							DISPLAY_DATA[19] = 8'b00100000; // 
+							DISPLAY_DATA[20] = 8'b00100000; // 
+							DISPLAY_DATA[21] = 8'b00100000; // 
+							DISPLAY_DATA[22] = 8'b00100000; // 
+							DISPLAY_DATA[23] = 8'b00100000; // 
+							DISPLAY_DATA[24] = 8'b00100000; // 
+							DISPLAY_DATA[25] = 8'b00100000; // 
+							DISPLAY_DATA[26] = 8'b00100000; // 
+							DISPLAY_DATA[27] = 8'b00100000; // 
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							if(ALARM_ENABLE == 1)
+								begin
+									DISPLAY_DATA[30] = 8'b10011000; // alarm
+								end
+							else
+								begin
+									DISPLAY_DATA[30] = 8'b00100000; // space
+								end
+						end
+					ALARM_CONTROL_TIME:
+						begin
+							CONT_START = 1'b0;
+							/*
+							DISPLAY_DATA[1] = ALARM_H10;
+							DISPLAY_DATA[2] = ALARM_H1;
+							DISPLAY_DATA[3] = 8'b00111010; // :
+							DISPLAY_DATA[4] = ALARM_M10;
+							DISPLAY_DATA[5] = ALARM_M1;
+							DISPLAY_DATA[6] = 8'b00111010; // :
+							DISPLAY_DATA[7] = ALARM_S10;
+							DISPLAY_DATA[8] = ALARM_S1; */
+							if(MERIDIAN == 1)	// Meridian is On(12)
+								begin
+									if(IN_TIME[16:12] >= 5'b01100)
+										begin
+											DISPLAY_DATA[10] = PM;
+										end
+									else
+										begin
+											DISPLAY_DATA[10] = AM;
+										end
+									DISPLAY_DATA[11] = 8'b01001101; // M
+								end
+							else
+								begin
+									DISPLAY_DATA[10] = 8'b00100000; // space
+									DISPLAY_DATA[11] = 8'b00100000; // space
+								end
+							DISPLAY_DATA[13] = 8'b10011000; // alarm
+							DISPLAY_DATA[14] = 8'b10101001; // special C
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							if(ALARM_ENABLE == 1)
+								begin
+									DISPLAY_DATA[30] = 8'b10011000; // alarm
+								end
+							else
+								begin
+									DISPLAY_DATA[30] = 8'b00111010; // space
+								end
+						end
+					ALARM_CONTROL_HOUR:
+						begin
+							CONT_START = 1'b1;
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[1] = ALARM_H10;
+									DISPLAY_DATA[2] = ALARM_H1;
+								end
+							else
+								begin
+									DISPLAY_DATA[1] = 8'b00100000; // space
+									DISPLAY_DATA[2] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+						end
+					ALARM_CONTROL_MIN:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[4] = ALARM_M10;
+									DISPLAY_DATA[5] = ALARM_M1;
+								end
+							else
+								begin
+									DISPLAY_DATA[4] = 8'b00100000; // space
+									DISPLAY_DATA[5] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							
+						end
+					ALARM_CONTROL_SEC:
+						begin
+							if(BLINK == 1'b0)
+								begin
+									DISPLAY_DATA[7] = ALARM_S10;
+									DISPLAY_DATA[8] = ALARM_S1;
+								end
+							else
+								begin
+									DISPLAY_DATA[7] = 8'b00100000; // space
+									DISPLAY_DATA[8] = 8'b00100000; // space
+								end
+							if(ALARM_DOING == 1)
+								begin
+									DISPLAY_DATA[29] = 8'b10010001; // note
+								end
+							else
+								begin
+									DISPLAY_DATA[29] = 8'b00100000; // space
+								end
+							
+						end
+					default:
+						begin
+							INC = 0;
+							while(INC <= 31)
+								begin
+									DISPLAY_DATA[INC] = 8'b00100000; // space
+									INC = INC + 1;
+								end
+						end
+			endcase
 		end
 end
+		 
+always @(posedge CLK)
+begin
+    if (RESETN == 1'b0)
+        STATE = DELAY;
+    else
+        begin
+            case(STATE)
+                DELAY:
+                    if(LCD_CNT == 70) STATE = FUNCTION_SET;
+                FUNCTION_SET:
+                    if(LCD_CNT == 30) STATE = DISP_ON_OFF;
+                DISP_ON_OFF:
+                    if(LCD_CNT == 30) STATE = ENTRY_MODE;
+                ENTRY_MODE:
+                    if(LCD_CNT == 30) STATE = LINE1;
+                LINE1:
+                    if(LCD_CNT == 17) STATE = LINE2;
+                LINE2:
+                    if(LCD_CNT == 17) STATE = DELAY_T;
+                DELAY_T:
+                    if(LCD_CNT == 17) STATE = LINE1;
+                CLEAR_DISP:
+                    if(LCD_CNT == 200) STATE = LINE1;
+                default: STATE = DELAY;
+            endcase
+        end
+end
+
+always @(posedge CLK)
+begin
+    if(RESETN == 1'b0)
+        LCD_CNT = 0;
+    else
+        begin
+            case(STATE)
+                DELAY:
+                    if(LCD_CNT >= 70) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                FUNCTION_SET:
+                    if(LCD_CNT >= 30) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                DISP_ON_OFF:
+                    if(LCD_CNT >= 30) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                ENTRY_MODE:
+                    if(LCD_CNT >= 30) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                LINE1:
+                    if(LCD_CNT >= 17) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                LINE2:
+                    if(LCD_CNT >= 17) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                DELAY_T:
+                    if(LCD_CNT >= 17) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                CLEAR_DISP:
+                    if(LCD_CNT >= 200) LCD_CNT = 0;
+                    else LCD_CNT = LCD_CNT + 1;
+                default: LCD_CNT = 0;
+            endcase
+        end
+end
+
+
+always @(posedge CLK)
+begin
+    if(RESETN == 1'b0)
+        begin
+            LCD_RS = 1'b1;
+            LCD_RW = 1'b1;
+            LCD_DATA = 8'b00000000;
+        end
+    else
+        begin
+            case(STATE)
+                FUNCTION_SET:
+                    begin
+                        LCD_RS = 1'b0;
+                        LCD_RW = 1'b0;
+                        LCD_DATA = 8'b00111100;
+                    end
+                DISP_ON_OFF:
+                    begin
+                        LCD_RS = 1'b0;
+                        LCD_RW = 1'b0;
+                        LCD_DATA = 8'b00001100;
+                    end
+                ENTRY_MODE:
+                    begin
+                        LCD_RS = 1'b0;
+                        LCD_RW = 1'b0;
+                        LCD_DATA = 8'b00000110;
+                    end
+                LINE1:
+                    begin
+                        LCD_RW = 1'b0;
+                        if(CNT == 0)
+									begin
+										LCD_RS = 1'b0;
+										LCD_DATA = 8'b10000000;
+									end
+								else if(CNT <= 16)
+									begin
+										// DISPLAY_DATA[15:0]
+										LCD_RS = 1'b1;
+										LCD_DATA = DISPLAY_DATA[CNT - 1];
+									end
+								else
+									begin
+										LCD_RS = 1'b1;
+                              LCD_DATA = 8'b00100000; // space character
+									end
+                    end
+                LINE2:
+                    begin
+                        LCD_RW = 1'b0;
+                        if(CNT == 0)
+									begin
+										LCD_RS = 1'b0;
+										LCD_DATA = 8'b11000000;
+									end
+								else if(CNT <= 16)
+									begin
+										// DISPLAY_DATA[31:16]
+										LCD_RS = 1'b1;
+										LCD_DATA = DISPLAY_DATA[CNT + 15];
+									end
+								else
+									begin
+										LCD_RS = 1'b1;
+                              LCD_DATA = 8'b00100000; // space character
+									end
+                    end
+                DELAY_T:
+                    begin
+                        LCD_RS = 1'b0;
+                        LCD_RW = 1'b0;
+                        LCD_DATA = 8'b00000010;
+                    end
+                CLEAR_DISP:
+                    begin
+                        LCD_RS = 1'b0;
+                        LCD_RW = 1'b0;
+                        LCD_DATA = 8'b00000001;
+                    end
+                default:
+                    begin
+                        LCD_RS = 1'b1;
+                        LCD_RW = 1'b1;
+                        LCD_DATA = 8'b00000000;
+                    end
+            endcase
+        end
+end
+
+assign LCD_E = !CLK;
 
 endmodule

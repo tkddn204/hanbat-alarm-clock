@@ -1,12 +1,12 @@
 // PIEZO
-module PIEZO(
+module PIEZO_UNIT(
 	RESETN, CLK,
-	ALARM_SET, ALARM_DOING,
+	ALARM_ENABLE, ALARM_DOING,
 	PIEZO
 );
 
 input RESETN, CLK;
-input ALARM_SET, ALARM_DOING;
+input ALARM_ENABLE, ALARM_DOING;
 output wire PIEZO;
 
 reg BUFF;
@@ -33,7 +33,7 @@ begin
 		end
 	else
 		begin
-			if(CNT == 12)
+			if(CNT == 126)
 				begin
 					CNT = 0;
 					case(ORDER)  // airplain
@@ -123,7 +123,7 @@ begin
 		end
 	else
 		begin
-			if((ALARM_SET == 1'b1) && (CNT_SOUND >= LIMIT))
+			if((ALARM_ENABLE == 1'b1) && (CNT_SOUND >= LIMIT))
 				begin
 					CNT_SOUND = 0;
 					if(ALARM_DOING == 1'b1)
