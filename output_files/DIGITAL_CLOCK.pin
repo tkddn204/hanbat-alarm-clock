@@ -1,4 +1,4 @@
- -- Copyright (C) 1991-2013 Altera Corporation
+ -- Copyright (C) 1991-2011 Altera Corporation
  -- Your use of Altera Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
 CHIP  "DIGITAL_CLOCK"  ASSIGNED TO AN: EP2C70F672C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -663,12 +663,12 @@ RESERVED_INPUT               : U24       :        :                   :         
 RESERVED_INPUT               : U25       :        :                   :         : 6         :                
 RESERVED_INPUT               : U26       :        :                   :         : 6         :                
 RESERVED_INPUT               : V1        :        :                   :         : 1         :                
-RESERVED_INPUT               : V2        :        :                   :         : 1         :                
-RESERVED_INPUT               : V3        :        :                   :         : 1         :                
-RESERVED_INPUT               : V4        :        :                   :         : 1         :                
+KEY[2]                       : V2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+KEY[3]                       : V3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+KEY[4]                       : V4        : input  : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT               : V5        :        :                   :         : 1         :                
 RESERVED_INPUT               : V6        :        :                   :         : 1         :                
-KEY[0]                       : V7        : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT               : V7        :        :                   :         : 1         :                
 VCCIO1                       : V8        : power  :                   : 3.3V    : 1         :                
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 VCCINT                       : V10       : power  :                   : 1.2V    :           :                
@@ -688,10 +688,10 @@ RESERVED_INPUT               : V23       :        :                   :         
 RESERVED_INPUT               : V24       :        :                   :         : 6         :                
 RESERVED_INPUT               : V25       :        :                   :         : 6         :                
 RESERVED_INPUT               : V26       :        :                   :         : 6         :                
-KEY[1]                       : W1        : input  : 3.3-V LVTTL       :         : 1         : Y              
-KEY[2]                       : W2        : input  : 3.3-V LVTTL       :         : 1         : Y              
-KEY[3]                       : W3        : input  : 3.3-V LVTTL       :         : 1         : Y              
-KEY[4]                       : W4        : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT               : W1        :        :                   :         : 1         :                
+KEY[0]                       : W2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+KEY[1]                       : W3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT               : W4        :        :                   :         : 1         :                
 GND                          : W5        : gnd    :                   :         :           :                
 RESERVED_INPUT               : W6        :        :                   :         : 1         :                
 GND_PLL1                     : W7        : gnd    :                   :         :           :                

@@ -59,7 +59,7 @@ parameter CURRENT_TIME = 6'b000000,
 			 
 /* MERIDIAN LIST(A, B) */
 parameter AM = 8'b01000001,
-			 PM = 8'b01000010;
+			 PM = 8'b01010000;
 			 
 reg [2:0] STATE;
 parameter DELAY = 3'b000,
@@ -71,38 +71,30 @@ parameter DELAY = 3'b000,
           DELAY_T = 3'b110,
           CLEAR_DISP = 3'b111;
 
-reg CONT_START, BLINK;
+reg CONT_START, CONT_START_MODE, BLINK;
 integer CNT, LCD_CNT, INC, LIMIT;
 
 always @(posedge CLK)
 begin
 	if(!RESETN)
 		begin
-			CONT_START = 1'b0;
 			BLINK = 1'b0;
+			CONT_START_MODE = 1'b0;
 			CNT = 0;
 			LIMIT = 0;
-			
-			INC = 0;
-			while(INC <= 31)
-				begin
-					DISPLAY_DATA[INC] = 8'b00100000; // space
-					INC = INC + 1;
-				end
 		end
 	else
-		begin
-			if(CONT_START == 1'b1)
+		if(CONT_START == 1'b1)
 				begin
 					if(LIMIT == 20)
 						begin
-							CONT_START = 1'b0;
+							CONT_START_MODE = 1'b1;
 							CNT = 0;
 							LIMIT = 0;
 						end
 					else if(CNT <= 499)
 						begin
-							CNT =0;
+							CNT = 0;
 							BLINK = !BLINK;
 							LIMIT = LIMIT + 1;
 						end
@@ -111,13 +103,24 @@ begin
 							CNT = CNT + 1;
 						end
 				end
-			else
+		else
+			CONT_START_MODE =1'b0;
+end
+
+always @(posedge CLK)
+begin
+	if(!RESETN)
+		begin
+			INC = 0;
+			CONT_START = 1'b0;
+			while(INC >= 31)
 				begin
-					CONT_START = 1'b0;
-					BLINK = 1'b0;
-					CNT = 0;
-					LIMIT = 0;
+					DISPLAY_DATA[INC] = 8'b00100000; // space
+					INC = INC + 1;
 				end
+		end
+	else
+		begin
 			case(MODE)
 					CURRENT_TIME:
 						begin
@@ -581,6 +584,7 @@ begin
 		end
 end
 		 
+// DISPLAY part
 always @(posedge CLK)
 begin
     if (RESETN == 1'b0)
@@ -599,7 +603,7 @@ begin
                 LINE1:
                     if(LCD_CNT == 17) STATE = LINE2;
                 LINE2:
-                    if(LCD_CNT == 17) STATE = DELAY_T;
+                    if(LCD_CNT == 17) STATE = LINE1;
                 DELAY_T:
                     if(LCD_CNT == 17) STATE = LINE1;
                 CLEAR_DISP:
@@ -678,16 +682,16 @@ begin
                 LINE1:
                     begin
                         LCD_RW = 1'b0;
-                        if(CNT == 0)
+                        if(LCD_CNT == 0)
 									begin
 										LCD_RS = 1'b0;
 										LCD_DATA = 8'b10000000;
 									end
-								else if(CNT <= 16)
+								else if(LCD_CNT <= 16)
 									begin
 										// DISPLAY_DATA[15:0]
 										LCD_RS = 1'b1;
-										LCD_DATA = DISPLAY_DATA[CNT - 1];
+										LCD_DATA = DISPLAY_DATA[LCD_CNT - 1];
 									end
 								else
 									begin
@@ -698,16 +702,16 @@ begin
                 LINE2:
                     begin
                         LCD_RW = 1'b0;
-                        if(CNT == 0)
+                        if(LCD_CNT == 0)
 									begin
 										LCD_RS = 1'b0;
 										LCD_DATA = 8'b11000000;
 									end
-								else if(CNT <= 16)
+								else if(LCD_CNT <= 16)
 									begin
 										// DISPLAY_DATA[31:16]
 										LCD_RS = 1'b1;
-										LCD_DATA = DISPLAY_DATA[CNT + 15];
+										LCD_DATA = DISPLAY_DATA[LCD_CNT + 15];
 									end
 								else
 									begin

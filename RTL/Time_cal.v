@@ -22,7 +22,7 @@
 module TIME_CAL(
 	RESETN, CLK,
 	IN_TIME, IN_DATE, IN_ALARM_TIME,
-	MODE, MODE_STATE, SETTING,
+	MODE, MODE_STATE, SETTING, SETTING_OK,
 	OUT_TIME, OUT_DATE, OUT_ALARM_TIME
 );
 
@@ -34,6 +34,7 @@ input MODE, MODE_STATE, SETTING;
 output reg [16:0] OUT_ALARM_TIME;
 output reg [17:0] OUT_TIME;
 output reg [15:0] OUT_DATE;
+output reg SETTING_OK;
 
 // TEMP TIME
 reg MERIDIAN;
@@ -52,14 +53,21 @@ begin
 	if(!RESETN)
 		begin
 			CNT = 0;
+			SETTING_OK = 0;
 		end
 	else if(SETTING == 1'b1)
-		CNT = 0;
-	else
-		if(CNT >= 999)
+		begin
 			CNT = 0;
-		else
-			CNT = CNT + 1;
+			SETTING_OK = 1;
+		end
+	else
+		begin
+			if(CNT >= 999)
+				CNT = 0;
+			else
+				CNT = CNT + 1;
+			SETTING_OK = 0;
+		end
 end
 
 // Count part
@@ -138,10 +146,10 @@ begin
 			begin
 				if(HOUR >= 23)
 					HOUR = 0;
-			end
-		else
-			begin
-				HOUR = HOUR + 1;
+				else
+					begin
+						HOUR = HOUR + 1;
+					end
 			end
 end
 

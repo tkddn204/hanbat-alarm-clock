@@ -33,11 +33,12 @@ begin
 		end
 	else
 		begin
-			if(CNT == 126)
+			if(CNT == 499)
 				begin
 					CNT = 0;
+					ORDER = ORDER + 1;
 					case(ORDER)  // airplain
-						0: LIMIT = MI;
+						0: LIMIT = 0;
 						1: LIMIT = MI;
 						2: LIMIT = RAE;
 						3: LIMIT = RAE;
@@ -107,7 +108,6 @@ begin
 						67: LIMIT = 0;
 						default: LIMIT = 0;
 					endcase
-					ORDER = ORDER + 1;
 				end
 			else
 				CNT = CNT + 1;

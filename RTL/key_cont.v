@@ -22,7 +22,7 @@
 module KEY_CONT(
 	RESETN, CLK,
 	KEY, IN_TIME, IN_DATE, IN_ALARM_TIME,
-	MODE, ALARM_ENABLE, SETTING,
+	MODE, ALARM_ENABLE, SETTING, SETTING_OK,
 	OUT_TIME, OUT_DATE, OUT_ALARM_TIME
 );
 
@@ -31,6 +31,7 @@ input [4:0] KEY;
 input [16:0] IN_ALARM_TIME;
 input [17:0] IN_TIME;
 input [15:0] IN_DATE;
+input SETTING_OK;
 output reg [16:0] OUT_ALARM_TIME;
 output reg [17:0] OUT_TIME;
 output reg [15:0] OUT_DATE;
@@ -90,12 +91,14 @@ begin
 			SETTING = 0;
 			CNT = 0;
 		end
+	else if(SETTING_OK)
+		SETTING = 0;
 	else
 		begin
 			case(KEY)
 				MENU:
 					begin
-						if(CNT >= 150)
+						if(CNT >= 249)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -162,7 +165,7 @@ begin
 					end
 				SET:
 					begin
-						if(CNT >= 150)
+						if(CNT >= 249)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -172,8 +175,8 @@ begin
 										end
 									CURRENT_CONTROL_TIME:
 										begin
-											OUT_TIME = IN_TIME;
-											OUT_DATE = IN_DATE;
+											//OUT_TIME = IN_TIME;
+											//OUT_DATE = IN_DATE;
 											MODE_BUFF = CURRENT_CONTROL_HOUR;
 										end
 									CURRENT_CONTROL_HOUR:
@@ -213,7 +216,7 @@ begin
 										end
 									ALARM_CONTROL_TIME:
 										begin
-											OUT_ALARM_TIME = IN_ALARM_TIME;
+											//OUT_ALARM_TIME = IN_ALARM_TIME;
 											MODE_BUFF = ALARM_CONTROL_HOUR;
 										end
 									ALARM_CONTROL_HOUR:
@@ -244,7 +247,7 @@ begin
 					end
 				CANCEL:
 					begin
-						if(CNT >= 150)
+						if(CNT >= 249)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -326,7 +329,7 @@ begin
 					end
 				UP:
 					begin
-						if(CNT >= 150)
+						if(CNT >= 249)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -422,7 +425,7 @@ begin
 					end
 				DOWN:
 					begin
-						if(CNT >= 150)
+						if(CNT >= 249)
 							begin
 								case(MODE)
 									CURRENT_TIME:
