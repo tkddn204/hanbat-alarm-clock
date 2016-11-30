@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for DIGITAL_CLOCK
-Wed Nov 30 22:39:51 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Thu Dec 01 00:40:22 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -106,7 +106,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 92.31 MHz ; 92.31 MHz       ; CLK        ;      ;
+; 93.92 MHz ; 93.92 MHz       ; CLK        ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; CLK   ; -9.833 ; -2909.927     ;
+; CLK   ; -9.647 ; -3240.970     ;
 +-------+--------+---------------+
 
 
@@ -146,7 +146,7 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; CLK   ; -1.941 ; -812.205              ;
+; CLK   ; -1.941 ; -861.177              ;
 +-------+--------+-----------------------+
 
 
@@ -155,106 +155,106 @@ No paths to report.
 +--------+---------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                       ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
-; -9.833 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.859     ;
-; -9.752 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.778     ;
-; -9.666 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.692     ;
-; -9.630 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.656     ;
-; -9.549 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.575     ;
-; -9.513 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.540     ;
-; -9.489 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.515     ;
-; -9.438 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.464     ;
-; -9.432 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.459     ;
-; -9.412 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.438     ;
-; -9.408 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.434     ;
-; -9.357 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.383     ;
-; -9.346 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.373     ;
-; -9.326 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.352     ;
-; -9.322 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.348     ;
-; -9.310 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.337     ;
-; -9.297 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.323     ;
-; -9.286 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.312     ;
-; -9.271 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.297     ;
-; -9.235 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.261     ;
-; -9.229 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.256     ;
-; -9.205 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.231     ;
-; -9.154 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.180     ;
-; -9.092 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.119     ;
-; -9.068 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.094     ;
-; -9.049 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.075     ;
-; -9.017 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.043     ;
-; -9.013 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.039     ;
-; -9.006 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.033     ;
-; -8.982 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 10.008     ;
-; -8.977 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 10.004     ;
-; -8.953 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.979      ;
-; -8.931 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.957      ;
-; -8.924 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.950      ;
-; -8.902 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.928      ;
-; -8.790 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.816      ;
-; -8.729 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.756      ;
-; -8.705 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.731      ;
-; -8.704 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.730      ;
-; -8.693 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.720      ;
-; -8.669 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.695      ;
-; -8.654 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.680      ;
-; -8.618 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.644      ;
-; -8.618 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.644      ;
-; -8.604 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.631      ;
-; -8.580 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.606      ;
-; -8.533 ; PIEZO_UNIT:piezo_unit|ORDER[14] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.559      ;
-; -8.529 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.555      ;
-; -8.510 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.536      ;
-; -8.484 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.519      ;
-; -8.484 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.519      ;
-; -8.470 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.497      ;
-; -8.464 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.499      ;
-; -8.464 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.499      ;
-; -8.459 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.511      ;
-; -8.456 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.491      ;
-; -8.456 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.491      ;
-; -8.451 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.486      ;
-; -8.451 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.486      ;
-; -8.446 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.472      ;
-; -8.439 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.491      ;
-; -8.431 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.483      ;
-; -8.426 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.478      ;
-; -8.395 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.421      ;
-; -8.384 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.411      ;
-; -8.360 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.386      ;
-; -8.350 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[14]      ; CLK          ; CLK         ; 1.000        ; 0.009      ; 9.399      ;
-; -8.333 ; PIEZO_UNIT:piezo_unit|ORDER[16] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; -0.026     ; 9.347      ;
-; -8.330 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[14]      ; CLK          ; CLK         ; 1.000        ; 0.009      ; 9.379      ;
-; -8.322 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[14]      ; CLK          ; CLK         ; 1.000        ; 0.009      ; 9.371      ;
-; -8.320 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.355      ;
-; -8.320 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.355      ;
-; -8.317 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[14]      ; CLK          ; CLK         ; 1.000        ; 0.009      ; 9.366      ;
-; -8.309 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[12]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.360      ;
-; -8.309 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.335      ;
-; -8.306 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[13]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.357      ;
-; -8.298 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; -0.013     ; 9.325      ;
-; -8.298 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.333      ;
-; -8.298 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.333      ;
-; -8.295 ; KEY_CONT:key_cont|CNT[28]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.330      ;
-; -8.295 ; KEY_CONT:key_cont|CNT[28]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.330      ;
-; -8.295 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.347      ;
-; -8.289 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[9] ; CLK          ; CLK         ; 1.000        ; 0.028      ; 9.357      ;
-; -8.289 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[12]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.340      ;
-; -8.286 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[13]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.337      ;
-; -8.281 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[12]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.332      ;
-; -8.278 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[13]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.329      ;
-; -8.276 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[12]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.327      ;
-; -8.275 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.310      ;
-; -8.275 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.310      ;
-; -8.274 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; -0.014     ; 9.300      ;
-; -8.273 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.325      ;
-; -8.273 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[13]      ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.324      ;
-; -8.272 ; KEY_CONT:key_cont|CNT[21]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.307      ;
-; -8.272 ; KEY_CONT:key_cont|CNT[21]       ; KEY_CONT:key_cont|OUT_TIME[5]       ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.307      ;
-; -8.270 ; KEY_CONT:key_cont|CNT[28]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.322      ;
-; -8.269 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[9] ; CLK          ; CLK         ; 1.000        ; 0.028      ; 9.337      ;
-; -8.261 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[9] ; CLK          ; CLK         ; 1.000        ; 0.028      ; 9.329      ;
-; -8.256 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[9] ; CLK          ; CLK         ; 1.000        ; 0.028      ; 9.324      ;
-; -8.250 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[15]      ; CLK          ; CLK         ; 1.000        ; 0.012      ; 9.302      ;
+; -9.647 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.690     ;
+; -9.646 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.689     ;
+; -9.642 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.685     ;
+; -9.641 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.684     ;
+; -9.570 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.613     ;
+; -9.565 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.608     ;
+; -9.468 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.511     ;
+; -9.467 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.510     ;
+; -9.459 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.502     ;
+; -9.458 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.501     ;
+; -9.431 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.474     ;
+; -9.430 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.473     ;
+; -9.407 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.450     ;
+; -9.402 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.445     ;
+; -9.391 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.434     ;
+; -9.382 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.425     ;
+; -9.354 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.397     ;
+; -9.296 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.339     ;
+; -9.295 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.338     ;
+; -9.228 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.271     ;
+; -9.219 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.262     ;
+; -9.219 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.262     ;
+; -9.214 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.257     ;
+; -9.213 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.256     ;
+; -9.191 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.234     ;
+; -9.178 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.221     ;
+; -9.177 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.220     ;
+; -9.137 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.180     ;
+; -9.101 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.144     ;
+; -9.056 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.099     ;
+; -8.974 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 10.017     ;
+; -8.938 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.981      ;
+; -8.938 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.981      ;
+; -8.937 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.980      ;
+; -8.889 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.932      ;
+; -8.888 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.931      ;
+; -8.861 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.904      ;
+; -8.813 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.856      ;
+; -8.812 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.855      ;
+; -8.812 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.855      ;
+; -8.754 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.790      ;
+; -8.736 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.779      ;
+; -8.731 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.774      ;
+; -8.730 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.773      ;
+; -8.724 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.760      ;
+; -8.698 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.741      ;
+; -8.688 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.731      ;
+; -8.687 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.730      ;
+; -8.658 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.694      ;
+; -8.654 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.697      ;
+; -8.649 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.692      ;
+; -8.633 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.680      ;
+; -8.627 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.669      ;
+; -8.613 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.649      ;
+; -8.611 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.654      ;
+; -8.603 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.650      ;
+; -8.595 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[14]     ; CLK          ; CLK         ; 1.000        ; -0.002     ; 9.633      ;
+; -8.590 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[14]     ; CLK          ; CLK         ; 1.000        ; -0.002     ; 9.628      ;
+; -8.589 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[5] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.625      ;
+; -8.589 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.632      ;
+; -8.588 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.631      ;
+; -8.585 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[4] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.621      ;
+; -8.584 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[11]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.631      ;
+; -8.581 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[10]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.628      ;
+; -8.578 ; KEY_CONT:key_cont|CNT[2]        ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.620      ;
+; -8.573 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.616      ;
+; -8.569 ; KEY_CONT:key_cont|CNT[21]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.605      ;
+; -8.559 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[5] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.595      ;
+; -8.555 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[4] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.591      ;
+; -8.554 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_TIME[11]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.601      ;
+; -8.551 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[7]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.593      ;
+; -8.551 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_TIME[10]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.598      ;
+; -8.537 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.584      ;
+; -8.535 ; KEY_CONT:key_cont|CNT[0]        ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.577      ;
+; -8.521 ; KEY_CONT:key_cont|CNT[20]       ; KEY_CONT:key_cont|OUT_TIME[7]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.563      ;
+; -8.512 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[4]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.555      ;
+; -8.506 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.013      ; 9.559      ;
+; -8.505 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[0]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.548      ;
+; -8.504 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[7]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.547      ;
+; -8.493 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[5] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.529      ;
+; -8.492 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.539      ;
+; -8.491 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.534      ;
+; -8.489 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[4] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.525      ;
+; -8.488 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[11]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.535      ;
+; -8.485 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[10]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.532      ;
+; -8.470 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[0] ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.518      ;
+; -8.462 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_ALARM_TIME[5] ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.504      ;
+; -8.458 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_ALARM_TIME[4] ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.500      ;
+; -8.457 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_TIME[11]      ; CLK          ; CLK         ; 1.000        ; 0.013      ; 9.510      ;
+; -8.457 ; KEY_CONT:key_cont|CNT[2]        ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.013      ; 9.510      ;
+; -8.455 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[7]       ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.497      ;
+; -8.454 ; KEY_CONT:key_cont|CNT[1]        ; KEY_CONT:key_cont|OUT_TIME[10]      ; CLK          ; CLK         ; 1.000        ; 0.013      ; 9.507      ;
+; -8.453 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.489      ;
+; -8.448 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[5]      ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.491      ;
+; -8.448 ; KEY_CONT:key_cont|CNT[21]       ; KEY_CONT:key_cont|OUT_TIME[8]       ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.495      ;
+; -8.448 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[5] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.484      ;
+; -8.444 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_ALARM_TIME[4] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.480      ;
+; -8.443 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[11]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.490      ;
+; -8.442 ; KEY_CONT:key_cont|CNT[18]       ; KEY_CONT:key_cont|OUT_TIME[4]       ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.478      ;
+; -8.440 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[10]      ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.487      ;
 +--------+---------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -263,85 +263,93 @@ No paths to report.
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.499 ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|STATE.LINE2         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; DISPLAY_CONT:display_cont|STATE.LINE1         ; DISPLAY_CONT:display_cont|STATE.LINE1         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; DISPLAY_CONT:display_cont|STATE.DELAY         ; DISPLAY_CONT:display_cont|STATE.DELAY         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE_BUFF[5]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DISPLAY_CONT:display_cont|STATE.LINE1         ; DISPLAY_CONT:display_cont|STATE.LINE1         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|STATE.LINE2         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; KEY_CONT:key_cont|CONT_STOP                   ; KEY_CONT:key_cont|CONT_STOP                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE_BUFF[5]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; KEY_CONT:key_cont|SETTING                     ; KEY_CONT:key_cont|SETTING                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; DISPLAY_CONT:display_cont|CONT_START          ; DISPLAY_CONT:display_cont|CONT_START          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; DISPLAY_CONT:display_cont|BLINK               ; DISPLAY_CONT:display_cont|BLINK               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; KEY_CONT:key_cont|MERIDIAN                    ; KEY_CONT:key_cont|MERIDIAN                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.499 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; TIME_CAL:time_cal|MONTH[0]                    ; TIME_CAL:time_cal|MONTH[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[1]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; TIME_CAL:time_cal|MONTH[2]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|MONTH[3]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; KEY_CONT:key_cont|ALARM_ENABLE                ; KEY_CONT:key_cont|ALARM_ENABLE                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; TIME_COMPARE:time_compare|STOP                ; TIME_COMPARE:time_compare|STOP                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; TIME_COMPARE:time_compare|DOING               ; TIME_COMPARE:time_compare|DOING               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; KEY_CONT:key_cont|MERIDIAN                    ; KEY_CONT:key_cont|MERIDIAN                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][4]  ; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
 ; 0.499 ; PIEZO_UNIT:piezo_unit|BUFF                    ; PIEZO_UNIT:piezo_unit|BUFF                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.736 ; KEY_CONT:key_cont|MODE_BUFF[2]                ; KEY_CONT:key_cont|MODE[2]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.042      ;
-; 0.744 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|OUT_DATE[8]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.732 ; TIME_CAL:time_cal|OUT_DATE[3]                 ; DISPLAY_DECODER:display_decoder|DAY[3]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.038      ;
+; 0.733 ; TIME_CAL:time_cal|OUT_DATE[9]                 ; DISPLAY_DECODER:display_decoder|YEAR[0]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.039      ;
+; 0.734 ; TIME_CAL:time_cal|OUT_DATE[0]                 ; DISPLAY_DECODER:display_decoder|DAY[0]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.735 ; KEY_CONT:key_cont|MODE_BUFF[1]                ; KEY_CONT:key_cont|MODE[1]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.041      ;
+; 0.742 ; TIME_CAL:time_cal|OUT_DATE[2]                 ; DISPLAY_DECODER:display_decoder|DAY[2]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.743 ; TIME_CAL:time_cal|OUT_DATE[4]                 ; DISPLAY_DECODER:display_decoder|DAY[4]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.744 ; KEY_CONT:key_cont|MODE_BUFF[3]                ; KEY_CONT:key_cont|MODE[3]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.744 ; TIME_CAL:time_cal|OUT_DATE[13]                ; DISPLAY_DECODER:display_decoder|YEAR[4]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.050      ;
 ; 0.753 ; DISPLAY_CONT:display_cont|LCD_CNT[31]         ; DISPLAY_CONT:display_cont|LCD_CNT[31]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; KEY_CONT:key_cont|CNT[31]                     ; KEY_CONT:key_cont|CNT[31]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; KEY_CONT:key_cont|LIMIT[31]                   ; KEY_CONT:key_cont|LIMIT[31]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; DISPLAY_CONT:display_cont|CNT[31]             ; DISPLAY_CONT:display_cont|CNT[31]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; TIME_CAL:time_cal|CNT[31]                     ; TIME_CAL:time_cal|CNT[31]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; TIME_COMPARE:time_compare|CNT[31]             ; TIME_COMPARE:time_compare|CNT[31]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; PIEZO_UNIT:piezo_unit|CNT[31]                 ; PIEZO_UNIT:piezo_unit|CNT[31]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
 ; 0.753 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[31]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[31]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
-; 0.754 ; KEY_CONT:key_cont|MODE_BUFF[4]                ; KEY_CONT:key_cont|MODE[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.060      ;
-; 0.758 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE[5]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.064      ;
-; 0.758 ; TIME_CAL:time_cal|DAY[2]                      ; TIME_CAL:time_cal|OUT_DATE[2]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.064      ;
-; 0.763 ; DISPLAY_CONT:display_cont|STATE.DISP_ON_OFF   ; DISPLAY_CONT:display_cont|STATE.ENTRY_MODE    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.069      ;
-; 0.763 ; TIME_CAL:time_cal|MONTH[2]                    ; TIME_CAL:time_cal|OUT_DATE[7]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.069      ;
-; 0.763 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[3]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.069      ;
-; 0.764 ; TIME_CAL:time_cal|MIN[1]                      ; TIME_CAL:time_cal|OUT_TIME[7]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.070      ;
-; 0.765 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.071      ;
-; 0.766 ; KEY_CONT:key_cont|OUT_DATE[15]                ; KEY_CONT:key_cont|OUT_DATE[15]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.072      ;
-; 0.766 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.072      ;
-; 0.767 ; TIME_CAL:time_cal|HOUR[0]                     ; TIME_CAL:time_cal|OUT_TIME[12]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.073      ;
-; 0.771 ; TIME_CAL:time_cal|MIN[3]                      ; TIME_CAL:time_cal|OUT_TIME[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.077      ;
-; 0.774 ; TIME_CAL:time_cal|HOUR[3]                     ; TIME_CAL:time_cal|OUT_TIME[15]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.080      ;
-; 0.777 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|HOUR[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.083      ;
-; 0.779 ; TIME_CAL:time_cal|HOUR[2]                     ; TIME_CAL:time_cal|OUT_TIME[14]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.085      ;
-; 0.780 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|OUT_TIME[16]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.086      ;
-; 0.795 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.101      ;
-; 0.914 ; KEY_CONT:key_cont|OUT_ALARM_TIME[3]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[3]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.220      ;
-; 0.922 ; KEY_CONT:key_cont|OUT_TIME[4]                 ; TIME_CAL:time_cal|SEC[4]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.228      ;
-; 0.931 ; KEY_CONT:key_cont|ALARM_SETTING               ; TIME_CAL:time_cal|SETTING_OK                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.237      ;
-; 0.932 ; TIME_CAL:time_cal|DAY[3]                      ; TIME_CAL:time_cal|OUT_DATE[3]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.238      ;
-; 0.960 ; TIME_CAL:time_cal|MIN[0]                      ; TIME_CAL:time_cal|OUT_TIME[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.266      ;
-; 0.965 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|LCD_DATA[6]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.271      ;
-; 0.966 ; TIME_CAL:time_cal|OUT_DATE[1]                 ; DISPLAY_DECODER:display_decoder|DAY[1]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.269      ;
-; 0.991 ; KEY_CONT:key_cont|OUT_ALARM_TIME[14]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[14]          ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.295      ;
-; 1.048 ; TIME_CAL:time_cal|OUT_DATE[2]                 ; DISPLAY_DECODER:display_decoder|DAY[2]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.351      ;
-; 1.049 ; KEY_CONT:key_cont|OUT_ALARM_TIME[13]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[13]          ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.356      ;
-; 1.049 ; KEY_CONT:key_cont|OUT_ALARM_TIME[16]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[16]          ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.356      ;
-; 1.054 ; TIME_CAL:time_cal|OUT_DATE[3]                 ; DISPLAY_DECODER:display_decoder|DAY[3]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.357      ;
-; 1.071 ; TIME_CAL:time_cal|OUT_TIME[0]                 ; DISPLAY_DECODER:display_decoder|SEC[0]        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.375      ;
-; 1.073 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][3] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.379      ;
-; 1.074 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.380      ;
-; 1.075 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.381      ;
-; 1.076 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.382      ;
-; 1.094 ; TIME_CAL:time_cal|SEC[1]                      ; TIME_CAL:time_cal|OUT_TIME[1]                 ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.398      ;
-; 1.126 ; KEY_CONT:key_cont|OUT_ALARM_TIME[9]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[9]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.432      ;
+; 0.756 ; TIME_CAL:time_cal|OUT_TIME[0]                 ; DISPLAY_DECODER:display_decoder|SEC[0]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.759 ; KEY_CONT:key_cont|MODE_BUFF[2]                ; KEY_CONT:key_cont|MODE[2]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.762 ; KEY_CONT:key_cont|OUT_ALARM_TIME[5]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[5]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.765 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|OUT_DATE[8]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.767 ; KEY_CONT:key_cont|MODE_BUFF[4]                ; KEY_CONT:key_cont|MODE[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.771 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|HOUR[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.077      ;
+; 0.772 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.078      ;
+; 0.773 ; TIME_COMPARE:time_compare|DOING               ; TIME_COMPARE:time_compare|STOP                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.775 ; TIME_COMPARE:time_compare|DOING               ; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.782 ; TIME_CAL:time_cal|SEC[5]                      ; TIME_CAL:time_cal|SEC[5]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.783 ; KEY_CONT:key_cont|MODE[0]                     ; KEY_CONT:key_cont|MODE_BUFF[2]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.089      ;
+; 0.785 ; TIME_CAL:time_cal|MIN[5]                      ; TIME_CAL:time_cal|MIN[5]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.909 ; KEY_CONT:key_cont|OUT_ALARM_TIME[13]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[13]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.215      ;
+; 0.911 ; KEY_CONT:key_cont|OUT_ALARM_TIME[4]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[4]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.920 ; DISPLAY_CONT:display_cont|STATE.DELAY         ; DISPLAY_CONT:display_cont|LCD_RW              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.226      ;
+; 0.940 ; DISPLAY_CONT:display_cont|STATE.DISP_ON_OFF   ; DISPLAY_CONT:display_cont|STATE.ENTRY_MODE    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.246      ;
+; 0.956 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.960 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_TIME[1]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.961 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[12]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.267      ;
+; 1.033 ; TIME_CAL:time_cal|OUT_DATE[5]                 ; DISPLAY_DECODER:display_decoder|MONTH[0]      ; CLK          ; CLK         ; 0.000        ; 0.034      ; 1.373      ;
+; 1.043 ; TIME_CAL:time_cal|OUT_DATE[11]                ; DISPLAY_DECODER:display_decoder|YEAR[2]       ; CLK          ; CLK         ; 0.000        ; 0.034      ; 1.383      ;
+; 1.076 ; TIME_CAL:time_cal|OUT_DATE[15]                ; DISPLAY_DECODER:display_decoder|YEAR[6]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.382      ;
+; 1.077 ; TIME_CAL:time_cal|OUT_DATE[14]                ; DISPLAY_DECODER:display_decoder|YEAR[5]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.383      ;
+; 1.092 ; KEY_CONT:key_cont|OUT_TIME[12]                ; TIME_CAL:time_cal|OUT_TIME[12]                ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.394      ;
+; 1.092 ; TIME_CAL:time_cal|YEAR[0]                     ; TIME_CAL:time_cal|OUT_DATE[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.398      ;
+; 1.102 ; TIME_CAL:time_cal|OUT_ALARM_TIME[12]          ; DISPLAY_DECODER:display_decoder|ALARM_HOUR[0] ; CLK          ; CLK         ; 0.000        ; -0.007     ; 1.401      ;
+; 1.109 ; TIME_CAL:time_cal|MIN[2]                      ; TIME_CAL:time_cal|OUT_TIME[8]                 ; CLK          ; CLK         ; 0.000        ; -0.034     ; 1.381      ;
+; 1.130 ; KEY_CONT:key_cont|OUT_ALARM_TIME[1]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[1]           ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.438      ;
+; 1.131 ; KEY_CONT:key_cont|OUT_ALARM_TIME[16]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[16]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.437      ;
+; 1.134 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.003      ; 1.443      ;
+; 1.140 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[7]                 ; CLK          ; CLK         ; 0.000        ; 0.003      ; 1.449      ;
+; 1.141 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_TIME[5]                 ; CLK          ; CLK         ; 0.000        ; 0.003      ; 1.450      ;
+; 1.144 ; KEY_CONT:key_cont|OUT_ALARM_TIME[11]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[11]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.450      ;
+; 1.146 ; TIME_COMPARE:time_compare|STOP                ; TIME_COMPARE:time_compare|DOING               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.452      ;
+; 1.165 ; KEY_CONT:key_cont|OUT_DATE[10]                ; TIME_CAL:time_cal|OUT_DATE[10]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.471      ;
 ; 1.166 ; DISPLAY_CONT:display_cont|LCD_CNT[16]         ; DISPLAY_CONT:display_cont|LCD_CNT[16]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.166 ; KEY_CONT:key_cont|CNT[16]                     ; KEY_CONT:key_cont|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
 ; 1.166 ; KEY_CONT:key_cont|LIMIT[16]                   ; KEY_CONT:key_cont|LIMIT[16]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
 ; 1.166 ; DISPLAY_CONT:display_cont|CNT[16]             ; DISPLAY_CONT:display_cont|CNT[16]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
 ; 1.166 ; TIME_CAL:time_cal|CNT[16]                     ; TIME_CAL:time_cal|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
-; 1.166 ; TIME_CAL:time_cal|SEC[5]                      ; TIME_CAL:time_cal|OUT_TIME[5]                 ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.470      ;
-; 1.166 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.166 ; TIME_COMPARE:time_compare|CNT[16]             ; TIME_COMPARE:time_compare|CNT[16]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
 ; 1.166 ; PIEZO_UNIT:piezo_unit|CNT[16]                 ; PIEZO_UNIT:piezo_unit|CNT[16]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.166 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.472      ;
 ; 1.167 ; KEY_CONT:key_cont|CNT[0]                      ; KEY_CONT:key_cont|CNT[0]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
 ; 1.167 ; KEY_CONT:key_cont|LIMIT[0]                    ; KEY_CONT:key_cont|LIMIT[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
 ; 1.167 ; DISPLAY_CONT:display_cont|CNT[0]              ; DISPLAY_CONT:display_cont|CNT[0]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
-; 1.167 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
+; 1.167 ; TIME_CAL:time_cal|CNT[0]                      ; TIME_CAL:time_cal|CNT[0]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
+; 1.167 ; TIME_COMPARE:time_compare|CNT[0]              ; TIME_COMPARE:time_compare|CNT[0]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
 ; 1.167 ; PIEZO_UNIT:piezo_unit|CNT[0]                  ; PIEZO_UNIT:piezo_unit|CNT[0]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
-; 1.171 ; KEY_CONT:key_cont|CNT[16]                     ; KEY_CONT:key_cont|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.477      ;
-; 1.175 ; DISPLAY_CONT:display_cont|LCD_CNT[1]          ; DISPLAY_CONT:display_cont|LCD_CNT[1]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
+; 1.167 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.473      ;
 ; 1.175 ; DISPLAY_CONT:display_cont|LCD_CNT[17]         ; DISPLAY_CONT:display_cont|LCD_CNT[17]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; KEY_CONT:key_cont|CNT[1]                      ; KEY_CONT:key_cont|CNT[1]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; KEY_CONT:key_cont|CNT[17]                     ; KEY_CONT:key_cont|CNT[17]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
@@ -351,18 +359,10 @@ No paths to report.
 ; 1.175 ; DISPLAY_CONT:display_cont|CNT[17]             ; DISPLAY_CONT:display_cont|CNT[17]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; TIME_CAL:time_cal|CNT[1]                      ; TIME_CAL:time_cal|CNT[1]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; TIME_CAL:time_cal|CNT[17]                     ; TIME_CAL:time_cal|CNT[17]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
-; 1.175 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
-; 1.175 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
+; 1.175 ; TIME_COMPARE:time_compare|CNT[1]              ; TIME_COMPARE:time_compare|CNT[1]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
+; 1.175 ; TIME_COMPARE:time_compare|CNT[17]             ; TIME_COMPARE:time_compare|CNT[17]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; PIEZO_UNIT:piezo_unit|CNT[1]                  ; PIEZO_UNIT:piezo_unit|CNT[1]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
 ; 1.175 ; PIEZO_UNIT:piezo_unit|CNT[17]                 ; PIEZO_UNIT:piezo_unit|CNT[17]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.481      ;
-; 1.176 ; DISPLAY_CONT:display_cont|LCD_CNT[9]          ; DISPLAY_CONT:display_cont|LCD_CNT[9]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; DISPLAY_CONT:display_cont|LCD_CNT[18]         ; DISPLAY_CONT:display_cont|LCD_CNT[18]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; DISPLAY_CONT:display_cont|LCD_CNT[25]         ; DISPLAY_CONT:display_cont|LCD_CNT[25]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; KEY_CONT:key_cont|CNT[2]                      ; KEY_CONT:key_cont|CNT[2]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; KEY_CONT:key_cont|CNT[9]                      ; KEY_CONT:key_cont|CNT[9]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; KEY_CONT:key_cont|CNT[18]                     ; KEY_CONT:key_cont|CNT[18]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; KEY_CONT:key_cont|CNT[25]                     ; KEY_CONT:key_cont|CNT[25]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
-; 1.176 ; KEY_CONT:key_cont|LIMIT[2]                    ; KEY_CONT:key_cont|LIMIT[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.482      ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -479,13 +479,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLK        ; 13.878 ; 13.878 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; 13.710 ; 13.710 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; 13.878 ; 13.878 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; 11.756 ; 11.756 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; 11.279 ; 11.279 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; 10.900 ; 10.900 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; 9.725  ; 9.725  ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; 12.911 ; 12.911 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; 12.466 ; 12.466 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; 12.911 ; 12.911 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; 12.053 ; 12.053 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; 12.455 ; 12.455 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; 11.243 ; 11.243 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; 11.989 ; 11.989 ; Rise       ; CLK             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -494,13 +494,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLK        ; -6.041 ; -6.041 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; -8.080 ; -8.080 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; -6.041 ; -6.041 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; -6.399 ; -6.399 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; -6.753 ; -6.753 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; -6.220 ; -6.220 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; -4.898 ; -4.898 ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; -6.061 ; -6.061 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; -7.324 ; -7.324 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; -6.061 ; -6.061 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; -7.227 ; -7.227 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; -6.906 ; -6.906 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; -7.007 ; -7.007 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; -5.660 ; -5.660 ; Rise       ; CLK             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -509,20 +509,20 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 9.917  ; 9.917  ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 9.451  ; 9.451  ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 9.917  ; 9.917  ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 9.539  ; 9.539  ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 9.504  ; 9.504  ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 9.145  ; 9.145  ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 9.872  ; 9.872  ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 9.862  ; 9.862  ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 9.874  ; 9.874  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 10.364 ; 10.364 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 9.494  ; 9.494  ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 9.853  ; 9.853  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 11.673 ; 11.673 ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 11.286 ; 11.286 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 11.673 ; 11.673 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 11.510 ; 11.510 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 11.328 ; 11.328 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 11.345 ; 11.345 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 8.937  ; 8.937  ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 10.612 ; 10.612 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 11.494 ; 11.494 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 12.099 ; 12.099 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 10.211 ; 10.211 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 12.217 ; 12.217 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Fall       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -531,20 +531,20 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 9.145  ; 9.145  ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 9.451  ; 9.451  ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 9.917  ; 9.917  ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 9.539  ; 9.539  ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 9.504  ; 9.504  ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 9.145  ; 9.145  ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 9.872  ; 9.872  ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 9.862  ; 9.862  ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 9.874  ; 9.874  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 10.364 ; 10.364 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 9.494  ; 9.494  ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 9.853  ; 9.853  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 8.937  ; 8.937  ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 11.286 ; 11.286 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 11.673 ; 11.673 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 11.510 ; 11.510 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 11.328 ; 11.328 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 11.345 ; 11.345 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 8.937  ; 8.937  ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 10.612 ; 10.612 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 11.494 ; 11.494 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 12.099 ; 12.099 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 10.211 ; 10.211 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 12.217 ; 12.217 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Fall       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -553,7 +553,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; CLK   ; -2.626 ; -587.187      ;
+; CLK   ; -2.566 ; -679.304      ;
 +-------+--------+---------------+
 
 
@@ -583,116 +583,116 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; CLK   ; -1.380 ; -547.380              ;
+; CLK   ; -1.380 ; -580.380              ;
 +-------+--------+-----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'CLK'                                                                                                                         ;
-+--------+---------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                       ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; -2.626 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.645      ;
-; -2.594 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.613      ;
-; -2.559 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.578      ;
-; -2.537 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.556      ;
-; -2.526 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.546      ;
-; -2.511 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.530      ;
-; -2.507 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.526      ;
-; -2.499 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.518      ;
-; -2.494 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.514      ;
-; -2.479 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.498      ;
-; -2.467 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.486      ;
-; -2.459 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.479      ;
-; -2.457 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.476      ;
-; -2.444 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.463      ;
-; -2.437 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.457      ;
-; -2.432 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.451      ;
-; -2.422 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.441      ;
-; -2.422 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.441      ;
-; -2.410 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.429      ;
-; -2.407 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.427      ;
-; -2.393 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.412      ;
-; -2.392 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.411      ;
-; -2.380 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.399      ;
-; -2.357 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.377      ;
-; -2.342 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.361      ;
-; -2.330 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.349      ;
-; -2.322 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.342      ;
-; -2.307 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.326      ;
-; -2.295 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.314      ;
-; -2.293 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.312      ;
-; -2.293 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.313      ;
-; -2.278 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.297      ;
-; -2.271 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.290      ;
-; -2.266 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.285      ;
-; -2.233 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.252      ;
-; -2.193 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.213      ;
-; -2.186 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.205      ;
-; -2.178 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.197      ;
-; -2.171 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.191      ;
-; -2.166 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.185      ;
-; -2.156 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.175      ;
-; -2.151 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.170      ;
-; -2.144 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.163      ;
-; -2.133 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.153      ;
-; -2.118 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.137      ;
-; -2.117 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.136      ;
-; -2.107 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.127      ;
-; -2.106 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.125      ;
-; -2.086 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.106      ;
-; -2.083 ; PIEZO_UNIT:piezo_unit|ORDER[14] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.102      ;
-; -2.075 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.095      ;
-; -2.071 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.090      ;
-; -2.059 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.078      ;
-; -2.053 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.072      ;
-; -2.051 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.071      ;
-; -2.040 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.060      ;
-; -2.036 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.055      ;
-; -2.024 ; PIEZO_UNIT:piezo_unit|ORDER[12] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.043      ;
-; -2.018 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.038      ;
-; -2.017 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.037      ;
-; -2.002 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.021      ;
-; -1.995 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.020      ;
-; -1.995 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.020      ;
-; -1.990 ; PIEZO_UNIT:piezo_unit|ORDER[13] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 3.009      ;
-; -1.988 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.008      ;
-; -1.985 ; PIEZO_UNIT:piezo_unit|ORDER[16] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.025     ; 2.992      ;
-; -1.983 ; PIEZO_UNIT:piezo_unit|ORDER[14] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 3.003      ;
-; -1.983 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.008      ;
-; -1.983 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.008      ;
-; -1.975 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.000      ;
-; -1.975 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.000      ;
-; -1.970 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[15] ; CLK          ; CLK         ; 1.000        ; 0.012      ; 3.014      ;
-; -1.968 ; PIEZO_UNIT:piezo_unit|ORDER[14] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 2.987      ;
-; -1.958 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[15] ; CLK          ; CLK         ; 1.000        ; 0.012      ; 3.002      ;
-; -1.956 ; PIEZO_UNIT:piezo_unit|ORDER[14] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 2.975      ;
-; -1.953 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[0] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.973      ;
-; -1.950 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[15] ; CLK          ; CLK         ; 1.000        ; 0.012      ; 2.994      ;
-; -1.938 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[5] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 2.957      ;
-; -1.938 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[6] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.958      ;
-; -1.936 ; PIEZO_UNIT:piezo_unit|ORDER[17] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.025     ; 2.943      ;
-; -1.931 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.956      ;
-; -1.931 ; KEY_CONT:key_cont|CNT[27]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.956      ;
-; -1.930 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[1]  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 2.958      ;
-; -1.926 ; PIEZO_UNIT:piezo_unit|ORDER[15] ; PIEZO_UNIT:piezo_unit|LIMIT[4] ; CLK          ; CLK         ; 1.000        ; -0.013     ; 2.945      ;
-; -1.925 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[14] ; CLK          ; CLK         ; 1.000        ; 0.008      ; 2.965      ;
-; -1.924 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.949      ;
-; -1.924 ; KEY_CONT:key_cont|CNT[29]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.949      ;
-; -1.918 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[1]  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 2.946      ;
-; -1.917 ; PIEZO_UNIT:piezo_unit|ORDER[18] ; PIEZO_UNIT:piezo_unit|LIMIT[7] ; CLK          ; CLK         ; 1.000        ; -0.025     ; 2.924      ;
-; -1.916 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.941      ;
-; -1.916 ; KEY_CONT:key_cont|CNT[19]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.941      ;
-; -1.915 ; KEY_CONT:key_cont|CNT[24]       ; KEY_CONT:key_cont|OUT_TIME[0]  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 2.943      ;
-; -1.913 ; KEY_CONT:key_cont|CNT[28]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.938      ;
-; -1.913 ; KEY_CONT:key_cont|CNT[28]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.938      ;
-; -1.913 ; KEY_CONT:key_cont|CNT[25]       ; KEY_CONT:key_cont|OUT_TIME[14] ; CLK          ; CLK         ; 1.000        ; 0.008      ; 2.953      ;
-; -1.910 ; KEY_CONT:key_cont|CNT[17]       ; KEY_CONT:key_cont|OUT_TIME[1]  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 2.938      ;
-; -1.907 ; KEY_CONT:key_cont|CNT[23]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.932      ;
-; -1.907 ; KEY_CONT:key_cont|CNT[23]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.932      ;
-; -1.907 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[4]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.932      ;
-; -1.907 ; KEY_CONT:key_cont|CNT[22]       ; KEY_CONT:key_cont|OUT_TIME[5]  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 2.932      ;
-+--------+---------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK'                                                                                                                          ;
++--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.566 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.601      ;
+; -2.565 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.600      ;
+; -2.540 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.575      ;
+; -2.539 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.574      ;
+; -2.495 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.530      ;
+; -2.488 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.523      ;
+; -2.487 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.522      ;
+; -2.480 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.515      ;
+; -2.469 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.504      ;
+; -2.468 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.503      ;
+; -2.467 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.502      ;
+; -2.454 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.489      ;
+; -2.446 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.481      ;
+; -2.445 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.480      ;
+; -2.417 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.452      ;
+; -2.402 ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.437      ;
+; -2.399 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.434      ;
+; -2.398 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.433      ;
+; -2.397 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.432      ;
+; -2.382 ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.417      ;
+; -2.375 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.410      ;
+; -2.365 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.400      ;
+; -2.364 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.399      ;
+; -2.360 ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.395      ;
+; -2.335 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.370      ;
+; -2.334 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.369      ;
+; -2.328 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.363      ;
+; -2.313 ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.348      ;
+; -2.294 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.329      ;
+; -2.279 ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.314      ;
+; -2.264 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.299      ;
+; -2.249 ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.284      ;
+; -2.238 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.273      ;
+; -2.237 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.272      ;
+; -2.219 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[14] ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.249      ;
+; -2.208 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.243      ;
+; -2.207 ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.242      ;
+; -2.199 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.231      ;
+; -2.198 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.230      ;
+; -2.198 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.230      ;
+; -2.197 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.229      ;
+; -2.197 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.229      ;
+; -2.196 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.228      ;
+; -2.194 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.226      ;
+; -2.193 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[14] ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.223      ;
+; -2.192 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.224      ;
+; -2.192 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.224      ;
+; -2.191 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.223      ;
+; -2.189 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.221      ;
+; -2.187 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[15] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.219      ;
+; -2.185 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.217      ;
+; -2.184 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.216      ;
+; -2.184 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.216      ;
+; -2.181 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[29] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.213      ;
+; -2.180 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[17] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.212      ;
+; -2.180 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[20] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.212      ;
+; -2.180 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[21] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.212      ;
+; -2.180 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[27] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.212      ;
+; -2.180 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.215      ;
+; -2.179 ; PIEZO_UNIT:piezo_unit|ORDER[10] ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.214      ;
+; -2.178 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[18] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.210      ;
+; -2.178 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[28] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.210      ;
+; -2.176 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[30] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.208      ;
+; -2.173 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[23] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.205      ;
+; -2.173 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[24] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.205      ;
+; -2.173 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.205      ;
+; -2.172 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[25] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.204      ;
+; -2.172 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[26] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.204      ;
+; -2.172 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.204      ;
+; -2.172 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.204      ;
+; -2.171 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[16] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.203      ;
+; -2.171 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[19] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.203      ;
+; -2.171 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.203      ;
+; -2.171 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.203      ;
+; -2.170 ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; PIEZO_UNIT:piezo_unit|ORDER[22] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.202      ;
+; -2.170 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.202      ;
+; -2.168 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.200      ;
+; -2.167 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[4]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.202      ;
+; -2.166 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.198      ;
+; -2.166 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.198      ;
+; -2.165 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[9]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.197      ;
+; -2.163 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.195      ;
+; -2.161 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[15] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.193      ;
+; -2.159 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.191      ;
+; -2.158 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.190      ;
+; -2.158 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.190      ;
+; -2.155 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[29] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.187      ;
+; -2.154 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[17] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.186      ;
+; -2.154 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[20] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.186      ;
+; -2.154 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[21] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.186      ;
+; -2.154 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[27] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.186      ;
+; -2.152 ; PIEZO_UNIT:piezo_unit|ORDER[8]  ; PIEZO_UNIT:piezo_unit|LIMIT[5]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.187      ;
+; -2.152 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[18] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.184      ;
+; -2.152 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[28] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.184      ;
+; -2.150 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[30] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.182      ;
+; -2.147 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[0]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.182      ;
+; -2.147 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[23] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.179      ;
+; -2.147 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[24] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.179      ;
+; -2.146 ; PIEZO_UNIT:piezo_unit|ORDER[11] ; PIEZO_UNIT:piezo_unit|LIMIT[7]  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.181      ;
+; -2.146 ; PIEZO_UNIT:piezo_unit|ORDER[1]  ; PIEZO_UNIT:piezo_unit|ORDER[25] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.178      ;
++--------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -700,83 +700,85 @@ No paths to report.
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.215 ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|STATE.LINE2         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; DISPLAY_CONT:display_cont|STATE.LINE1         ; DISPLAY_CONT:display_cont|STATE.LINE1         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; DISPLAY_CONT:display_cont|STATE.DELAY         ; DISPLAY_CONT:display_cont|STATE.DELAY         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE_BUFF[5]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; DISPLAY_CONT:display_cont|STATE.FUNCTION_SET  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DISPLAY_CONT:display_cont|STATE.LINE1         ; DISPLAY_CONT:display_cont|STATE.LINE1         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|STATE.LINE2         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; KEY_CONT:key_cont|CONT_STOP                   ; KEY_CONT:key_cont|CONT_STOP                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE_BUFF[5]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; KEY_CONT:key_cont|SETTING                     ; KEY_CONT:key_cont|SETTING                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; DISPLAY_CONT:display_cont|CONT_START          ; DISPLAY_CONT:display_cont|CONT_START          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; DISPLAY_CONT:display_cont|BLINK               ; DISPLAY_CONT:display_cont|BLINK               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; KEY_CONT:key_cont|MERIDIAN                    ; KEY_CONT:key_cont|MERIDIAN                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; TIME_CAL:time_cal|MONTH[0]                    ; TIME_CAL:time_cal|MONTH[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[1]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; TIME_CAL:time_cal|MONTH[2]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|MONTH[3]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; KEY_CONT:key_cont|ALARM_ENABLE                ; KEY_CONT:key_cont|ALARM_ENABLE                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; TIME_COMPARE:time_compare|STOP                ; TIME_COMPARE:time_compare|STOP                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; TIME_COMPARE:time_compare|DOING               ; TIME_COMPARE:time_compare|DOING               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; KEY_CONT:key_cont|MERIDIAN                    ; KEY_CONT:key_cont|MERIDIAN                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][4]  ; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; PIEZO_UNIT:piezo_unit|BUFF                    ; PIEZO_UNIT:piezo_unit|BUFF                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.238 ; KEY_CONT:key_cont|MODE_BUFF[2]                ; KEY_CONT:key_cont|MODE[2]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.390      ;
-; 0.241 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|OUT_DATE[8]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.236 ; TIME_CAL:time_cal|OUT_DATE[3]                 ; DISPLAY_DECODER:display_decoder|DAY[3]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; TIME_CAL:time_cal|OUT_DATE[0]                 ; DISPLAY_DECODER:display_decoder|DAY[0]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; TIME_CAL:time_cal|OUT_DATE[9]                 ; DISPLAY_DECODER:display_decoder|YEAR[0]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.237 ; KEY_CONT:key_cont|MODE_BUFF[1]                ; KEY_CONT:key_cont|MODE[1]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.240 ; TIME_CAL:time_cal|OUT_DATE[2]                 ; DISPLAY_DECODER:display_decoder|DAY[2]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; TIME_CAL:time_cal|OUT_DATE[4]                 ; DISPLAY_DECODER:display_decoder|DAY[4]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; KEY_CONT:key_cont|MODE_BUFF[3]                ; KEY_CONT:key_cont|MODE[3]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; TIME_CAL:time_cal|OUT_DATE[13]                ; DISPLAY_DECODER:display_decoder|YEAR[4]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.393      ;
 ; 0.243 ; DISPLAY_CONT:display_cont|LCD_CNT[31]         ; DISPLAY_CONT:display_cont|LCD_CNT[31]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; KEY_CONT:key_cont|CNT[31]                     ; KEY_CONT:key_cont|CNT[31]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; KEY_CONT:key_cont|LIMIT[31]                   ; KEY_CONT:key_cont|LIMIT[31]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; DISPLAY_CONT:display_cont|CNT[31]             ; DISPLAY_CONT:display_cont|CNT[31]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; TIME_CAL:time_cal|CNT[31]                     ; TIME_CAL:time_cal|CNT[31]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; TIME_COMPARE:time_compare|CNT[31]             ; TIME_COMPARE:time_compare|CNT[31]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; PIEZO_UNIT:piezo_unit|CNT[31]                 ; PIEZO_UNIT:piezo_unit|CNT[31]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
 ; 0.243 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[31]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[31]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
-; 0.245 ; KEY_CONT:key_cont|MODE_BUFF[5]                ; KEY_CONT:key_cont|MODE[5]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.397      ;
-; 0.246 ; KEY_CONT:key_cont|MODE_BUFF[4]                ; KEY_CONT:key_cont|MODE[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.398      ;
-; 0.246 ; TIME_CAL:time_cal|DAY[2]                      ; TIME_CAL:time_cal|OUT_DATE[2]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.398      ;
-; 0.249 ; KEY_CONT:key_cont|OUT_DATE[15]                ; KEY_CONT:key_cont|OUT_DATE[15]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.401      ;
-; 0.249 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[3]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.401      ;
-; 0.250 ; DISPLAY_CONT:display_cont|STATE.DISP_ON_OFF   ; DISPLAY_CONT:display_cont|STATE.ENTRY_MODE    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.402      ;
-; 0.251 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.403      ;
-; 0.252 ; TIME_CAL:time_cal|MIN[1]                      ; TIME_CAL:time_cal|OUT_TIME[7]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
-; 0.252 ; TIME_CAL:time_cal|MONTH[2]                    ; TIME_CAL:time_cal|OUT_DATE[7]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
-; 0.252 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
-; 0.253 ; TIME_CAL:time_cal|HOUR[3]                     ; TIME_CAL:time_cal|OUT_TIME[15]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.405      ;
-; 0.254 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|HOUR[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.406      ;
-; 0.254 ; TIME_CAL:time_cal|HOUR[0]                     ; TIME_CAL:time_cal|OUT_TIME[12]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.406      ;
-; 0.255 ; TIME_CAL:time_cal|MIN[3]                      ; TIME_CAL:time_cal|OUT_TIME[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.407      ;
-; 0.256 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|OUT_TIME[16]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.408      ;
-; 0.259 ; TIME_CAL:time_cal|HOUR[2]                     ; TIME_CAL:time_cal|OUT_TIME[14]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.411      ;
-; 0.264 ; KEY_CONT:key_cont|OUT_DATE[5]                 ; KEY_CONT:key_cont|OUT_DATE[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.416      ;
-; 0.295 ; TIME_CAL:time_cal|DAY[3]                      ; TIME_CAL:time_cal|OUT_DATE[3]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.447      ;
-; 0.297 ; KEY_CONT:key_cont|ALARM_SETTING               ; TIME_CAL:time_cal|SETTING_OK                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.449      ;
-; 0.315 ; TIME_CAL:time_cal|MIN[0]                      ; TIME_CAL:time_cal|OUT_TIME[6]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.467      ;
-; 0.317 ; TIME_CAL:time_cal|OUT_DATE[1]                 ; DISPLAY_DECODER:display_decoder|DAY[1]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 0.466      ;
-; 0.320 ; DISPLAY_CONT:display_cont|STATE.LINE2         ; DISPLAY_CONT:display_cont|LCD_DATA[6]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.472      ;
-; 0.324 ; KEY_CONT:key_cont|OUT_ALARM_TIME[13]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[13]          ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.477      ;
-; 0.324 ; KEY_CONT:key_cont|OUT_ALARM_TIME[16]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[16]          ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.477      ;
-; 0.326 ; TIME_CAL:time_cal|OUT_DATE[2]                 ; DISPLAY_DECODER:display_decoder|DAY[2]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 0.475      ;
-; 0.328 ; TIME_CAL:time_cal|OUT_DATE[3]                 ; DISPLAY_DECODER:display_decoder|DAY[3]        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 0.477      ;
-; 0.330 ; KEY_CONT:key_cont|OUT_ALARM_TIME[14]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[14]          ; CLK          ; CLK         ; 0.000        ; -0.002     ; 0.480      ;
-; 0.334 ; TIME_CAL:time_cal|OUT_TIME[0]                 ; DISPLAY_DECODER:display_decoder|SEC[0]        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.485      ;
-; 0.336 ; KEY_CONT:key_cont|OUT_ALARM_TIME[3]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[3]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.488      ;
-; 0.337 ; KEY_CONT:key_cont|OUT_TIME[4]                 ; TIME_CAL:time_cal|SEC[4]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.489      ;
-; 0.338 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.490      ;
-; 0.338 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.490      ;
-; 0.338 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.490      ;
-; 0.338 ; DISPLAY_DECODER:display_decoder|MONTH[1]      ; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][3] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.490      ;
-; 0.347 ; TIME_CAL:time_cal|SEC[1]                      ; TIME_CAL:time_cal|OUT_TIME[1]                 ; CLK          ; CLK         ; 0.000        ; -0.002     ; 0.497      ;
+; 0.247 ; TIME_CAL:time_cal|OUT_TIME[0]                 ; DISPLAY_DECODER:display_decoder|SEC[0]        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.250 ; KEY_CONT:key_cont|MODE_BUFF[2]                ; KEY_CONT:key_cont|MODE[2]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.250 ; TIME_CAL:time_cal|MONTH[3]                    ; TIME_CAL:time_cal|OUT_DATE[8]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.250 ; KEY_CONT:key_cont|OUT_ALARM_TIME[5]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[5]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.252 ; TIME_CAL:time_cal|HOUR[4]                     ; TIME_CAL:time_cal|HOUR[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.252 ; TIME_COMPARE:time_compare|DOING               ; TIME_COMPARE:time_compare|STOP                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.253 ; KEY_CONT:key_cont|MODE_BUFF[4]                ; KEY_CONT:key_cont|MODE[4]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.254 ; TIME_COMPARE:time_compare|DOING               ; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.255 ; TIME_CAL:time_cal|SEC[5]                      ; TIME_CAL:time_cal|SEC[5]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.407      ;
+; 0.255 ; TIME_CAL:time_cal|MONTH[1]                    ; TIME_CAL:time_cal|MONTH[2]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.407      ;
+; 0.256 ; KEY_CONT:key_cont|MODE[0]                     ; KEY_CONT:key_cont|MODE_BUFF[2]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.258 ; TIME_CAL:time_cal|MIN[5]                      ; TIME_CAL:time_cal|MIN[5]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.290 ; DISPLAY_CONT:display_cont|STATE.DELAY         ; DISPLAY_CONT:display_cont|LCD_RW              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.442      ;
+; 0.300 ; TIME_CAL:time_cal|OUT_DATE[5]                 ; DISPLAY_DECODER:display_decoder|MONTH[0]      ; CLK          ; CLK         ; 0.000        ; 0.035      ; 0.487      ;
+; 0.305 ; TIME_CAL:time_cal|OUT_DATE[11]                ; DISPLAY_DECODER:display_decoder|YEAR[2]       ; CLK          ; CLK         ; 0.000        ; 0.035      ; 0.492      ;
+; 0.311 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_TIME[1]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.463      ;
+; 0.311 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.463      ;
+; 0.312 ; KEY_CONT:key_cont|MODE[5]                     ; TIME_CAL:time_cal|OUT_DATE[12]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.464      ;
+; 0.330 ; DISPLAY_CONT:display_cont|STATE.DISP_ON_OFF   ; DISPLAY_CONT:display_cont|STATE.ENTRY_MODE    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.332 ; KEY_CONT:key_cont|OUT_ALARM_TIME[13]          ; TIME_CAL:time_cal|OUT_ALARM_TIME[13]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.332 ; KEY_CONT:key_cont|OUT_ALARM_TIME[4]           ; TIME_CAL:time_cal|OUT_ALARM_TIME[4]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.340 ; TIME_CAL:time_cal|OUT_DATE[15]                ; DISPLAY_DECODER:display_decoder|YEAR[6]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.492      ;
+; 0.340 ; TIME_CAL:time_cal|OUT_DATE[14]                ; DISPLAY_DECODER:display_decoder|YEAR[5]       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.492      ;
+; 0.346 ; KEY_CONT:key_cont|OUT_TIME[12]                ; TIME_CAL:time_cal|OUT_TIME[12]                ; CLK          ; CLK         ; 0.000        ; -0.002     ; 0.496      ;
+; 0.346 ; TIME_CAL:time_cal|YEAR[0]                     ; TIME_CAL:time_cal|OUT_DATE[9]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.498      ;
 ; 0.355 ; DISPLAY_CONT:display_cont|LCD_CNT[16]         ; DISPLAY_CONT:display_cont|LCD_CNT[16]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; KEY_CONT:key_cont|CNT[0]                      ; KEY_CONT:key_cont|CNT[0]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; KEY_CONT:key_cont|CNT[16]                     ; KEY_CONT:key_cont|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; KEY_CONT:key_cont|LIMIT[16]                   ; KEY_CONT:key_cont|LIMIT[16]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; DISPLAY_CONT:display_cont|CNT[0]              ; DISPLAY_CONT:display_cont|CNT[0]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; DISPLAY_CONT:display_cont|CNT[16]             ; DISPLAY_CONT:display_cont|CNT[16]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; TIME_CAL:time_cal|CNT[0]                      ; TIME_CAL:time_cal|CNT[0]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; TIME_CAL:time_cal|CNT[16]                     ; TIME_CAL:time_cal|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
-; 0.355 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
-; 0.355 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; TIME_COMPARE:time_compare|CNT[0]              ; TIME_COMPARE:time_compare|CNT[0]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; TIME_COMPARE:time_compare|CNT[16]             ; TIME_COMPARE:time_compare|CNT[16]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; TIME_CAL:time_cal|OUT_ALARM_TIME[12]          ; DISPLAY_DECODER:display_decoder|ALARM_HOUR[0] ; CLK          ; CLK         ; 0.000        ; -0.006     ; 0.501      ;
 ; 0.355 ; PIEZO_UNIT:piezo_unit|CNT[0]                  ; PIEZO_UNIT:piezo_unit|CNT[0]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.355 ; PIEZO_UNIT:piezo_unit|CNT[16]                 ; PIEZO_UNIT:piezo_unit|CNT[16]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
-; 0.357 ; KEY_CONT:key_cont|CNT[16]                     ; KEY_CONT:key_cont|CNT[16]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.355 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[16]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[0]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; DISPLAY_CONT:display_cont|LCD_CNT[0]          ; DISPLAY_CONT:display_cont|LCD_CNT[0]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.510      ;
 ; 0.358 ; KEY_CONT:key_cont|LIMIT[0]                    ; KEY_CONT:key_cont|LIMIT[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.510      ;
-; 0.359 ; DISPLAY_CONT:display_cont|LCD_CNT[1]          ; DISPLAY_CONT:display_cont|LCD_CNT[1]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; DISPLAY_CONT:display_cont|LCD_CNT[17]         ; DISPLAY_CONT:display_cont|LCD_CNT[17]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; KEY_CONT:key_cont|CNT[1]                      ; KEY_CONT:key_cont|CNT[1]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; KEY_CONT:key_cont|CNT[17]                     ; KEY_CONT:key_cont|CNT[17]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
@@ -786,20 +788,18 @@ No paths to report.
 ; 0.359 ; DISPLAY_CONT:display_cont|CNT[17]             ; DISPLAY_CONT:display_cont|CNT[17]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; TIME_CAL:time_cal|CNT[1]                      ; TIME_CAL:time_cal|CNT[1]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; TIME_CAL:time_cal|CNT[17]                     ; TIME_CAL:time_cal|CNT[17]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
-; 0.359 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
-; 0.359 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; TIME_COMPARE:time_compare|CNT[1]              ; TIME_COMPARE:time_compare|CNT[1]              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; TIME_COMPARE:time_compare|CNT[17]             ; TIME_COMPARE:time_compare|CNT[17]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; PIEZO_UNIT:piezo_unit|CNT[1]                  ; PIEZO_UNIT:piezo_unit|CNT[1]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359 ; PIEZO_UNIT:piezo_unit|CNT[17]                 ; PIEZO_UNIT:piezo_unit|CNT[17]                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
-; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[0]          ; DISPLAY_CONT:display_cont|LCD_CNT[0]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.359 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; PIEZO_UNIT:piezo_unit|CNT_SOUND[1]            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; PIEZO_UNIT:piezo_unit|CNT_SOUND[17]           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[9]          ; DISPLAY_CONT:display_cont|LCD_CNT[9]          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[11]         ; DISPLAY_CONT:display_cont|LCD_CNT[11]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[18]         ; DISPLAY_CONT:display_cont|LCD_CNT[18]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[25]         ; DISPLAY_CONT:display_cont|LCD_CNT[25]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.360 ; DISPLAY_CONT:display_cont|LCD_CNT[27]         ; DISPLAY_CONT:display_cont|LCD_CNT[27]         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.360 ; KEY_CONT:key_cont|CNT[2]                      ; KEY_CONT:key_cont|CNT[2]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
-; 0.360 ; KEY_CONT:key_cont|CNT[9]                      ; KEY_CONT:key_cont|CNT[9]                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
-; 0.360 ; KEY_CONT:key_cont|CNT[11]                     ; KEY_CONT:key_cont|CNT[11]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
-; 0.360 ; KEY_CONT:key_cont|CNT[18]                     ; KEY_CONT:key_cont|CNT[18]                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.512      ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -916,13 +916,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLK        ; 4.968 ; 4.968 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; 4.813 ; 4.813 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; 4.968 ; 4.968 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; 4.461 ; 4.461 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; 4.207 ; 4.207 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; 3.956 ; 3.956 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; 3.707 ; 3.707 ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; 4.723 ; 4.723 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; 4.519 ; 4.519 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; 4.723 ; 4.723 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; 4.454 ; 4.454 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; 4.606 ; 4.606 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; 4.214 ; 4.214 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; 4.534 ; 4.534 ; Rise       ; CLK             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -931,13 +931,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLK        ; -2.559 ; -2.559 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; -3.142 ; -3.142 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; -2.612 ; -2.612 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; -2.596 ; -2.596 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; -2.799 ; -2.799 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; -2.559 ; -2.559 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; -2.126 ; -2.126 ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; -2.561 ; -2.561 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; -2.915 ; -2.915 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; -2.561 ; -2.561 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; -2.901 ; -2.901 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; -2.841 ; -2.841 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; -2.891 ; -2.891 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; -2.396 ; -2.396 ; Rise       ; CLK             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -946,20 +946,20 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 4.340 ; 4.340 ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 4.179 ; 4.179 ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 4.340 ; 4.340 ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 4.233 ; 4.233 ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 4.218 ; 4.218 ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 4.166 ; 4.166 ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 4.319 ; 4.319 ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 4.312 ; 4.312 ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 4.315 ; 4.315 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 4.491 ; 4.491 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 4.204 ; 4.204 ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 4.298 ; 4.298 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 4.998 ; 4.998 ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 4.762 ; 4.762 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 4.880 ; 4.880 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 4.884 ; 4.884 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 4.791 ; 4.791 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 4.779 ; 4.779 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 4.149 ; 4.149 ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 4.635 ; 4.635 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 4.998 ; 4.998 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 5.156 ; 5.156 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 4.516 ; 4.516 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 5.098 ; 5.098 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Fall       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -968,20 +968,20 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 4.166 ; 4.166 ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 4.179 ; 4.179 ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 4.340 ; 4.340 ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 4.233 ; 4.233 ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 4.218 ; 4.218 ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 4.166 ; 4.166 ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 4.319 ; 4.319 ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 4.312 ; 4.312 ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 4.315 ; 4.315 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 4.491 ; 4.491 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 4.204 ; 4.204 ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 4.298 ; 4.298 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 4.149 ; 4.149 ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 4.762 ; 4.762 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 4.880 ; 4.880 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 4.884 ; 4.884 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 4.791 ; 4.791 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 4.779 ; 4.779 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 4.149 ; 4.149 ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 4.635 ; 4.635 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 4.998 ; 4.998 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 5.156 ; 5.156 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 4.516 ; 4.516 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 5.098 ; 5.098 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Fall       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -990,10 +990,10 @@ No paths to report.
 +------------------+-----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -9.833    ; 0.215 ; N/A      ; N/A     ; -1.941              ;
-;  CLK             ; -9.833    ; 0.215 ; N/A      ; N/A     ; -1.941              ;
-; Design-wide TNS  ; -2909.927 ; 0.0   ; 0.0      ; 0.0     ; -812.205            ;
-;  CLK             ; -2909.927 ; 0.000 ; N/A      ; N/A     ; -812.205            ;
+; Worst-case Slack ; -9.647    ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+;  CLK             ; -9.647    ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+; Design-wide TNS  ; -3240.97  ; 0.0   ; 0.0      ; 0.0     ; -861.177            ;
+;  CLK             ; -3240.970 ; 0.000 ; N/A      ; N/A     ; -861.177            ;
 +------------------+-----------+-------+----------+---------+---------------------+
 
 
@@ -1002,13 +1002,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLK        ; 13.878 ; 13.878 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; 13.710 ; 13.710 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; 13.878 ; 13.878 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; 11.756 ; 11.756 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; 11.279 ; 11.279 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; 10.900 ; 10.900 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; 9.725  ; 9.725  ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; 12.911 ; 12.911 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; 12.466 ; 12.466 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; 12.911 ; 12.911 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; 12.053 ; 12.053 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; 12.455 ; 12.455 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; 11.243 ; 11.243 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; 11.989 ; 11.989 ; Rise       ; CLK             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1017,13 +1017,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLK        ; -2.559 ; -2.559 ; Rise       ; CLK             ;
-;  KEY[0]   ; CLK        ; -3.142 ; -3.142 ; Rise       ; CLK             ;
-;  KEY[1]   ; CLK        ; -2.612 ; -2.612 ; Rise       ; CLK             ;
-;  KEY[2]   ; CLK        ; -2.596 ; -2.596 ; Rise       ; CLK             ;
-;  KEY[3]   ; CLK        ; -2.799 ; -2.799 ; Rise       ; CLK             ;
-;  KEY[4]   ; CLK        ; -2.559 ; -2.559 ; Rise       ; CLK             ;
-; RESETN    ; CLK        ; -2.126 ; -2.126 ; Rise       ; CLK             ;
+; KEY[*]    ; CLK        ; -2.561 ; -2.561 ; Rise       ; CLK             ;
+;  KEY[0]   ; CLK        ; -2.915 ; -2.915 ; Rise       ; CLK             ;
+;  KEY[1]   ; CLK        ; -2.561 ; -2.561 ; Rise       ; CLK             ;
+;  KEY[2]   ; CLK        ; -2.901 ; -2.901 ; Rise       ; CLK             ;
+;  KEY[3]   ; CLK        ; -2.841 ; -2.841 ; Rise       ; CLK             ;
+;  KEY[4]   ; CLK        ; -2.891 ; -2.891 ; Rise       ; CLK             ;
+; RESETN    ; CLK        ; -2.396 ; -2.396 ; Rise       ; CLK             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1032,20 +1032,20 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 9.917  ; 9.917  ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 9.451  ; 9.451  ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 9.917  ; 9.917  ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 9.539  ; 9.539  ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 9.504  ; 9.504  ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 9.145  ; 9.145  ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 9.872  ; 9.872  ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 9.862  ; 9.862  ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 9.874  ; 9.874  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 10.364 ; 10.364 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 9.494  ; 9.494  ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 9.853  ; 9.853  ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 6.228  ; 6.228  ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 11.673 ; 11.673 ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 11.286 ; 11.286 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 11.673 ; 11.673 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 11.510 ; 11.510 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 11.328 ; 11.328 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 11.345 ; 11.345 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 8.937  ; 8.937  ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 10.612 ; 10.612 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 11.494 ; 11.494 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 12.099 ; 12.099 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 10.211 ; 10.211 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 12.217 ; 12.217 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 6.230  ; 6.230  ; Fall       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -1054,20 +1054,20 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; LCD_DATA[*]  ; CLK        ; 4.166 ; 4.166 ; Rise       ; CLK             ;
-;  LCD_DATA[0] ; CLK        ; 4.179 ; 4.179 ; Rise       ; CLK             ;
-;  LCD_DATA[1] ; CLK        ; 4.340 ; 4.340 ; Rise       ; CLK             ;
-;  LCD_DATA[2] ; CLK        ; 4.233 ; 4.233 ; Rise       ; CLK             ;
-;  LCD_DATA[3] ; CLK        ; 4.218 ; 4.218 ; Rise       ; CLK             ;
-;  LCD_DATA[4] ; CLK        ; 4.166 ; 4.166 ; Rise       ; CLK             ;
-;  LCD_DATA[5] ; CLK        ; 4.319 ; 4.319 ; Rise       ; CLK             ;
-;  LCD_DATA[6] ; CLK        ; 4.312 ; 4.312 ; Rise       ; CLK             ;
-;  LCD_DATA[7] ; CLK        ; 4.315 ; 4.315 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Rise       ; CLK             ;
-; LCD_RS       ; CLK        ; 4.491 ; 4.491 ; Rise       ; CLK             ;
-; LCD_RW       ; CLK        ; 4.204 ; 4.204 ; Rise       ; CLK             ;
-; PIEZO        ; CLK        ; 4.298 ; 4.298 ; Rise       ; CLK             ;
-; LCD_E        ; CLK        ; 2.703 ; 2.703 ; Fall       ; CLK             ;
+; LCD_DATA[*]  ; CLK        ; 4.149 ; 4.149 ; Rise       ; CLK             ;
+;  LCD_DATA[0] ; CLK        ; 4.762 ; 4.762 ; Rise       ; CLK             ;
+;  LCD_DATA[1] ; CLK        ; 4.880 ; 4.880 ; Rise       ; CLK             ;
+;  LCD_DATA[2] ; CLK        ; 4.884 ; 4.884 ; Rise       ; CLK             ;
+;  LCD_DATA[3] ; CLK        ; 4.791 ; 4.791 ; Rise       ; CLK             ;
+;  LCD_DATA[4] ; CLK        ; 4.779 ; 4.779 ; Rise       ; CLK             ;
+;  LCD_DATA[5] ; CLK        ; 4.149 ; 4.149 ; Rise       ; CLK             ;
+;  LCD_DATA[6] ; CLK        ; 4.635 ; 4.635 ; Rise       ; CLK             ;
+;  LCD_DATA[7] ; CLK        ; 4.998 ; 4.998 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Rise       ; CLK             ;
+; LCD_RS       ; CLK        ; 5.156 ; 5.156 ; Rise       ; CLK             ;
+; LCD_RW       ; CLK        ; 4.516 ; 4.516 ; Rise       ; CLK             ;
+; PIEZO        ; CLK        ; 5.098 ; 5.098 ; Rise       ; CLK             ;
+; LCD_E        ; CLK        ; 2.704 ; 2.704 ; Fall       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1076,7 +1076,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLK        ; CLK      ; 69653    ; 0        ; 0        ; 0        ;
+; CLK        ; CLK      ; 98308    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1086,7 +1086,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLK        ; CLK      ; 69653    ; 0        ; 0        ; 0        ;
+; CLK        ; CLK      ; 98308    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1111,7 +1111,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 957   ; 957  ;
+; Unconstrained Input Port Paths  ; 990   ; 990  ;
 ; Unconstrained Output Ports      ; 12    ; 12   ;
 ; Unconstrained Output Port Paths ; 12    ; 12   ;
 +---------------------------------+-------+------+
@@ -1121,9 +1121,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Nov 30 22:39:49 2016
+    Info: Processing started: Thu Dec 01 00:40:20 2016
 Info: Command: quartus_sta DIGITAL_CLOCK -c DIGITAL_CLOCK
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1136,10 +1136,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -9.833
+Info (332146): Worst-case setup slack is -9.647
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -9.833     -2909.927 CLK 
+    Info (332119):    -9.647     -3240.970 CLK 
 Info (332146): Worst-case hold slack is 0.499
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1149,14 +1149,14 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.941
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.941      -812.205 CLK 
+    Info (332119):    -1.941      -861.177 CLK 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.626
+Info (332146): Worst-case setup slack is -2.566
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.626      -587.187 CLK 
+    Info (332119):    -2.566      -679.304 CLK 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1166,13 +1166,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380      -547.380 CLK 
+    Info (332119):    -1.380      -580.380 CLK 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 317 megabytes
-    Info: Processing ended: Wed Nov 30 22:39:51 2016
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 452 megabytes
+    Info: Processing ended: Thu Dec 01 00:40:22 2016
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

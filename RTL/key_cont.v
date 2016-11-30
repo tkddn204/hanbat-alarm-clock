@@ -82,7 +82,7 @@ begin
 					CONT_STOP = 1'b1;
 					LIMIT = 0;
 				end
-			else if(SETTING == 1)
+			else if((SETTING == 1) && (ALARM_SETTING == 1))
 				begin
 					LIMIT = LIMIT + 1;
 				end

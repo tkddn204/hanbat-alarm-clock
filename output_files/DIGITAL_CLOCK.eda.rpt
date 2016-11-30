@@ -1,6 +1,6 @@
 EDA Netlist Writer report for DIGITAL_CLOCK
-Wed Nov 30 22:39:54 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Thu Dec 01 00:40:24 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Nov 30 22:39:54 2016 ;
+; EDA Netlist Writer Status ; Successful - Thu Dec 01 00:40:24 2016 ;
 ; Revision Name             ; DIGITAL_CLOCK                         ;
 ; Top-level Entity Name     ; DIGITAL_CLOCK                         ;
 ; Family                    ; Cyclone II                            ;
@@ -66,31 +66,31 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                            ;
-+---------------------------------------------------------------------------------------+
-; Generated Files                                                                       ;
-+---------------------------------------------------------------------------------------+
-; C:/Users/JJM/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK.vo         ;
-; C:/Users/JJM/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_fast.vo    ;
-; C:/Users/JJM/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_v.sdo      ;
-; C:/Users/JJM/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_v_fast.sdo ;
-+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Simulation Generated Files                                                  ;
++-----------------------------------------------------------------------------+
+; Generated Files                                                             ;
++-----------------------------------------------------------------------------+
+; D:/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK.vo         ;
+; D:/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_fast.vo    ;
+; D:/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_v.sdo      ;
+; D:/Projects/hanbat-alarm-clock/simulation/modelsim/DIGITAL_CLOCK_v_fast.sdo ;
++-----------------------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit EDA Netlist Writer
+Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Nov 30 22:39:52 2016
+    Info: Processing started: Thu Dec 01 00:40:23 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
-Info (204026): Generated files "DIGITAL_CLOCK.vo", "DIGITAL_CLOCK_fast.vo", "DIGITAL_CLOCK_v.sdo" and "DIGITAL_CLOCK_v_fast.sdo" in directory "C:/Users/JJM/Projects/hanbat-alarm-clock/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 329 megabytes
-    Info: Processing ended: Wed Nov 30 22:39:54 2016
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info (204026): Generated files "DIGITAL_CLOCK.vo", "DIGITAL_CLOCK_fast.vo", "DIGITAL_CLOCK_v.sdo" and "DIGITAL_CLOCK_v_fast.sdo" in directory "D:/Projects/hanbat-alarm-clock/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 433 megabytes
+    Info: Processing ended: Thu Dec 01 00:40:24 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
