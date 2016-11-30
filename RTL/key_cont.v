@@ -1,6 +1,5 @@
 
 /* IN_TIME BIT LIST
-`define   IN_MERIDIAN IN_TIME[17]
 `define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
@@ -22,21 +21,22 @@
 module KEY_CONT(
 	RESETN, CLK,
 	KEY, IN_TIME, IN_DATE, IN_ALARM_TIME,
-	MODE, ALARM_ENABLE, SETTING, SETTING_OK,
-	OUT_TIME, OUT_DATE, OUT_ALARM_TIME
+	MODE, ALARM_ENABLE, SETTING, ALARM_SETTING, SETTING_OK,
+	OUT_TIME, OUT_DATE, OUT_ALARM_TIME, MERIDIAN
 );
 
 input RESETN, CLK;
 input [4:0] KEY;
 input [16:0] IN_ALARM_TIME;
-input [17:0] IN_TIME;
+input [16:0] IN_TIME;
 input [15:0] IN_DATE;
 input SETTING_OK;
+output reg MERIDIAN;
 output reg [16:0] OUT_ALARM_TIME;
-output reg [17:0] OUT_TIME;
+output reg [16:0] OUT_TIME;
 output reg [15:0] OUT_DATE;
 output reg [5:0] MODE;
-output reg ALARM_ENABLE, SETTING;
+output reg ALARM_ENABLE, SETTING, ALARM_SETTING;
 
 reg [5:0] MODE_BUFF;
 
@@ -54,7 +54,6 @@ parameter MENU = 5'b10000,
   1         -> Counting Continue(0), Stop(1) Bit
 */
 parameter CURRENT_TIME = 6'b000000,
-			 CURRENT_CONTROL_TIME = 6'b010000,
 			 CURRENT_CONTROL_HOUR = 6'b010011,
 			 CURRENT_CONTROL_MIN = 6'b010101,
 			 CURRENT_CONTROL_SEC = 6'b010111,
@@ -62,13 +61,38 @@ parameter CURRENT_TIME = 6'b000000,
 			 CURRENT_CONTROL_MONTH = 6'b011101,
 			 CURRENT_CONTROL_DAY = 6'b011111,
 			 ALARM_TIME = 6'b100001,
-			 ALARM_CONTROL_TIME = 6'b110001,
 			 ALARM_CONTROL_HOUR = 6'b110011,
 			 ALARM_CONTROL_MIN = 6'b110101,
 			 ALARM_CONTROL_SEC = 6'b110111;
-			 
-integer CNT;
-			 
+
+reg CONT_STOP;
+integer CNT, LIMIT;
+
+always @(posedge CLK)
+begin
+	if(!RESETN)
+		begin
+			CONT_STOP = 1'b0;
+			LIMIT = 0;
+		end
+	else
+		begin
+			if(LIMIT == 999999)
+				begin
+					CONT_STOP = 1'b1;
+					LIMIT = 0;
+				end
+			else if(SETTING == 1)
+				begin
+					LIMIT = LIMIT + 1;
+				end
+			else
+				begin
+					CONT_STOP = 1'b0;
+				end
+		end
+end
+
 always @(posedge CLK)
 begin
 	if(!RESETN)
@@ -76,36 +100,54 @@ begin
 			MODE = CURRENT_TIME;
 		end
 	else
-		MODE = MODE_BUFF;
+		begin
+			MODE = MODE_BUFF;
+		end
 end
 
 always @(posedge CLK)
 begin
-	if(~RESETN)
+	if(!RESETN)
 		begin
 			MODE_BUFF = CURRENT_TIME;
 			OUT_ALARM_TIME = 0;
 			OUT_TIME = 0;
 			OUT_DATE = 0;
 			ALARM_ENABLE = 0;
+			MERIDIAN = 0;
 			SETTING = 0;
+			ALARM_SETTING = 0;
 			CNT = 0;
 		end
 	else if(SETTING_OK)
-		SETTING = 0;
+		begin
+			SETTING = 0;
+			ALARM_SETTING = 0;
+		end
 	else
 		begin
+			if(CONT_STOP == 1)
+				begin
+					if(MODE_BUFF[5] == 0)
+						begin
+							SETTING = 0;
+							OUT_TIME = IN_TIME;
+							MODE_BUFF = CURRENT_TIME;
+						end
+					else
+						begin
+							ALARM_SETTING = 0;
+							OUT_ALARM_TIME = IN_ALARM_TIME;
+							MODE_BUFF = ALARM_TIME;
+						end
+				end
 			case(KEY)
 				MENU:
 					begin
-						if(CNT >= 249)
+						if(CNT >= 19999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
-										begin
-											MODE_BUFF = CURRENT_CONTROL_TIME;
-										end
-									CURRENT_CONTROL_TIME:
 										begin
 											MODE_BUFF = ALARM_TIME;
 										end
@@ -135,10 +177,6 @@ begin
 										end
 									ALARM_TIME:
 										begin
-											MODE_BUFF = ALARM_CONTROL_TIME;
-										end
-									ALARM_CONTROL_TIME:
-										begin
 											MODE_BUFF = CURRENT_TIME;
 										end
 									ALARM_CONTROL_HOUR:
@@ -165,74 +203,63 @@ begin
 					end
 				SET:
 					begin
-						if(CNT >= 249)
+						if(CNT >= 19999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
 										begin
-											// Show Alarm Time for 3 seconds...
-											// Not operate
-										end
-									CURRENT_CONTROL_TIME:
-										begin
-											//OUT_TIME = IN_TIME;
-											//OUT_DATE = IN_DATE;
+											SETTING = 0;
 											MODE_BUFF = CURRENT_CONTROL_HOUR;
 										end
 									CURRENT_CONTROL_HOUR:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_MIN:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_SEC:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_YEAR:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_MONTH:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_DAY:
 										begin
 											SETTING = 1;
-											MODE_BUFF = CURRENT_CONTROL_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									ALARM_TIME:
 										begin
-											// Show Current Time for 3 seconds...
-											// Not operate
-										end
-									ALARM_CONTROL_TIME:
-										begin
-											//OUT_ALARM_TIME = IN_ALARM_TIME;
+											ALARM_SETTING = 0;
 											MODE_BUFF = ALARM_CONTROL_HOUR;
 										end
 									ALARM_CONTROL_HOUR:
 										begin
-											SETTING = 1;
-											MODE_BUFF = ALARM_CONTROL_TIME;
+											ALARM_SETTING = 1;
+											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_MIN:
 										begin
-											SETTING = 1;
-											MODE_BUFF = ALARM_CONTROL_TIME;
+											ALARM_SETTING = 1;
+											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_SEC:
 										begin
-											SETTING = 1;
-											MODE_BUFF = ALARM_CONTROL_TIME;
+											ALARM_SETTING = 1;
+											MODE_BUFF = ALARM_TIME;
 										end
 									default:
 										begin
@@ -247,79 +274,80 @@ begin
 					end
 				CANCEL:
 					begin
-						if(CNT >= 249)
+						if(CNT >= 19999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
 										begin
 											// MERIDIAN change...
-											OUT_TIME[17] = (OUT_TIME[17] == 0) ? 1 : 0;
-										end
-									CURRENT_CONTROL_TIME:
-										begin
-											// MERIDIAN change...
-											OUT_TIME[17] = (OUT_TIME[17] == 0) ? 1 : 0;
+											if(MERIDIAN == 0) MERIDIAN = 1;
+											else MERIDIAN = 0;
 										end
 									CURRENT_CONTROL_HOUR:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_MIN:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_SEC:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_YEAR:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_MONTH:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									CURRENT_CONTROL_DAY:
 										begin
 											SETTING = 0;
 											OUT_TIME = IN_TIME;
+											MODE_BUFF = CURRENT_TIME;
 										end
 									ALARM_TIME:
 										begin
 											// Alarm ON/OFF...
-											if(ALARM_ENABLE == 1)
-												ALARM_ENABLE = 0;
-										end
-									ALARM_CONTROL_TIME:
-										begin
-											// Alarm Cancel...
-											ALARM_ENABLE = 0;
+											if(ALARM_ENABLE == 1) ALARM_ENABLE = 0;
+											else ALARM_ENABLE = 1;
 										end
 									ALARM_CONTROL_HOUR:
 										begin
-											SETTING = 0;
+											ALARM_SETTING = 0;
 											OUT_ALARM_TIME = IN_ALARM_TIME;
+											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_MIN:
 										begin
-											SETTING = 0;
+											ALARM_SETTING = 0;
 											OUT_ALARM_TIME = IN_ALARM_TIME;
+											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_SEC:
 										begin
-											SETTING = 0;
+											ALARM_SETTING = 0;
 											OUT_ALARM_TIME = IN_ALARM_TIME;
+											MODE_BUFF = ALARM_TIME;
 										end
 									default:
 										begin
 											// MERIDIAN change...
-											OUT_TIME[17] = (OUT_TIME[17] == 0) ? 1 : 0;
+											if(MERIDIAN == 0) MERIDIAN = 1;
+											else MERIDIAN = 0;
 										end
 								endcase
 								CNT = 0;
@@ -329,14 +357,10 @@ begin
 					end
 				UP:
 					begin
-						if(CNT >= 249)
+						if(CNT >= 19999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
-										begin
-											// Nothing Special...
-										end
-									CURRENT_CONTROL_TIME:
 										begin
 											// Nothing Special...
 										end
@@ -385,12 +409,6 @@ begin
 									ALARM_TIME:
 										begin
 											// Nothing Special...
-											// PLAN : MORE ALARM DATA?
-										end
-									ALARM_CONTROL_TIME:
-										begin
-											// Nothing Special...
-											// PLAN : MORE ALARM DATA?
 										end
 									ALARM_CONTROL_HOUR:
 										begin
@@ -425,14 +443,10 @@ begin
 					end
 				DOWN:
 					begin
-						if(CNT >= 249)
+						if(CNT >= 19999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
-										begin
-											// Nothing Special...
-										end
-									CURRENT_CONTROL_TIME:
 										begin
 											// Nothing Special...
 										end
@@ -481,12 +495,6 @@ begin
 									ALARM_TIME:
 										begin
 											// Nothing Special...
-											// PLAN : MORE ALARM DATA?
-										end
-									ALARM_CONTROL_TIME:
-										begin
-											// Nothing Special...
-											// PLAN : MORE ALARM DATA?
 										end
 									ALARM_CONTROL_HOUR:
 										begin

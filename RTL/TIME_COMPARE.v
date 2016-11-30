@@ -17,8 +17,6 @@ begin
 	else
 		if((ALARM_ENABLE == 1'b1) && (CURRENT_TIME == ALARM_TIME))
 			DOING = 1'b1;
-		else
-			DOING = 1'b0;
 end
 
 assign ALARM_DOING = DOING;

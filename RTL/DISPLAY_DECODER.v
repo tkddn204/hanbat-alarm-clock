@@ -1,21 +1,38 @@
+
+/* IN_TIME BIT LIST
+`define	 IN_HOUR     IN_TIME[16:12]
+`define	 IN_MIN      IN_TIME[11:6]
+`define   IN_SEC      IN_TIME[5:0]
+
+ IN_DATE BIT LIST
+`define   IN_YEAR     IN_DATE[15:9]
+`define	 IN_MONTH    IN_DATE[8:5]
+`define	 IN_DAY      IN_DATE[4:0]
+
+
+ IN_ALARM_TIME BIT LIST
+`define	 IN_HOUR     IN_TIME[16:12]
+`define	 IN_MIN      IN_TIME[11:6]
+`define   IN_SEC      IN_TIME[5:0]
+*/
+
 module DISPLAY_DECODER(
 	RESETN, CLK,
 	IN_TIME, IN_DATE, IN_ALARM_TIME,
-	OUT_H10, OUT_H1, OUT_M10, OUT_M1, OUT_S10, OUT_S1, OUT_MERIDIAN,
+	OUT_H10, OUT_H1, OUT_M10, OUT_M1, OUT_S10, OUT_S1,
 	OUT_Y10, OUT_Y1, OUT_MT10, OUT_MT1, OUT_D10, OUT_D1,
 	OUT_ALARM_H10, OUT_ALARM_H1, OUT_ALARM_M10, OUT_ALARM_M1, OUT_ALARM_S10, OUT_ALARM_S1
 );
 
 input RESETN, CLK;
 input [16:0] IN_ALARM_TIME;
-input [17:0] IN_TIME;
+input [16:0] IN_TIME;
 input [15:0] IN_DATE;
 output wire [7:0] OUT_ALARM_H10, OUT_ALARM_H1, OUT_ALARM_M10, OUT_ALARM_M1, OUT_ALARM_S10, OUT_ALARM_S1;
-output wire [7:0] OUT_H10, OUT_H1, OUT_M10, OUT_M1, OUT_S10, OUT_S1, OUT_MERIDIAN;
+output wire [7:0] OUT_H10, OUT_H1, OUT_M10, OUT_M1, OUT_S10, OUT_S1;
 output wire [7:0] OUT_Y10, OUT_Y1, OUT_MT10, OUT_MT1, OUT_D10, OUT_D1;
 
 // Current
-reg MERIDIAN;
 reg [4:0] HOUR;
 reg [5:0] MIN, SEC;
 
@@ -35,14 +52,13 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		begin
-			MERIDIAN = 0;
 			HOUR = 0;
 			MIN  = 0;
 			SEC  = 0;
 			
-			YEAR  = 16;
-			MONTH = 1;
-			DAY   = 1;
+			YEAR  = 0;
+			MONTH = 0;
+			DAY   = 0;
 			
 			ALARM_HOUR = 0;
 			ALARM_MIN  = 0;
@@ -50,7 +66,6 @@ begin
 		end
 	else
 		begin
-			MERIDIAN = IN_TIME[17];
 			HOUR = IN_TIME[16:12];
 			MIN  = IN_TIME[11:6];
 			SEC  = IN_TIME[5:0];
@@ -64,8 +79,6 @@ begin
 			ALARM_SEC  = IN_ALARM_TIME[5:0];
 		end
 end
-
-assign OUT_MERIDIAN = MERIDIAN;
 
 // x, y, z => input x, output y, z
 WT_SEP HOUR_SEP(HOUR, H10, H1);
@@ -90,8 +103,8 @@ WT_DECODER S1_DECODE(S1, OUT_S1);
 
 WT_DECODER Y10_DECODE(Y10, OUT_Y10);
 WT_DECODER Y1_DECODE(Y1, OUT_Y1);
-WT_DECODER MT10_DECODE(D10, OUT_MT10);
-WT_DECODER MT1_DECODE(D1, OUT_MT1);
+WT_DECODER MT10_DECODE(MT10, OUT_MT10);
+WT_DECODER MT1_DECODE(MT1, OUT_MT1);
 WT_DECODER D10_DECODE(D10, OUT_D10);
 WT_DECODER D1_DECODE(D1, OUT_D1);
 

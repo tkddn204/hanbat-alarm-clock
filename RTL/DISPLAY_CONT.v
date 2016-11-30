@@ -1,6 +1,5 @@
 
 /* CURRENT_TIME BIT LIST
-`define   IN_MERIDIAN IN_TIME[17]
 `define	 IN_HOUR     IN_TIME[16:12]
 `define	 IN_MIN      IN_TIME[11:6]
 `define   IN_SEC      IN_TIME[5:0]
@@ -44,7 +43,6 @@ reg [7:0] DISPLAY_DATA [31:0];
 
 /* MODE */
 parameter CURRENT_TIME = 6'b000000,
-			 CURRENT_CONTROL_TIME = 6'b010000,
 			 CURRENT_CONTROL_HOUR = 6'b010011,
 			 CURRENT_CONTROL_MIN = 6'b010101,
 			 CURRENT_CONTROL_SEC = 6'b010111,
@@ -52,7 +50,6 @@ parameter CURRENT_TIME = 6'b000000,
 			 CURRENT_CONTROL_MONTH = 6'b011101,
 			 CURRENT_CONTROL_DAY = 6'b011111,
 			 ALARM_TIME = 6'b100001,
-			 ALARM_CONTROL_TIME = 6'b110001,
 			 ALARM_CONTROL_HOUR = 6'b110011,
 			 ALARM_CONTROL_MIN = 6'b110101,
 			 ALARM_CONTROL_SEC = 6'b110111;
@@ -71,40 +68,31 @@ parameter DELAY = 3'b000,
           DELAY_T = 3'b110,
           CLEAR_DISP = 3'b111;
 
-reg CONT_START, CONT_START_MODE, BLINK;
-integer CNT, LCD_CNT, INC, LIMIT;
+reg CONT_START, BLINK;
+integer CNT, LCD_CNT, INC;
 
 always @(posedge CLK)
 begin
 	if(!RESETN)
 		begin
 			BLINK = 1'b0;
-			CONT_START_MODE = 1'b0;
 			CNT = 0;
-			LIMIT = 0;
 		end
 	else
 		if(CONT_START == 1'b1)
 				begin
-					if(LIMIT == 20)
-						begin
-							CONT_START_MODE = 1'b1;
-							CNT = 0;
-							LIMIT = 0;
-						end
-					else if(CNT <= 499)
+					if(CNT == 24999)
 						begin
 							CNT = 0;
 							BLINK = !BLINK;
-							LIMIT = LIMIT + 1;
 						end
 					else
-						begin
-							CNT = CNT + 1;
-						end
+						CNT = CNT + 1;
 				end
 		else
-			CONT_START_MODE =1'b0;
+			begin
+				BLINK = 1'b0;
+			end
 end
 
 always @(posedge CLK)
@@ -121,9 +109,52 @@ begin
 		end
 	else
 		begin
+			if(MERIDIAN == 1)	// Meridian is On(12)
+				begin
+					if((H10 >= 8'b00110001) && (H1 >= 8'b00110010)) // H10 > 1 && H1 > 2
+						begin
+							DISPLAY_DATA[10] = PM;
+							if(H10 == 8'b00110010) // H10 2
+								begin
+									if(H1 >= 8'b00110010) // H1 2
+										begin
+											DISPLAY_DATA[1] = 8'b00110001; // H10 1
+											if(H1 == 8'b00110010) // 22
+												DISPLAY_DATA[2] = 8'b00110000; // H10, H1 10
+											else // 23
+												DISPLAY_DATA[2] = 8'b00110001; // H10, H1 11
+										end
+								end
+							else // 1
+								begin
+									DISPLAY_DATA[1] = 8'b00110000; // H10 0
+									DISPLAY_DATA[2] = H1 - 2;
+								end
+						end
+					else if((H10 >= 8'b00110010) && (H1 >= 8'b00110000)) // H10 > 2 && H1 > 0
+						begin
+							DISPLAY_DATA[1] = 8'b00110000; // H10 0
+							if(H1 == 8'b00110000) // 20
+								DISPLAY_DATA[2] = 8'b00111000; // H10, H1 08
+							else // 21
+								DISPLAY_DATA[2] = 8'b00111001; // H10, H1 09
+						end
+					else
+						begin
+							DISPLAY_DATA[10] = AM;
+						end
+					DISPLAY_DATA[11] = 8'b01001101; // M
+				end
+			else
+				begin
+					DISPLAY_DATA[10] = 8'b00100000; // space
+					DISPLAY_DATA[11] = 8'b00100000; // space
+				end	
+				
 			case(MODE)
 					CURRENT_TIME:
 						begin
+							CONT_START = 1'b0;
 							DISPLAY_DATA[1] = H10;
 							DISPLAY_DATA[2] = H1;
 							DISPLAY_DATA[3] = 8'b00111010; // :
@@ -132,25 +163,9 @@ begin
 							DISPLAY_DATA[6] = 8'b00111010; // :
 							DISPLAY_DATA[7] = S10;
 							DISPLAY_DATA[8] = S1;
-							if(MERIDIAN == 1)	// Meridian is On(12)
-								begin
-									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
-										begin
-											DISPLAY_DATA[10] = PM;
-										end
-									else
-										begin
-											DISPLAY_DATA[10] = AM;
-										end
-									DISPLAY_DATA[11] = 8'b01001101; // M
-								end
-							else
-								begin
-									DISPLAY_DATA[10] = 8'b00100000; // space
-									DISPLAY_DATA[11] = 8'b00100000; // space
-								end
 							DISPLAY_DATA[13] = 8'b00100000; // 
 							DISPLAY_DATA[14] = 8'b00100000; // 
+							
 							DISPLAY_DATA[17] = 8'b00110010; // 2
 							DISPLAY_DATA[18] = 8'b00110000; // 0
 							DISPLAY_DATA[19] = Y10;
@@ -162,61 +177,6 @@ begin
 							DISPLAY_DATA[25] = D10;
 							DISPLAY_DATA[26] = D1;
 							DISPLAY_DATA[27] = 8'b01000100; // D
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
-							if(ALARM_ENABLE == 1)
-								begin
-									DISPLAY_DATA[30] = 8'b10011000; // alarm
-								end
-							else
-								begin
-									DISPLAY_DATA[30] = 8'b00100000; // space
-								end
-						end
-					CURRENT_CONTROL_TIME:
-						begin
-							CONT_START = 1'b0;
-							/*
-							DISPLAY_DATA[1] = H10;
-							DISPLAY_DATA[2] = H1;
-							DISPLAY_DATA[3] = 8'b00111010; // :
-							DISPLAY_DATA[4] = M10;
-							DISPLAY_DATA[5] = M1;
-							DISPLAY_DATA[6] = 8'b00111010; // :
-							DISPLAY_DATA[7] = S10;
-							DISPLAY_DATA[8] = S1;*/
-							if(MERIDIAN == 1)	// Meridian is On(12)
-								begin
-									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
-										begin
-											DISPLAY_DATA[10] = PM;
-										end
-									else
-										begin
-											DISPLAY_DATA[10] = AM;
-										end
-									DISPLAY_DATA[11] = 8'b01001101; // M
-								end
-							else
-								begin
-									DISPLAY_DATA[10] = 8'b00100000; // space
-									DISPLAY_DATA[11] = 8'b00100000; // space
-								end
-							DISPLAY_DATA[14] = 8'b10101001; // special C
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
 							if(ALARM_ENABLE == 1)
 								begin
 									DISPLAY_DATA[30] = 8'b10011000; // alarm
@@ -236,64 +196,13 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[25] = D10;
+									DISPLAY_DATA[26] = D1;
 									DISPLAY_DATA[1] = 8'b00100000; // space
 									DISPLAY_DATA[2] = 8'b00100000; // space
 								end
-							/*
-							DISPLAY_DATA[3] = 8'b00111010; // :
-							DISPLAY_DATA[4] = M10;
-							DISPLAY_DATA[5] = M1;
-							DISPLAY_DATA[6] = 8'b00111010; // :
-							DISPLAY_DATA[7] = S10;
-							DISPLAY_DATA[8] = S1;
-							if(CURRENT_TIME[17] == 1)	// Meridian is On(12)
-								begin
-									if(DISPLAY_DATA[16:12] >= 12)
-										begin
-											DISPLAY_DATA[10] = PM;
-										end
-									else
-										begin
-											DISPLAY_DATA[10] = AM;
-										end
-									DISPLAY_DATA[11] = 8'b01001101; // M
-								end
-							else
-								begin
-									DISPLAY_DATA[10] = 8'b00100000; // space
-									DISPLAY_DATA[11] = 8'b00100000; // space
-								end
+								
 							DISPLAY_DATA[14] = 8'b10101001; // special C
-							DISPLAY_DATA[17] = 8'b00110010; // 2
-							DISPLAY_DATA[18] = 8'b00110000; // 0
-							DISPLAY_DATA[19] = Y10;
-							DISPLAY_DATA[20] = Y1;
-							DISPLAY_DATA[21] = 8'b01011001; // Y
-							DISPLAY_DATA[22] = MT10;
-							DISPLAY_DATA[23] = MT1;
-							DISPLAY_DATA[24] = 8'b01001101; // M
-							DISPLAY_DATA[25] = D10;
-							DISPLAY_DATA[26] = D1;
-							DISPLAY_DATA[27] = 8'b01000100; // D
-							*/
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
-							/*
-							if(ALARM_ENABLE == 1)
-								begin
-									DISPLAY_DATA[30] = 8'b10011000; // alarm
-								end
-							else
-								begin
-									DISPLAY_DATA[30] = 8'b00100000; // space
-								end
-							*/
 						end
 					CURRENT_CONTROL_MIN:
 						begin
@@ -304,16 +213,10 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[1] = H10;
+									DISPLAY_DATA[2] = H1;
 									DISPLAY_DATA[4] = 8'b00100000; // space
 									DISPLAY_DATA[5] = 8'b00100000; // space
-								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
 								end
 						end
 					CURRENT_CONTROL_SEC:
@@ -325,16 +228,10 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[4] = M10;
+									DISPLAY_DATA[5] = M1;
 									DISPLAY_DATA[7] = 8'b00100000; // space
 									DISPLAY_DATA[8] = 8'b00100000; // space
-								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
 								end
 						end
 					CURRENT_CONTROL_YEAR:
@@ -346,16 +243,10 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[7] = S10;
+									DISPLAY_DATA[8] = S1;
 									DISPLAY_DATA[19] = 8'b00100000; // space
 									DISPLAY_DATA[20] = 8'b00100000; // space
-								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
 								end
 						end
 					CURRENT_CONTROL_MONTH:
@@ -367,16 +258,10 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[19] = Y10;
+									DISPLAY_DATA[20] = Y1;
 									DISPLAY_DATA[22] = 8'b00100000; // space
 									DISPLAY_DATA[23] = 8'b00100000; // space
-								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
 								end
 						end
 					CURRENT_CONTROL_DAY:
@@ -388,20 +273,15 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[22] = MT10;
+									DISPLAY_DATA[23] = MT1;
 									DISPLAY_DATA[25] = 8'b00100000; // space
 									DISPLAY_DATA[26] = 8'b00100000; // space
-								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
 								end
 						end
 					ALARM_TIME:
 						begin
+							CONT_START = 1'b0;
 							DISPLAY_DATA[1] = ALARM_H10;
 							DISPLAY_DATA[2] = ALARM_H1;
 							DISPLAY_DATA[3] = 8'b00111010; // :
@@ -427,8 +307,10 @@ begin
 									DISPLAY_DATA[10] = 8'b00100000; // space
 									DISPLAY_DATA[11] = 8'b00100000; // space
 								end
+							
 							DISPLAY_DATA[13] = 8'b10011000; // alarm
 							DISPLAY_DATA[14] = 8'b00100000; // 
+							
 							DISPLAY_DATA[17] = 8'b00100000; // 
 							DISPLAY_DATA[18] = 8'b00100000; // 
 							DISPLAY_DATA[19] = 8'b00100000; // 
@@ -440,14 +322,6 @@ begin
 							DISPLAY_DATA[25] = 8'b00100000; // 
 							DISPLAY_DATA[26] = 8'b00100000; // 
 							DISPLAY_DATA[27] = 8'b00100000; // 
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
 							if(ALARM_ENABLE == 1)
 								begin
 									DISPLAY_DATA[30] = 8'b10011000; // alarm
@@ -455,54 +329,6 @@ begin
 							else
 								begin
 									DISPLAY_DATA[30] = 8'b00100000; // space
-								end
-						end
-					ALARM_CONTROL_TIME:
-						begin
-							CONT_START = 1'b0;
-							/*
-							DISPLAY_DATA[1] = ALARM_H10;
-							DISPLAY_DATA[2] = ALARM_H1;
-							DISPLAY_DATA[3] = 8'b00111010; // :
-							DISPLAY_DATA[4] = ALARM_M10;
-							DISPLAY_DATA[5] = ALARM_M1;
-							DISPLAY_DATA[6] = 8'b00111010; // :
-							DISPLAY_DATA[7] = ALARM_S10;
-							DISPLAY_DATA[8] = ALARM_S1; */
-							if(MERIDIAN == 1)	// Meridian is On(12)
-								begin
-									if((H10 >= 8'b00110001) && (H1 >= 8'b00110010))
-										begin
-											DISPLAY_DATA[10] = PM;
-										end
-									else
-										begin
-											DISPLAY_DATA[10] = AM;
-										end
-									DISPLAY_DATA[11] = 8'b01001101; // M
-								end
-							else
-								begin
-									DISPLAY_DATA[10] = 8'b00100000; // space
-									DISPLAY_DATA[11] = 8'b00100000; // space
-								end
-							DISPLAY_DATA[13] = 8'b10011000; // alarm
-							DISPLAY_DATA[14] = 8'b10101001; // special C
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
-							if(ALARM_ENABLE == 1)
-								begin
-									DISPLAY_DATA[30] = 8'b10011000; // alarm
-								end
-							else
-								begin
-									DISPLAY_DATA[30] = 8'b00111010; // space
 								end
 						end
 					ALARM_CONTROL_HOUR:
@@ -515,17 +341,13 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[7] = ALARM_S10;
+									DISPLAY_DATA[8] = ALARM_S1;
 									DISPLAY_DATA[1] = 8'b00100000; // space
 									DISPLAY_DATA[2] = 8'b00100000; // space
 								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
+							
+							DISPLAY_DATA[14] = 8'b10101001; // special C
 						end
 					ALARM_CONTROL_MIN:
 						begin
@@ -536,18 +358,11 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[1] = ALARM_H10;
+									DISPLAY_DATA[2] = ALARM_H1;
 									DISPLAY_DATA[4] = 8'b00100000; // space
 									DISPLAY_DATA[5] = 8'b00100000; // space
 								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
-							
 						end
 					ALARM_CONTROL_SEC:
 						begin
@@ -558,18 +373,11 @@ begin
 								end
 							else
 								begin
+									DISPLAY_DATA[4] = ALARM_M10;
+									DISPLAY_DATA[5] = ALARM_M1;
 									DISPLAY_DATA[7] = 8'b00100000; // space
 									DISPLAY_DATA[8] = 8'b00100000; // space
 								end
-							if(ALARM_DOING == 1)
-								begin
-									DISPLAY_DATA[29] = 8'b10010001; // note
-								end
-							else
-								begin
-									DISPLAY_DATA[29] = 8'b00100000; // space
-								end
-							
 						end
 					default:
 						begin
@@ -581,6 +389,15 @@ begin
 								end
 						end
 			endcase
+			
+			if(ALARM_DOING == 1) // Alarm is calling!
+				begin
+					DISPLAY_DATA[29] = 8'b10010001; // note
+				end
+			else
+				begin
+					DISPLAY_DATA[29] = 8'b00100000; // space
+				end
 		end
 end
 		 

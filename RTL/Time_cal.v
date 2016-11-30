@@ -22,22 +22,21 @@
 module TIME_CAL(
 	RESETN, CLK,
 	IN_TIME, IN_DATE, IN_ALARM_TIME,
-	MODE, MODE_STATE, SETTING, SETTING_OK,
+	MODE, MODE_STATE, SETTING, ALARM_SETTING, SETTING_OK,
 	OUT_TIME, OUT_DATE, OUT_ALARM_TIME
 );
 
 input RESETN, CLK;
 input [16:0] IN_ALARM_TIME;
-input [17:0] IN_TIME;
+input [16:0] IN_TIME;
 input [15:0] IN_DATE;
-input MODE, MODE_STATE, SETTING;
+input MODE, MODE_STATE, SETTING, ALARM_SETTING;
 output reg [16:0] OUT_ALARM_TIME;
-output reg [17:0] OUT_TIME;
+output reg [16:0] OUT_TIME;
 output reg [15:0] OUT_DATE;
 output reg SETTING_OK;
 
 // TEMP TIME
-reg MERIDIAN;
 reg [4:0] HOUR;
 reg [5:0] MIN, SEC;
 
@@ -55,14 +54,14 @@ begin
 			CNT = 0;
 			SETTING_OK = 0;
 		end
-	else if(SETTING == 1'b1)
+	else if((SETTING == 1'b1) || (ALARM_SETTING == 1'b1))
 		begin
 			CNT = 0;
 			SETTING_OK = 1;
 		end
 	else
 		begin
-			if(CNT >= 999)
+			if(CNT >= 99999)
 				CNT = 0;
 			else
 				CNT = CNT + 1;
@@ -79,7 +78,7 @@ begin
 			if(!MODE_STATE) 
 				// MODE_STATE 0 -> current time
 				begin
-					OUT_TIME = { MERIDIAN, HOUR, MIN, SEC };
+					OUT_TIME = { HOUR, MIN, SEC };
 					OUT_DATE = { YEAR, MONTH, DAY };
 				end
 		end
@@ -89,12 +88,14 @@ begin
 			if(!MODE_STATE) 
 				// MODE_STATE 0 -> current time
 				begin
-					OUT_TIME = { IN_TIME[17], IN_TIME[16:12], IN_TIME[11:6], IN_TIME[5:0] };
+					OUT_TIME = { IN_TIME[16:12], IN_TIME[11:6], IN_TIME[5:0] };
 					OUT_DATE = { IN_DATE[15:9], IN_DATE[8:5], IN_DATE[4:0] };
 				end
 			else
 				// MODE_STATE 1 -> alarm time
 				begin
+					OUT_TIME = { HOUR, MIN, SEC };
+					OUT_DATE = { YEAR, MONTH, DAY };
 					OUT_ALARM_TIME = { IN_ALARM_TIME[16:12], IN_ALARM_TIME[11:6], IN_ALARM_TIME[5:0] };
 				end
 		end
@@ -108,7 +109,7 @@ begin
 	else if(SETTING == 1'b1)
 		SEC = IN_TIME[5:0];
 	else
-		if(CNT == 999)
+		if(CNT == 99999)
 			begin
 				if(SEC >= 59)
 					SEC = 0;
@@ -125,7 +126,7 @@ begin
 	else if(SETTING == 1'b1)
 		MIN = IN_TIME[11:6];
 	else
-		if((CNT == 999) && (SEC == 59))
+		if((CNT == 99999) && (SEC == 59))
 			begin
 				if(MIN >= 59)
 					MIN = 0;
@@ -142,7 +143,7 @@ begin
 	else if(SETTING == 1'b1)
 		HOUR = IN_TIME[16:12];
 	else
-		if((CNT == 999) && (SEC == 59) && (MIN == 59))
+		if((CNT == 99999) && (SEC == 59) && (MIN == 59))
 			begin
 				if(HOUR >= 23)
 					HOUR = 0;
@@ -153,16 +154,6 @@ begin
 			end
 end
 
-// Meridian part
-always @(posedge CLK)
-begin
-	if(!RESETN)
-		MERIDIAN = 0;
-	else if(SETTING == 1'b1)
-		MERIDIAN = IN_TIME[17];
-end
-
-
 // Day part
 always @(posedge CLK)
 begin
@@ -171,7 +162,7 @@ begin
 	else if(SETTING == 1'b1)
 		DAY = IN_DATE[4:0];
 	else
-		if((CNT == 999) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 99999) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(DAY >= 31)
 					DAY = 1;
@@ -188,7 +179,7 @@ begin
 	else if(SETTING == 1'b1)
 		MONTH = IN_DATE[8:5];
 	else
-		if((CNT == 999) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 99999) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(MONTH >= 31)
 					MONTH = 1;
@@ -205,7 +196,7 @@ begin
 	else if(SETTING == 1'b1)
 		YEAR = IN_DATE[15:9]; 
 	else
-		if((CNT == 999) && (MONTH == 12) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
+		if((CNT == 99999) && (MONTH == 12) && (DAY == 31) && (HOUR == 23) && (SEC == 59) && (MIN == 59))
 			begin
 				if(YEAR >= 99)
 					YEAR = 0;

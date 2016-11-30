@@ -1,1 +1,8 @@
-<sld_project_info/>
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="d215ba9bde2e02a2d3b5"/>
+  </project>
+  <file_info>
+    <file device="EP2C70F672C8" path="DIGITAL_CLOCK.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+</sld_project_info>
