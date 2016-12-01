@@ -208,7 +208,6 @@ begin
 								case(MODE)
 									CURRENT_TIME:
 										begin
-											SETTING = 0;
 											MODE_BUFF = CURRENT_CONTROL_HOUR;
 										end
 									CURRENT_CONTROL_HOUR:
@@ -243,7 +242,6 @@ begin
 										end
 									ALARM_TIME:
 										begin
-											ALARM_SETTING = 0;
 											MODE_BUFF = ALARM_CONTROL_HOUR;
 										end
 									ALARM_CONTROL_HOUR:
