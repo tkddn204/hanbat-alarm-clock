@@ -51,7 +51,7 @@ parameter MENU = 5'b10000,
   100000    -> Current(0), Alarm(1) Control TIME Bit
   10000     -> No(0), Controlling(1) Time Bit
   1000 ~ 10 -> Control Bit
-  1         -> Counting Continue(0), Stop(1) Bit
+  1         -> Current Time Counting Continue(0), Stop(1) Bit
 */
 parameter CURRENT_TIME = 6'b000000,
 			 CURRENT_CONTROL_HOUR = 6'b010011,
@@ -60,12 +60,12 @@ parameter CURRENT_TIME = 6'b000000,
 			 CURRENT_CONTROL_YEAR = 6'b011011,
 			 CURRENT_CONTROL_MONTH = 6'b011101,
 			 CURRENT_CONTROL_DAY = 6'b011111,
-			 ALARM_TIME = 6'b100001,
-			 ALARM_CONTROL_HOUR = 6'b110011,
-			 ALARM_CONTROL_MIN = 6'b110101,
-			 ALARM_CONTROL_SEC = 6'b110111;
+			 ALARM_TIME = 6'b100000,
+			 ALARM_CONTROL_HOUR = 6'b110010,
+			 ALARM_CONTROL_MIN = 6'b110100,
+			 ALARM_CONTROL_SEC = 6'b110110;
 
-reg CONT_STOP;
+reg CONT_STOP, STOP_OK;
 integer CNT, LIMIT;
 
 always @(posedge CLK)
@@ -82,13 +82,14 @@ begin
 					CONT_STOP = 1'b1;
 					LIMIT = 0;
 				end
-			else if((SETTING == 1) && (ALARM_SETTING == 1))
+			else if((MODE != CURRENT_TIME) || (MODE != ALARM_TIME))
 				begin
 					LIMIT = LIMIT + 1;
 				end
 			else
 				begin
 					CONT_STOP = 1'b0;
+					LIMIT = 0;
 				end
 		end
 end
@@ -111,40 +112,43 @@ begin
 		begin
 			MODE_BUFF = CURRENT_TIME;
 			OUT_ALARM_TIME = 0;
-			OUT_TIME = 0;
-			OUT_DATE = 0;
+			OUT_TIME = 16'b0000000000000001; // 16'b0000/000000/000001;
+			OUT_DATE = 16'b0010000000100001; // 16'b0010000/0001/00001;
 			ALARM_ENABLE = 0;
 			MERIDIAN = 0;
 			SETTING = 0;
 			ALARM_SETTING = 0;
 			CNT = 0;
+			STOP_OK = 0;
 		end
 	else if(SETTING_OK)
 		begin
 			SETTING = 0;
 			ALARM_SETTING = 0;
 		end
-	else
-		begin
-			if(CONT_STOP == 1)
+	else if((CONT_STOP == 1'b1) && (STOP_OK = 1'b0))
 				begin
 					if(MODE_BUFF[5] == 0)
 						begin
-							SETTING = 0;
+							SETTING = 1;
 							OUT_TIME = IN_TIME;
 							MODE_BUFF = CURRENT_TIME;
 						end
 					else
 						begin
-							ALARM_SETTING = 0;
+							ALARM_SETTING = 1;
 							OUT_ALARM_TIME = IN_ALARM_TIME;
 							MODE_BUFF = ALARM_TIME;
 						end
+					STOP_OK = 1'b1;
 				end
+	else
+		begin
+			STOP_OK = 1'b0;
 			case(KEY)
 				MENU:
 					begin
-						if(CNT >= 19999)
+						if(CNT >= 22999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -203,7 +207,7 @@ begin
 					end
 				SET:
 					begin
-						if(CNT >= 19999)
+						if(CNT >= 22999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -272,7 +276,7 @@ begin
 					end
 				CANCEL:
 					begin
-						if(CNT >= 19999)
+						if(CNT >= 22999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -326,19 +330,19 @@ begin
 									ALARM_CONTROL_HOUR:
 										begin
 											ALARM_SETTING = 0;
-											OUT_ALARM_TIME = IN_ALARM_TIME;
+											OUT_ALARM_TIME = 0;
 											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_MIN:
 										begin
 											ALARM_SETTING = 0;
-											OUT_ALARM_TIME = IN_ALARM_TIME;
+											OUT_ALARM_TIME = 0;
 											MODE_BUFF = ALARM_TIME;
 										end
 									ALARM_CONTROL_SEC:
 										begin
 											ALARM_SETTING = 0;
-											OUT_ALARM_TIME = IN_ALARM_TIME;
+											OUT_ALARM_TIME = 0;
 											MODE_BUFF = ALARM_TIME;
 										end
 									default:
@@ -355,7 +359,7 @@ begin
 					end
 				UP:
 					begin
-						if(CNT >= 19999)
+						if(CNT >= 22999)
 							begin
 								case(MODE)
 									CURRENT_TIME:
@@ -441,7 +445,7 @@ begin
 					end
 				DOWN:
 					begin
-						if(CNT >= 19999)
+						if(CNT >= 22999)
 							begin
 								case(MODE)
 									CURRENT_TIME:

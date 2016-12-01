@@ -1,6 +1,6 @@
 Analysis & Synthesis report for DIGITAL_CLOCK
-Thu Dec 01 09:03:53 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Thu Dec 01 20:42:11 2016
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -15,40 +15,41 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|STATE
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: KEY_CONT:key_cont
- 13. Parameter Settings for User Entity Instance: PIEZO_UNIT:piezo_unit
- 14. Parameter Settings for User Entity Instance: DISPLAY_CONT:display_cont
- 15. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S1_DECODE"
- 16. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S10_DECODE"
- 17. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M1_DECODE"
- 18. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE"
- 19. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE"
- 20. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H10_DECODE"
- 21. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE"
- 22. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D10_DECODE"
- 23. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT1_DECODE"
- 24. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT10_DECODE"
- 25. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y1_DECODE"
- 26. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y10_DECODE"
- 27. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE"
- 28. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S10_DECODE"
- 29. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE"
- 30. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE"
- 31. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE"
- 32. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"
- 33. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP"
- 34. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP"
- 35. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP"
- 36. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP"
- 37. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MONTH_SEP"
- 38. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP"
- 39. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP"
- 40. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP"
- 41. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP"
- 42. Elapsed Time Per Partition
- 43. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: KEY_CONT:key_cont
+ 14. Parameter Settings for User Entity Instance: PIEZO_UNIT:piezo_unit
+ 15. Parameter Settings for User Entity Instance: DISPLAY_CONT:display_cont
+ 16. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S1_DECODE"
+ 17. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S10_DECODE"
+ 18. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M1_DECODE"
+ 19. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE"
+ 20. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE"
+ 21. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H10_DECODE"
+ 22. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE"
+ 23. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:D10_DECODE"
+ 24. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT1_DECODE"
+ 25. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:MT10_DECODE"
+ 26. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y1_DECODE"
+ 27. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:Y10_DECODE"
+ 28. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE"
+ 29. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:S10_DECODE"
+ 30. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE"
+ 31. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE"
+ 32. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE"
+ 33. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"
+ 34. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP"
+ 35. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP"
+ 36. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP"
+ 37. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP"
+ 38. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MONTH_SEP"
+ 39. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP"
+ 40. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP"
+ 41. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP"
+ 42. Port Connectivity Checks: "DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP"
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -74,15 +75,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 01 09:03:53 2016           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 01 20:42:11 2016           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DIGITAL_CLOCK                                   ;
 ; Top-level Entity Name              ; DIGITAL_CLOCK                                   ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,676                                           ;
-;     Total combinational functions  ; 1,658                                           ;
-;     Dedicated logic registers      ; 611                                             ;
-; Total registers                    ; 611                                             ;
+; Total logic elements               ; 1,438                                           ;
+;     Total combinational functions  ; 1,419                                           ;
+;     Dedicated logic registers      ; 578                                             ;
+; Total registers                    ; 578                                             ;
 ; Total pins                         ; 19                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -187,21 +188,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                       ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
-; RTL/PIEZO_UNIT.v                 ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/PIEZO_UNIT.v      ;         ;
-; RTL/TIME_CAL.v                   ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/TIME_CAL.v        ;         ;
-; RTL/KEY_CONT.v                   ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v        ;         ;
-; RTL/DIGITAL_CLOCK.v              ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DIGITAL_CLOCK.v   ;         ;
-; RTL/WT_SEP.v                     ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/WT_SEP.v          ;         ;
-; RTL/WT_DECODER.v                 ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/WT_DECODER.v      ;         ;
-; RTL/TIME_COMPARE.v               ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/TIME_COMPARE.v    ;         ;
-; RTL/DISPLAY_CONT.v               ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v    ;         ;
-; RTL/DISPLAY_DECODER.v            ; yes             ; User Verilog HDL File  ; D:/Projects/hanbat-alarm-clock/RTL/DISPLAY_DECODER.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; RTL/PIEZO_UNIT.v                 ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/PIEZO_UNIT.v      ;         ;
+; RTL/TIME_CAL.v                   ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/TIME_CAL.v        ;         ;
+; RTL/KEY_CONT.v                   ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/KEY_CONT.v        ;         ;
+; RTL/DIGITAL_CLOCK.v              ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DIGITAL_CLOCK.v   ;         ;
+; RTL/WT_SEP.v                     ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/WT_SEP.v          ;         ;
+; RTL/WT_DECODER.v                 ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/WT_DECODER.v      ;         ;
+; RTL/TIME_COMPARE.v               ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/TIME_COMPARE.v    ;         ;
+; RTL/DISPLAY_CONT.v               ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_CONT.v    ;         ;
+; RTL/DISPLAY_DECODER.v            ; yes             ; User Verilog HDL File  ; C:/Users/JJM/Projects/hanbat-alarm-clock/RTL/DISPLAY_DECODER.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -209,28 +210,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,676 ;
+; Estimated Total logic elements              ; 1,438 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1658  ;
+; Total combinational functions               ; 1419  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 853   ;
-;     -- 3 input functions                    ; 195   ;
-;     -- <=2 input functions                  ; 610   ;
+;     -- 4 input functions                    ; 689   ;
+;     -- 3 input functions                    ; 188   ;
+;     -- <=2 input functions                  ; 542   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1279  ;
-;     -- arithmetic mode                      ; 379   ;
+;     -- normal mode                          ; 1071  ;
+;     -- arithmetic mode                      ; 348   ;
 ;                                             ;       ;
-; Total registers                             ; 611   ;
-;     -- Dedicated logic registers            ; 611   ;
+; Total registers                             ; 578   ;
+;     -- Dedicated logic registers            ; 578   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 19    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 612   ;
-; Total fan-out                               ; 7263  ;
-; Average fan-out                             ; 3.17  ;
+; Maximum fan-out                             ; 579   ;
+; Total fan-out                               ; 6357  ;
+; Average fan-out                             ; 3.15  ;
 +---------------------------------------------+-------+
 
 
@@ -239,31 +240,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
-; |DIGITAL_CLOCK                       ; 1658 (1)          ; 611 (0)      ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |DIGITAL_CLOCK                                                             ; work         ;
-;    |DISPLAY_CONT:display_cont|       ; 525 (525)         ; 145 (145)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont                                   ; work         ;
-;    |DISPLAY_DECODER:display_decoder| ; 161 (50)          ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder                             ; work         ;
-;       |WT_DECODER:ALARM_H10_DECODE|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H10_DECODE ; work         ;
-;       |WT_DECODER:ALARM_H1_DECODE|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE  ; work         ;
-;       |WT_DECODER:ALARM_M10_DECODE|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE ; work         ;
+; |DIGITAL_CLOCK                       ; 1419 (1)          ; 578 (0)      ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |DIGITAL_CLOCK                                                             ; work         ;
+;    |DISPLAY_CONT:display_cont|       ; 492 (492)         ; 145 (145)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont                                   ; work         ;
+;    |DISPLAY_DECODER:display_decoder| ; 163 (50)          ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder                             ; work         ;
+;       |WT_DECODER:ALARM_H1_DECODE|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_H1_DECODE  ; work         ;
+;       |WT_DECODER:ALARM_M10_DECODE|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M10_DECODE ; work         ;
 ;       |WT_DECODER:ALARM_M1_DECODE|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_M1_DECODE  ; work         ;
 ;       |WT_DECODER:ALARM_S1_DECODE|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:ALARM_S1_DECODE  ; work         ;
 ;       |WT_DECODER:D1_DECODE|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:D1_DECODE        ; work         ;
-;       |WT_DECODER:H10_DECODE|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE       ; work         ;
-;       |WT_DECODER:H1_DECODE|         ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE        ; work         ;
+;       |WT_DECODER:H10_DECODE|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE       ; work         ;
+;       |WT_DECODER:H1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:H1_DECODE        ; work         ;
 ;       |WT_DECODER:M10_DECODE|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:M10_DECODE       ; work         ;
 ;       |WT_DECODER:M1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:M1_DECODE        ; work         ;
 ;       |WT_DECODER:S1_DECODE|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:S1_DECODE        ; work         ;
-;       |WT_DECODER:Y10_DECODE|        ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_DECODER:Y10_DECODE       ; work         ;
 ;       |WT_SEP:ALARM_HOUR_SEP|        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_HOUR_SEP       ; work         ;
-;       |WT_SEP:ALARM_MIN_SEP|         ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP        ; work         ;
+;       |WT_SEP:ALARM_MIN_SEP|         ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_MIN_SEP        ; work         ;
 ;       |WT_SEP:ALARM_SECOND_SEP|      ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:ALARM_SECOND_SEP     ; work         ;
 ;       |WT_SEP:DAY_SEP|               ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:DAY_SEP              ; work         ;
 ;       |WT_SEP:HOUR_SEP|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:HOUR_SEP             ; work         ;
 ;       |WT_SEP:MIN_SEP|               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:MIN_SEP              ; work         ;
-;       |WT_SEP:SECOND_SEP|            ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP           ; work         ;
-;       |WT_SEP:YEAR_SEP|              ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP             ; work         ;
-;    |KEY_CONT:key_cont|               ; 500 (500)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|KEY_CONT:key_cont                                           ; work         ;
-;    |PIEZO_UNIT:piezo_unit|           ; 227 (227)         ; 102 (102)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit                                       ; work         ;
+;       |WT_SEP:SECOND_SEP|            ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:SECOND_SEP           ; work         ;
+;       |WT_SEP:YEAR_SEP|              ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP             ; work         ;
+;    |KEY_CONT:key_cont|               ; 333 (333)         ; 98 (98)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|KEY_CONT:key_cont                                           ; work         ;
+;    |PIEZO_UNIT:piezo_unit|           ; 186 (186)         ; 102 (102)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit                                       ; work         ;
 ;    |TIME_CAL:time_cal|               ; 186 (186)         ; 149 (149)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|TIME_CAL:time_cal                                           ; work         ;
 ;    |TIME_COMPARE:time_compare|       ; 58 (58)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DIGITAL_CLOCK|TIME_COMPARE:time_compare                                   ; work         ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
@@ -287,220 +286,230 @@ Encoding Type:  One-Hot
 +--------------------+------------------+---------------+-------------+-------------+-------------------+------------------+--------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                              ;
-+-----------------------------------------------------+-----------------------------------------------------------+
-; Register name                                       ; Reason for Removal                                        ;
-+-----------------------------------------------------+-----------------------------------------------------------+
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][7]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][2]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][0]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][0]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][1]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][2]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][3]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][4]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][7]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][2]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][2]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][3]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][4]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][7]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][0]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][3]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][4]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][7]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][2]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
-; PIEZO_UNIT:piezo_unit|LIMIT[15,19,22,25,27..29]     ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
-; PIEZO_UNIT:piezo_unit|LIMIT[8,10,11,13,16,18]       ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[30]               ;
-; PIEZO_UNIT:piezo_unit|LIMIT[9,12,14,17,20,21,23,24] ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[26]               ;
-; PIEZO_UNIT:piezo_unit|LIMIT[3]                      ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[5]                ;
-; PIEZO_UNIT:piezo_unit|LIMIT[2]                      ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[4]                ;
-; PIEZO_UNIT:piezo_unit|LIMIT[26]                     ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][5]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][5]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][3]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][4]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][3]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][4]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[8][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][0]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][0]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][2]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][2]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][7]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
-; PIEZO_UNIT:piezo_unit|LIMIT[31]                     ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[30]               ;
-; PIEZO_UNIT:piezo_unit|LIMIT[4]                      ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[1]                ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1]       ; Stuck at GND due to stuck port data_in                    ;
-; PIEZO_UNIT:piezo_unit|LIMIT[30]                     ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][7]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][6]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][3]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][2]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][3]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][6]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][5]        ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]  ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][2]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][3]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]        ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5]       ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][5]        ; Stuck at VCC due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6]       ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|STATE~10                  ; Lost fanout                                               ;
-; DISPLAY_CONT:display_cont|STATE~11                  ; Lost fanout                                               ;
-; DISPLAY_CONT:display_cont|STATE~12                  ; Lost fanout                                               ;
-; DISPLAY_CONT:display_cont|STATE.DELAY_T             ; Merged with DISPLAY_CONT:display_cont|STATE.CLEAR_DISP    ;
-; DISPLAY_CONT:display_cont|STATE.CLEAR_DISP          ; Stuck at GND due to stuck port data_in                    ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][5]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][6]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][5] ;
-; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][4]       ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[20][4] ;
-; Total Number of Removed Registers = 225             ;                                                           ;
-+-----------------------------------------------------+-----------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++-----------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                        ;
++-----------------------------------------------------------+-----------------------------------------------------------+
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][7]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][2]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][0]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][7]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][2]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][0]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][0]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][1]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][2]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][3]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][4]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[0][7]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][0]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][1]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][2]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][3]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][4]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[9][7]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[12][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[15][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[16][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[28][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][0]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][3]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][4]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[31][7]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][2]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][2]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[11][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[11][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[29][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[29][0] ;
+; PIEZO_UNIT:piezo_unit|LIMIT[8,9,12,13,15,17,23,25,27..29] ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[10,11,16,19]                  ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[30]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[14,18,20..22,24]              ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[26]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[3]                            ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[5]                ;
+; PIEZO_UNIT:piezo_unit|LIMIT[1]                            ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[2]                ;
+; PIEZO_UNIT:piezo_unit|LIMIT[26]                           ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[31]               ;
+; PIEZO_UNIT:piezo_unit|LIMIT[2]                            ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[4]                ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][3]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[6][4]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][3]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][4]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[8][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[13][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[13][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[14][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[14][0] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[17][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[18][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][0]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[21][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][0]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][2]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][2]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[17][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[20][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[23][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[26][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][7]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
+; PIEZO_UNIT:piezo_unit|LIMIT[31]                           ; Merged with PIEZO_UNIT:piezo_unit|LIMIT[30]               ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[24][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[27][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[10][1]             ; Stuck at GND due to stuck port data_in                    ;
+; PIEZO_UNIT:piezo_unit|LIMIT[30]                           ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][6]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][6]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][7]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][6]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][3]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][2]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[3][1]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[6][1]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][6]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][3]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[4][5]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[5][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[8][5]              ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]  ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][2]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][3]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][6]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][2]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][3]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5]             ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[5][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6]             ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6]              ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|STATE~10                        ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE~11                        ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE~12                        ; Lost fanout                                               ;
+; DISPLAY_CONT:display_cont|STATE.DELAY_T                   ; Merged with DISPLAY_CONT:display_cont|STATE.CLEAR_DISP    ;
+; DISPLAY_CONT:display_cont|STATE.CLEAR_DISP                ; Stuck at GND due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[30][5]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3] ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][5]              ; Stuck at VCC due to stuck port data_in                    ;
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[19][4]             ; Merged with DISPLAY_CONT:display_cont|DISPLAY_DATA[20][4] ;
+; Total Number of Removed Registers = 225                   ;                                                           ;
++-----------------------------------------------------------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                             ;
++----------------------------------------------+---------------------------+----------------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register       ;
++----------------------------------------------+---------------------------+----------------------------------------------+
+; DISPLAY_CONT:display_cont|DISPLAY_DATA[1][6] ; Stuck at GND              ; DISPLAY_CONT:display_cont|DISPLAY_DATA[2][5] ;
+;                                              ; due to stuck port data_in ;                                              ;
++----------------------------------------------+---------------------------+----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -508,12 +517,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 611   ;
-; Number of registers using Synchronous Clear  ; 328   ;
-; Number of registers using Synchronous Load   ; 75    ;
+; Total registers                              ; 578   ;
+; Number of registers using Synchronous Clear  ; 336   ;
+; Number of registers using Synchronous Load   ; 59    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 371   ;
+; Number of registers using Clock Enable       ; 370   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -523,56 +532,54 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|CNT_SOUND[18]                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|LIMIT[6]                           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|CNT[16]                            ;
-; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|OUT_TIME[6]                            ;
-; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|SETTING_TIME[1]                        ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|ORDER[31]                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|CNT[6]                         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_COMPARE:time_compare|CNT[0]                         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|LIMIT[31]                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|MONTH[1]                               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|CNT[21]                                ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|HOUR[4]                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|CNT_SOUND[2]                       ;
+; 3:1                ; 37 bits   ; 74 LEs        ; 37 LEs               ; 37 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|ORDER[29]                          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|PIEZO_UNIT:piezo_unit|CNT[6]                             ;
+; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|OUT_TIME[3]                            ;
+; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|SETTING_TIME[14]                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|CNT[12]                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_COMPARE:time_compare|CNT[28]                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|MONTH[2]                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|CNT[3]                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|HOUR[2]                                ;
 ; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|MIN[0]                                 ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|SEC[3]                                 ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|DAY[1]                                 ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|YEAR[5]                                ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|CNT[22]                                ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|SEC[1]                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|DAY[4]                                 ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DIGITAL_CLOCK|TIME_CAL:time_cal|YEAR[3]                                ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|CNT[13]                                ;
 ; 64:1               ; 5 bits    ; 210 LEs       ; 20 LEs               ; 190 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[21][5]            ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 2 LEs                ; 82 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[30][5]            ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 0 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[4][5]             ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 2 LEs                ; 82 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[30][3]            ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[1][5]             ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[2][5]             ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 0 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[5][5]             ;
 ; 64:1               ; 2 bits    ; 84 LEs        ; 0 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[7][5]             ;
 ; 65:1               ; 2 bits    ; 86 LEs        ; 0 LEs                ; 86 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[25][5]            ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 0 LEs                ; 86 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[19][6]            ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 0 LEs                ; 86 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[22][1]            ;
-; 66:1               ; 8 bits    ; 352 LEs       ; 8 LEs                ; 344 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[20][0]            ;
-; 66:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[23][0]            ;
-; 66:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[26][0]            ;
-; 58:1               ; 2 bits    ; 76 LEs        ; 4 LEs                ; 72 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[10][6]            ;
-; 59:1               ; 2 bits    ; 78 LEs        ; 6 LEs                ; 72 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[10][4]            ;
-; 68:1               ; 5 bits    ; 225 LEs       ; 10 LEs               ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[5][2]             ;
-; 68:1               ; 5 bits    ; 225 LEs       ; 10 LEs               ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[8][3]             ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 0 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[1][5]             ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[3]                           ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 0 LEs                ; 86 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[19][5]            ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 0 LEs                ; 86 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[22][5]            ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[10][6]            ;
+; 66:1               ; 8 bits    ; 352 LEs       ; 8 LEs                ; 344 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[19][0]            ;
+; 66:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[23][2]            ;
+; 66:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[26][1]            ;
+; 68:1               ; 5 bits    ; 225 LEs       ; 10 LEs               ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[5][1]             ;
+; 68:1               ; 5 bits    ; 225 LEs       ; 10 LEs               ; 215 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[8][1]             ;
+; 68:1               ; 2 bits    ; 90 LEs        ; 6 LEs                ; 84 LEs                 ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[10][0]            ;
+; 39:1               ; 2 bits    ; 52 LEs        ; 2 LEs                ; 50 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[3]                           ;
 ; 40:1               ; 5 bits    ; 130 LEs       ; 15 LEs               ; 115 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[1]                            ;
 ; 40:1               ; 3 bits    ; 78 LEs        ; 9 LEs                ; 69 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[8]                            ;
-; 40:1               ; 7 bits    ; 182 LEs       ; 14 LEs               ; 168 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[12]                           ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LCD_CNT[1]                     ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 12 LEs               ; 120 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|DISPLAY_DATA[2][3]             ;
-; 42:1               ; 5 bits    ; 140 LEs       ; 15 LEs               ; 125 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[13]                     ;
-; 42:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[7]                      ;
-; 42:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[0]                      ;
+; 40:1               ; 7 bits    ; 182 LEs       ; 21 LEs               ; 161 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_DATE[15]                           ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LCD_CNT[0]                     ;
+; 42:1               ; 5 bits    ; 140 LEs       ; 10 LEs               ; 130 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[15]                     ;
+; 42:1               ; 6 bits    ; 168 LEs       ; 12 LEs               ; 156 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[9]                      ;
+; 42:1               ; 6 bits    ; 168 LEs       ; 12 LEs               ; 156 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME[5]                      ;
 ; 42:1               ; 5 bits    ; 140 LEs       ; 15 LEs               ; 125 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[13]                           ;
-; 42:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[8]                            ;
-; 42:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[2]                            ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[4]                           ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME                               ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_ALARM_TIME                         ;
+; 42:1               ; 6 bits    ; 168 LEs       ; 18 LEs               ; 150 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[10]                           ;
+; 42:1               ; 6 bits    ; 168 LEs       ; 24 LEs               ; 144 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|OUT_TIME[2]                            ;
+; 101:1              ; 3 bits    ; 201 LEs       ; 12 LEs               ; 189 LEs                ; Yes        ; |DIGITAL_CLOCK|KEY_CONT:key_cont|MODE_BUFF[0]                           ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|LCD_DATA                       ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP|SEP_A[2] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP|SEP_A[1] ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 3 LEs                ; 123 LEs                ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|Selector119                    ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DIGITAL_CLOCK|DISPLAY_DECODER:display_decoder|WT_SEP:YEAR_SEP|SEP_A[3] ;
+; 68:1               ; 5 bits    ; 225 LEs       ; 15 LEs               ; 210 LEs                ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|Selector123                    ;
 ; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |DIGITAL_CLOCK|DISPLAY_CONT:display_cont|STATE                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 
@@ -594,10 +601,10 @@ Encoding Type:  One-Hot
 ; CURRENT_CONTROL_YEAR  ; 011011 ; Unsigned Binary               ;
 ; CURRENT_CONTROL_MONTH ; 011101 ; Unsigned Binary               ;
 ; CURRENT_CONTROL_DAY   ; 011111 ; Unsigned Binary               ;
-; ALARM_TIME            ; 100001 ; Unsigned Binary               ;
-; ALARM_CONTROL_HOUR    ; 110011 ; Unsigned Binary               ;
-; ALARM_CONTROL_MIN     ; 110101 ; Unsigned Binary               ;
-; ALARM_CONTROL_SEC     ; 110111 ; Unsigned Binary               ;
+; ALARM_TIME            ; 100000 ; Unsigned Binary               ;
+; ALARM_CONTROL_HOUR    ; 110010 ; Unsigned Binary               ;
+; ALARM_CONTROL_MIN     ; 110100 ; Unsigned Binary               ;
+; ALARM_CONTROL_SEC     ; 110110 ; Unsigned Binary               ;
 +-----------------------+--------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -914,7 +921,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -922,9 +929,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 01 09:03:44 2016
+    Info: Processing started: Thu Dec 01 20:42:00 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DIGITAL_CLOCK -c DIGITAL_CLOCK
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/piezo_unit.v
@@ -948,14 +955,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/dis
     Info (12023): Found entity 1: DISPLAY_DECODER
 Info (12127): Elaborating entity "DIGITAL_CLOCK" for the top level hierarchy
 Info (12128): Elaborating entity "KEY_CONT" for hierarchy "KEY_CONT:key_cont"
-Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(144): all case item expressions in this case statement are onehot
+Warning (10036): Verilog HDL or VHDL warning at KEY_CONT.v(68): object "STOP_OK" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at KEY_CONT.v(148): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "TIME_CAL" for hierarchy "TIME_CAL:time_cal"
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(135): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(152): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(170): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(188): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(205): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(222): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(138): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(155): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(173): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(191): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(208): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at TIME_CAL.v(225): truncated value with size 32 to match size of target (7)
 Info (12128): Elaborating entity "TIME_COMPARE" for hierarchy "TIME_COMPARE:time_compare"
 Info (12128): Elaborating entity "PIEZO_UNIT" for hierarchy "PIEZO_UNIT:piezo_unit"
 Warning (10762): Verilog HDL Case Statement warning at PIEZO_UNIT.v(40): can't check case statement for completeness because the case expression has too many possible states
@@ -972,8 +980,8 @@ Warning (10230): Verilog HDL assignment warning at WT_SEP.v(63): truncated value
 Warning (10230): Verilog HDL assignment warning at WT_SEP.v(68): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "WT_DECODER" for hierarchy "DISPLAY_DECODER:display_decoder|WT_DECODER:H10_DECODE"
 Info (12128): Elaborating entity "DISPLAY_CONT" for hierarchy "DISPLAY_CONT:display_cont"
-Warning (10230): Verilog HDL assignment warning at DISPLAY_CONT.v(131): truncated value with size 32 to match size of target (8)
-Info (10264): Verilog HDL Case Statement information at DISPLAY_CONT.v(480): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at DISPLAY_CONT.v(374): truncated value with size 32 to match size of target (8)
+Info (10264): Verilog HDL Case Statement information at DISPLAY_CONT.v(485): all case item expressions in this case statement are onehot
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[7]" is missing source, defaulting to GND
     Warning (12110): Net "DISPLAY_DECODER:display_decoder|H10[6]" is missing source, defaulting to GND
@@ -1051,14 +1059,14 @@ Warning (12241): 27 hierarchies have connectivity warnings - see the Connectivit
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1698 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1464 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 1679 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 93 warnings
-    Info: Peak virtual memory: 509 megabytes
-    Info: Processing ended: Thu Dec 01 09:03:53 2016
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21061): Implemented 1445 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 94 warnings
+    Info: Peak virtual memory: 347 megabytes
+    Info: Processing ended: Thu Dec 01 20:42:11 2016
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 

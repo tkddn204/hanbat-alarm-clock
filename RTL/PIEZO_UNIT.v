@@ -10,6 +10,7 @@ input ALARM_ENABLE, ALARM_DOING;
 output wire PIEZO;
 
 reg BUFF;
+
 integer CNT, ORDER;
 integer CNT_SOUND;
 integer LIMIT;
@@ -36,9 +37,8 @@ begin
 			if(CNT == 12499)
 				begin
 					CNT = 0;
-					ORDER = ORDER + 1;
 					case(ORDER)  // airplain
-						0: begin LIMIT = 0; end
+						0: begin LIMIT = MI; end
 						1: begin LIMIT = MI; end
 						2: begin LIMIT = RAE; end
 						3: begin LIMIT = RAE; end
@@ -108,6 +108,7 @@ begin
 						67: begin LIMIT = 0; ORDER = 0; end
 						default: LIMIT = 0;
 					endcase
+					ORDER = ORDER + 1;
 				end
 			else
 				CNT = CNT + 1;

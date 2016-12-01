@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Dec 01 09:03:53 2016
-Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Analysis & Synthesis Status : Successful - Thu Dec 01 20:42:11 2016
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : DIGITAL_CLOCK
 Top-level Entity Name : DIGITAL_CLOCK
 Family : Cyclone II
-Total logic elements : 1,676
-    Total combinational functions : 1,658
-    Dedicated logic registers : 611
-Total registers : 611
+Total logic elements : 1,438
+    Total combinational functions : 1,419
+    Dedicated logic registers : 578
+Total registers : 578
 Total pins : 19
 Total virtual pins : 0
 Total memory bits : 0

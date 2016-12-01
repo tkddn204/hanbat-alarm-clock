@@ -54,11 +54,11 @@ begin
 		begin
 			HOUR = 0;
 			MIN  = 0;
-			SEC  = 0;
+			SEC  = 1;
 			
-			YEAR  = 0;
-			MONTH = 0;
-			DAY   = 0;
+			YEAR  = 16;
+			MONTH = 1;
+			DAY   = 1;
 			
 			ALARM_HOUR = 0;
 			ALARM_MIN  = 0;

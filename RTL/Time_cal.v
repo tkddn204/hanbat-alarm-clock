@@ -76,15 +76,17 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		begin
-			SETTING_TIME = 0;
-			SETTING_DATE = 0;
+			SETTING_TIME = 16'b0000000000000001; // 16'b0000/000000/000001;
+			SETTING_DATE = 16'b0010000000100001; // 16'b0010000/0001/00001;
 		end
 	else
-		if(SETTING == 0)
-			begin
-				SETTING_TIME = IN_TIME;
-				SETTING_DATE = IN_DATE;
-			end
+		begin
+			if((SETTING == 0) && (ALARM_SETTING == 0))
+				begin
+					SETTING_TIME = IN_TIME;
+					SETTING_DATE = IN_DATE;
+				end
+		end
 end
 
 // Count part
@@ -124,6 +126,7 @@ always @(posedge CLK)
 begin
 	if(!RESETN)
 		SEC = 0;
+		
 	else if(SETTING == 1)
 		SEC = SETTING_TIME[5:0];
 	else

@@ -23,7 +23,7 @@ begin
 	else
 		if(DOING == 1'b1)
 			begin
-				if(CNT == 99999 * 60)
+				if(CNT == 99999 * 30)
 					begin
 						STOP = 1'b1;
 						CNT = 0;
@@ -44,7 +44,7 @@ begin
 			begin
 				DOING = 1'b1;
 			end
-		else if(STOP == 1'b1)
+		else if((STOP == 1'b1))
 			begin
 				DOING = 1'b0;
 			end

@@ -109,48 +109,6 @@ begin
 		end
 	else
 		begin
-			if(MERIDIAN == 1)	// Meridian is On(12)
-				begin
-					if((H10 >= 8'b00110001) && (H1 >= 8'b00110010)) // H10 > 1 && H1 > 2
-						begin
-							DISPLAY_DATA[10] = PM;
-							if(H10 == 8'b00110010) // H10 2
-								begin
-									if(H1 >= 8'b00110010) // H1 2
-										begin
-											DISPLAY_DATA[1] = 8'b00110001; // H10 1
-											if(H1 == 8'b00110010) // 22
-												DISPLAY_DATA[2] = 8'b00110000; // H10, H1 10
-											else // 23
-												DISPLAY_DATA[2] = 8'b00110001; // H10, H1 11
-										end
-								end
-							else // 1
-								begin
-									DISPLAY_DATA[1] = 8'b00110000; // H10 0
-									DISPLAY_DATA[2] = H1 - 2;
-								end
-						end
-					else if((H10 >= 8'b00110010) && (H1 >= 8'b00110000)) // H10 > 2 && H1 > 0
-						begin
-							DISPLAY_DATA[1] = 8'b00110000; // H10 0
-							if(H1 == 8'b00110000) // 20
-								DISPLAY_DATA[2] = 8'b00111000; // H10, H1 08
-							else // 21
-								DISPLAY_DATA[2] = 8'b00111001; // H10, H1 09
-						end
-					else
-						begin
-							DISPLAY_DATA[10] = AM;
-						end
-					DISPLAY_DATA[11] = 8'b01001101; // M
-				end
-			else
-				begin
-					DISPLAY_DATA[10] = 8'b00100000; // space
-					DISPLAY_DATA[11] = 8'b00100000; // space
-				end	
-				
 			case(MODE)
 					CURRENT_TIME:
 						begin
@@ -390,6 +348,53 @@ begin
 						end
 			endcase
 			
+			if(MERIDIAN == 1)	// Meridian is On(12)
+				begin
+					if((DISPLAY_DATA[1] == 8'b00100000) && (DISPLAY_DATA[2] == 8'b00100000)) // both blank
+						begin
+							// pass
+						end
+					else if((H10 >= 8'b00110001) && (H1 >= 8'b00110010)) // H10 > 1 && H1 > 2
+						begin
+							DISPLAY_DATA[10] = PM;
+							if(H10 == 8'b00110010) // H10 2
+								begin
+									if(H1 >= 8'b00110010) // H1 2
+										begin
+											DISPLAY_DATA[1] = 8'b00110001; // H10 1
+											if(H1 == 8'b00110010) // 22
+												DISPLAY_DATA[2] = 8'b00110000; // H10, H1 10
+											else // 23
+												DISPLAY_DATA[2] = 8'b00110001; // H10, H1 11
+										end
+								end
+							else // 1
+								begin
+									DISPLAY_DATA[1] = 8'b00110000; // H10 0
+									DISPLAY_DATA[2] = H1 - 2;
+								end
+						end
+					else if((H10 >= 8'b00110010) && (H1 >= 8'b00110000)) // H10 > 2 && H1 > 0
+						begin
+							DISPLAY_DATA[10] = PM;
+							DISPLAY_DATA[1] = 8'b00110000; // H10 0
+							if(H1 == 8'b00110000) // 20
+								DISPLAY_DATA[2] = 8'b00111000; // H10, H1 08
+							else // 21
+								DISPLAY_DATA[2] = 8'b00111001; // H10, H1 09
+						end
+					else
+						begin
+							DISPLAY_DATA[10] = AM;
+						end
+					DISPLAY_DATA[11] = 8'b01001101; // M
+				end
+			else
+				begin
+					DISPLAY_DATA[10] = 8'b00100000; // space
+					DISPLAY_DATA[11] = 8'b00100000; // space
+				end
+				
 			if(ALARM_DOING == 1) // Alarm is calling!
 				begin
 					DISPLAY_DATA[29] = 8'b10010001; // note
